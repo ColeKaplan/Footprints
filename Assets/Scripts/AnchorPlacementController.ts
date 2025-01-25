@@ -23,6 +23,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   private anchorArray : Anchor[] = [];
   private footprintArray : SceneObject[] = [];
   private pathArray : string[] = [];
+  private trailHeads : string[] = [];
   private pathCount : number = 0
 
   private trailHead : boolean = true
@@ -121,9 +122,9 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     } else {
       var object: SceneObject = this.trailHeadPrefab.instantiate(this.getSceneObject());
       this.trailHead = false
+      print("trailhead created")
     }
 
-    // Line Below DOES NOT WORK, ASK WHY
     object.getChild(0).getTransform().setLocalScale(new vec3(30,30,30));
     object.getChild(0).getTransform().setLocalRotation(object.getTransform().getLocalRotation().multiply(new quat(-.2,.15,0,0)));
     object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,-150,0)));
@@ -135,6 +136,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
     // Add to arrays
     this.footprintArray.push(object);
+    // print(this.footprintArray)
     if (this.footprintArray.length > 7) this.footprintArray[this.footprintArray.length - 8].enabled = false;
 
     this.anchorArray.push(anchor)

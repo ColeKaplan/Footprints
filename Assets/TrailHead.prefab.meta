@@ -1,0 +1,79 @@
+- !<AssetImportMetadata/1a2a52fc-6861-4a10-8eb5-11ac721a089f>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 41883c03-0881-415f-9a66-33f054c048da
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 41883c03-0881-415f-9a66-33f054c048da
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 0ad29446-a880-408d-9daa-83298bd7c473
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/0d27a587-8690-476b-a663-0344c8704931>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefabAssetData/0ad29446-a880-408d-9daa-83298bd7c473>
+  SourceRemaps:
+    - 27ca67aa-c5b1-4c5e-943f-34225f16cd63: a16a6437-2907-4b4b-8066-1dc22e7640df
+    - 41883c03-0881-415f-9a66-33f054c048da: 7b7d2489-a5c5-4635-a32e-05bec3e36c8d
+    - bff215a1-18d1-4ae6-a1d5-44d3ce801cc7: 56b66c1f-f7b6-4bf4-a5d7-fd89ea1e3990
+    - d33ede09-f965-4426-8a56-0eaa61c71048: 36bf83e1-548c-491a-8086-8aed67e73654
+  SourceState: !<own> 7b7d2489-a5c5-4635-a32e-05bec3e36c8d
+- !<SceneObject/36bf83e1-548c-491a-8086-8aed67e73654>
+  PrefabRemaps:
+    []
+  Name: TrailHead
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> a16a6437-2907-4b4b-8066-1dc22e7640df
+  Components:
+    []
+- !<RenderMeshVisual/56b66c1f-f7b6-4bf4-a5d7-fd89ea1e3990>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 38f1bc78-58c3-434d-b04a-7198c5609f2e
+  Mesh: !<reference> 4c8420d1-44e2-4b47-b743-5177c55b234c
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ObjectPrefab/7b7d2489-a5c5-4635-a32e-05bec3e36c8d>
+  PackagePath: ""
+  objects:
+    - !<own> 36bf83e1-548c-491a-8086-8aed67e73654
+  LazyLoading: false
+  RetainAssets: true
+- !<SceneObject/a16a6437-2907-4b4b-8066-1dc22e7640df>
+  PrefabRemaps:
+    []
+  Name: Cylinder
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 10.000000, y: 30.000000, z: 10.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 56b66c1f-f7b6-4bf4-a5d7-fd89ea1e3990
