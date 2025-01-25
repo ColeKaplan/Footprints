@@ -16,6 +16,7 @@
     - !<own> 7812115a-8e65-466b-ae90-833f75ad8db0
     - !<own> 6764f554-4200-4815-b185-7efc7324a472
     - !<own> aba1fef1-7c1d-4340-8abf-8bc3a42113cc
+    - !<own> 1dc00065-0a72-4bab-9e3d-629f9907a302
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -2792,6 +2793,22 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/1dc00065-0a72-4bab-9e3d-629f9907a302>
+  PrefabRemaps:
+    []
+  Name: Object
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> 7705f63d-219e-42a7-95b8-961c495b9b63
+    - !<own> 3dc290a4-6085-4ec3-b1f6-cd60c76379f1
+  Components:
+    []
 - !<SceneObject/1dc67040-bae9-41b8-960f-b57a94672dfa>
   PrefabRemaps:
     []
@@ -4816,6 +4833,21 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/3dc290a4-6085-4ec3-b1f6-cd60c76379f1>
+  PrefabRemaps:
+    []
+  Name: voiceRecognition
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> e73fbc29-4273-44f1-a799-620ca9a13ffe
 - !<ScriptComponent/3e990679-08c6-45bd-99e3-c496efe54958>
   PrefabRemaps:
     []
@@ -6829,6 +6861,22 @@
     []
   Components:
     - !<own> 1c958716-75ae-42c2-b5ef-de8c4711f1a5
+- !<ScriptComponent/60ba0737-9a2f-40a5-9df6-a213c4a1e7ba>
+  PrefabRemaps:
+    []
+  Name: mainStateMachine
+  Enabled: true
+  ScriptAsset: !<reference> c95c4864-7866-46b8-b8c1-1e31dfeaaca0
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/61a4215f-bc21-48f1-8786-72f70fb964fb>
   PrefabRemaps:
     []
@@ -8884,6 +8932,21 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/7705f63d-219e-42a7-95b8-961c495b9b63>
+  PrefabRemaps:
+    []
+  Name: mainStateMachine
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 60ba0737-9a2f-40a5-9df6-a213c4a1e7ba
 - !<SceneObject/771da37d-9459-45e0-8f98-9538710f0dc5>
   PrefabRemaps:
     []
@@ -15961,6 +16024,22 @@
     InvertRotation: false
   SurfaceOptions: !<SurfaceOptions>
     EnhanceWithNativeAR: false
+- !<ScriptComponent/e73fbc29-4273-44f1-a799-620ca9a13ffe>
+  PrefabRemaps:
+    []
+  Name: voiceRecognition
+  Enabled: true
+  ScriptAsset: !<reference> 52cb046f-bfdd-4a44-b8b5-bdddcb42f2ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/e769c593-4515-4020-a2bf-11dd93208bc4>
   PrefabRemaps:
     []

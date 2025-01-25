@@ -2,42 +2,56 @@
 
 import { MicController } from "./voiceRecognition"
 
-type Mode = "creator" | "explorer" | "undefined";
+// type Mode = "creator" | "explorer" | "undefined";
 
-class User {
-    mode: Mode;
-    trail_id: number;
-    constructor(mode: Mode = "undefined") {
-        this.mode = mode;
-        this.trail_id = -1;
-    }
+// class User {
+//     public mode: Mode;
+//     trail_id: number;
+//     constructor(mode: Mode = "undefined") {
+//         this.mode = mode;
+//         this.trail_id = -1;
+//     }
 
-    setMode(mode: Mode) {
-        this.mode = mode;
-        print(`User mode changed to: ${mode}`);
-    }
-}
+//     setMode(mode: Mode) {
+//         this.mode = mode;
+//         print(`User mode changed to: ${mode}`);
+//     }
+// }
 
 @component
 export class mainStateMachine extends BaseScriptComponent {
     private micController: MicController;
-    private user: User;
-
+    // private user: User;
+    
+    private trail_id : number = -1;
+    private mode : number = 0
 
 
     onAwake() {
         this.micController = new MicController();
-        this.user = new User(); // Starts in "undefined" mode
+        // this.user = new User(); // Starts in "undefined" mode
         print('state machine awake')
+
+        print("the mode is: " + this.mode)
+        if (this.mode == 0) {
+            print("it equals 0")
+        } else if (this.mode === 1){
+            print("it equals 1")
+        } else {
+            this.mode += 1
+            this.onAwake
+        }
     }
 
     public handleCommand(command: string) {
-        if (this.user.mode === "undefined") {
+        print("we got a command!!!")
+        if (this.mode == 0) {
+            print("we got inside undefined")
             if (command === "start") {
-                this.user.setMode("creator");
+                // this.mode = "creator";
                 this.createTrail();
             } else if (command === "join") {
-                this.user.setMode("explorer");
+                // this.mode = "explorer"
                 let memoriesNearby = this.locateMemories();
                 if (memoriesNearby) {
                     // join nearest trail
@@ -47,13 +61,14 @@ export class mainStateMachine extends BaseScriptComponent {
                 }
             }
         }
+        print("mode is: " + this.mode)
         if (command == "snap") {
-            if (this.user.mode === "undefined") {
-                this.createMemory(-1);
-            }
-            else {
-                this.createMemory(this.user.trail_id);
-            }
+            // if (this.user.mode === "undefined") {
+            //     this.createMemory(-1);
+            // }
+            // else {
+            //     this.createMemory(this.user.trail_id);
+            // }
 
         }
     }
