@@ -1,0 +1,59 @@
+- !<AssetImportMetadata/5211b1d2-16cd-4b1c-91f1-c302ff739efa>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> b9a34ce4-b884-40dd-a2a5-379cc0bfe672
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> b9a34ce4-b884-40dd-a2a5-379cc0bfe672
+  PackageType: NotAPackage
+  AssetDataMap:
+    TypeScriptAsset: !<own> 5265aae3-0625-40e2-9ea2-f16ffc44ec62
+  ImporterSettings: !<AssetImporterSettings/f540b4d2-7a44-40cc-a803-6f538e59d2aa>
+    {}
+  PackagePolicy: CannotBeUnpacked
+  DependentFiles:
+    []
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+  ExtraData:
+    {}
+- !<TypeScriptAssetData/5265aae3-0625-40e2-9ea2-f16ffc44ec62>
+  InputLines:
+    - // @input Asset.LocationCloudStorageModule locationCloudStorageModule
+    - // @input Asset.ConnectedLensModule connectedLensModule
+    - // @input bool useLocalStorage
+    - // @input float mappingInterval = 20
+    - // @input float resetDelayInS = 0.5
+    - // @input bool debug = true
+    - // @input bool incrementalMapping
+    - // @input bool enableLoggingPoseSettling
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    connectedLensModule: false
+    debug: false
+    enableLoggingPoseSettling: false
+    incrementalMapping: false
+    locationCloudStorageModule: false
+    mappingInterval: false
+    resetDelayInS: false
+    useLocalStorage: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - locationCloudStorageModule: !<reference.LocationCloudStorageModule> 00000000-0000-0000-0000-000000000000
+      useLocalStorage: false
+      debug: false
+      mappingInterval: !<float> 120.000000
+      resetDelayInS: 0.500000
+      incrementalMapping: false
+      enableLoggingPoseSettling: false
+      connectedLensModule: !<reference.ConnectedLensModule> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
