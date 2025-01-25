@@ -30,6 +30,7 @@
     camera: false
     createAnchorButton: false
     prefab: false
+    trailHeadPrefab: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
@@ -37,6 +38,7 @@
       createAnchorButton: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       camera: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       prefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      trailHeadPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -45,3 +47,4 @@
     - // @input PinchButton createAnchorButton
     - // @input SceneObject camera
     - // @input Asset.ObjectPrefab prefab
+    - // @input Asset.ObjectPrefab trailHeadPrefab

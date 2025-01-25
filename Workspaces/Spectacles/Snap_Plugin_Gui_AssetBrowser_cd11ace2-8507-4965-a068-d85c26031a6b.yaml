@@ -1,12 +1,13 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 702
+    size: 703
     values:
       - Base 1.png
       - Base.png
       - Behavior.js
       - Capsule.mesh
+      - Cinematic Glow
       - Device Camera Texture.deviceCameraTexture
       - Echopark.hdr
       - Echopark.hdr/Diffuse

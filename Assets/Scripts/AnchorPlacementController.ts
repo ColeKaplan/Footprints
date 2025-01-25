@@ -17,12 +17,15 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   @input camera: SceneObject;
   @input prefab: ObjectPrefab;
+  @input trailHeadPrefab: ObjectPrefab;
 
   private anchorCount : number = 0;
   private anchorArray : Anchor[] = [];
   private footprintArray : SceneObject[] = [];
   private pathArray : string[] = [];
   private pathCount : number = 0
+
+  private trailHead : boolean = true
 
   private log = new NativeLogger("AnchorPlacementController")
 
@@ -113,7 +116,13 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   private attachNewObjectToAnchor(anchor: Anchor, enabled: boolean) {
     // Create a new object from the prefab
-    var object: SceneObject = this.prefab.instantiate(this.getSceneObject());
+    if (!this.trailHead) {
+      var object: SceneObject = this.prefab.instantiate(this.getSceneObject());
+    } else {
+      var object: SceneObject = this.trailHeadPrefab.instantiate(this.getSceneObject());
+      this.trailHead = false
+    }
+
     // Line Below DOES NOT WORK, ASK WHY
     object.getChild(0).getTransform().setLocalScale(new vec3(30,30,30));
     object.getChild(0).getTransform().setLocalRotation(object.getTransform().getLocalRotation().multiply(new quat(-.2,.15,0,0)));
@@ -206,6 +215,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   private startCreator() {
     this.disableOldPrints()
     this.pathCount += 1
+    this.trailHead = true
   }
 
   // Gets called by ToggleUserMode script, triggered currently by the user_toggle button
