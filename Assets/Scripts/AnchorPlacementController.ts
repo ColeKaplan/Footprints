@@ -21,6 +21,8 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   private anchorCount : number = 0;
   private anchorArray : Anchor[] = [];
   private footprintArray : SceneObject[] = [];
+  private pathArray : string[] = [];
+  private pathCount : number = 0
 
   private log = new NativeLogger("AnchorPlacementController")
 
@@ -47,10 +49,13 @@ export default class AnchorPlacementController extends BaseScriptComponent {
                 if (this.creatorMode){
                   this.createAnchor();
                   this.previousPosition = currentPosition
-                } else {
-                  this.showNearbyExplorer();
                 }
-            }  
+            }
+
+            if (!this.creatorMode) {
+              this.showNearbyExplorer();
+            }
+          
         });
   }
 
@@ -86,7 +91,6 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   public async createAnchor(position? : mat4) {
 
 
-    // Compute the anchor position 5 units in front of user
     let toWorldFromDevice = this.camera.getTransform().getWorldTransform();
     let anchorPosition = position? position : toWorldFromDevice.mult(
       mat4.fromTranslation(new vec3(1, 0, 0))
@@ -113,7 +117,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     // Line Below DOES NOT WORK, ASK WHY
     object.getChild(0).getTransform().setLocalScale(new vec3(30,30,30));
     object.getChild(0).getTransform().setLocalRotation(object.getTransform().getLocalRotation().multiply(new quat(-.2,.15,0,0)));
-    object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,-50,0)));
+    object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,-150,0)));
 
     if (!enabled) {
       object.enabled = false
@@ -122,10 +126,12 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
     // Add to arrays
     this.footprintArray.push(object);
-    if (this.footprintArray.length > 4) this.footprintArray[this.footprintArray.length - 5].enabled = false;
+    if (this.footprintArray.length > 7) this.footprintArray[this.footprintArray.length - 8].enabled = false;
 
     this.anchorArray.push(anchor)
     this.anchorCount = this.anchorArray.length;
+    this.pathArray.push("" + this.pathCount)
+
 
     // Associate the anchor with the object by adding an AnchorComponent to the
     // object and setting the anchor in the AnchorComponent.
@@ -146,6 +152,9 @@ export default class AnchorPlacementController extends BaseScriptComponent {
       footprint.destroy()
     }
     this.footprintArray = []
+
+    this.pathArray = []
+    this.pathCount = 0
   }
 
   private async endAnchorSession() {
@@ -155,8 +164,11 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   // Gets called when a new footprint is created to disable all but most recent.
   // TODO, call once at start of session and then just disable the single 4th most recent footprint
   private disableOldPrints() {
-    for (var i: number = 0; i < this.footprintArray.length - 2; i++) {
+    for (var i: number = 0; i < this.footprintArray.length - 6; i++) {
       this.footprintArray[i].enabled = false;
+    }
+    for (var i: number = this.footprintArray.length - 6; i < this.footprintArray.length; i++) {
+      this.footprintArray[i].enabled = true;
     }
   }
 
@@ -169,20 +181,43 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   // Shows footprints in a radius around Explorer
   // TODO: Only show footprints belonging to this trail
   private showNearbyExplorer() {
+
+    var found = false
     for (var footprint of this.footprintArray) {
       // print(footprint.getChild(0).getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()))
-      if (footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()) < 400) {
+      if (footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()) < 700) {
         footprint.enabled = true
+        found = true
       }
       else {footprint.enabled = false}
     }
+
+    if (!found) {
+      var prevPath = ""
+      for (var i: number = 0; i < this.footprintArray.length; i++) {
+        if (this.pathArray[i] != prevPath) {
+          this.footprintArray[i].enabled = true;
+          prevPath = this.pathArray[i]
+        }
+      }
+    }
+  }
+
+  private startCreator() {
+    this.disableOldPrints()
+    this.pathCount += 1
   }
 
   // Gets called by ToggleUserMode script, triggered currently by the user_toggle button
   public toggleCreatorMode(creatorToggle : boolean) {
     // print("script toggled")
     this.creatorMode = creatorToggle
-    this.startExplorer()
+    if (creatorToggle) {
+      this.startCreator();
+    } else {
+      this.startExplorer()
+    }
+      
 
   }
 
