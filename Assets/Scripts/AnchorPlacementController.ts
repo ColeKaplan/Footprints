@@ -75,8 +75,6 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   public onAnchorNearby(anchor: Anchor) {
     // Invoked when a new Anchor is found
-    this.anchorArray.push(anchor)
-    this.anchorCount = this.anchorArray.length;
     this.attachNewObjectToAnchor(anchor)
     // this.anchorSession.deleteAnchor(anchor);
   }
@@ -100,8 +98,6 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     // Save the anchor so it's loaded in future sessions
     try {
       this.anchorSession.saveAnchor(anchor);
-      this.anchorCount += 1;
-      this.log.d("anchor count = " + this.anchorCount)
     } catch (error) {
       print('Error saving anchor: ' + error);
     }
@@ -112,11 +108,17 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     var object: SceneObject = this.prefab.instantiate(this.getSceneObject());
     // Line Below DOES NOT WORK, ASK WHY
     object.getChild(0).getTransform().setLocalScale(new vec3(10,10,10));
-    object.getChild(0).getTransform().setLocalRotation(object.getTransform().getLocalRotation().multiply(new quat(-.5,.5,0,0)));
+    object.getChild(0).getTransform().setLocalRotation(object.getTransform().getLocalRotation().multiply(new quat(-.2,.15,0,0)));
     object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,-10,0)));
     // object.setParent(this.getSceneObject());
 
+
+    // Add to arrays
     this.footprintArray.push(object);
+    this.decreaseOpacity();
+
+    this.anchorArray.push(anchor)
+    this.anchorCount = this.anchorArray.length;
 
     // Associate the anchor with the object by adding an AnchorComponent to the
     // object and setting the anchor in the AnchorComponent.
@@ -126,26 +128,50 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     anchorComponent.anchor = anchor;
   }
 
-  private deleteAnchors() {
+  private deleteAnchors = () => {
     for (var anchor of this.anchorArray) {
       this.anchorSession.deleteAnchor(anchor);
     }
+    this.anchorArray = [];
 
     for (var footprint of this.footprintArray) {
+      // footprint.enabled = false;
       footprint.destroy()
-      // footprint.getTransform().setLocalScale(footprint.getTransform().getLocalScale().add(new vec3(10,10,10)));
-      // footprint.getTransform().setLocalRotation(footprint.getTransform().getLocalRotation().multiply(new quat(-.5,.5,0,0)));
-      // footprint.getTransform().setLocalPosition(footprint.getTransform().getLocalPosition().add(new vec3(0,-10,0)));
     }
+    this.footprintArray = []
   }
 
   private async endAnchorSession() {
     await this.anchorSession.close();
   }
 
+  private decreaseOpacity() {
+    print("decreasing opacities")
+    // if (this.footprintArray.length > 5) {
+    //   var fifthToLastIndex = this.footprintArray.length - 5;
+
+    for (var i: number = 0; i < this.footprintArray.length - 2; i++) {
+    // for (var footprint of this.footprintArray) {
+
+      // var footprint = this.footprintArray[fifthToLastIndex];
+      this.footprintArray[i].enabled = false;
+    }
+  }
+
+  private startExplorer() {
+    for (var footprint of this.footprintArray) {
+      // print(footprint.getChild(0).getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()))
+      if (footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()) < 100) {
+        footprint.enabled = true
+      }
+      else {footprint.enabled = false}
+    }
+  }
+
   public toggleCreatorMode(creatorToggle : boolean) {
     // print("script toggled")
     this.creatorMode = creatorToggle
+    this.startExplorer()
 
   }
 

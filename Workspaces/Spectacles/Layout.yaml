@@ -55,6 +55,8 @@ dock:
             Uuid: 52fc2a95-41a3-427b-a138-1e00eb1c405e
           - persistentName: Snap.Plugin.AssistantAI.Panel
             Uuid: df91b2cf-37e1-401c-83fc-3d9f83343e71
+          - persistentName: Snap.Plugin.Gui.ScriptEditorPanel
+            Uuid: 58a22b7f-276e-468d-8a31-761b80e25f05
         type: section
         current: 0
     sizes:
