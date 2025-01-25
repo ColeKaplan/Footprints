@@ -1,7 +1,7 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 683
+    size: 658
     values:
       - Base 1.png
       - Base.png
@@ -48,6 +48,7 @@ CollapsedEntities:
       - Scene.scene
       - Scripts/AnchorPlacementController.ts
       - Scripts/MovementHandler.ts
+      - Scripts/SetFloor.ts
       - Scripts/ToggleUserMode.ts
       - Spatial Anchors
       - Spatial Anchors/AlignmentProvider.ts
@@ -80,33 +81,7 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Assets/Audio/TriggerEndAudioTrack.wav
       - SpectaclesInteractionKit/Assets/Audio/TriggerStartAudioTrack.wav
       - SpectaclesInteractionKit/Assets/Downloaded
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Audio
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Audio/CalibrationComplete.mp3
-      - "SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Example [DELETE ME]"
-      - "SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Example [DELETE ME]/Example Script [EDIT].ts"
-      - "SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Example [DELETE ME]/Materials"
-      - "SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Example [DELETE ME]/Materials/Uber PBR.mat"
-      - "SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Example [DELETE ME]/Meshes"
-      - "SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Example [DELETE ME]/Meshes/Box.mesh"
-      - "SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Example [DELETE ME]/Shaders"
-      - "SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Example [DELETE ME]/Shaders/uber_pbr.ss_graph"
-      - "SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Example [DELETE ME]/Textures"
-      - "SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Example [DELETE ME]/Textures/Base.png"
-      - "SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Example [DELETE ME]/Textures/Normal.png"
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Materials
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Materials/CalibrationMat.mat
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Meshes
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Meshes/Unit Plane.mesh
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Scripts
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Scripts/CircleAnimation.ts
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Scripts/SurfaceDetection.ts
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Shaders
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Shaders/CalibrationShader.ss_graph
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/SurfaceDetection__ADD_TO_SCENE.prefab
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Textures
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Textures/groundIcon.png
-      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/package.native
+      - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection/package.native
       - SpectaclesInteractionKit/Assets/Materials/BaseHandVisualsMaterials
       - SpectaclesInteractionKit/Assets/Materials/BaseHandVisualsMaterials/FingerHighlightLeft.mat
       - SpectaclesInteractionKit/Assets/Materials/BaseHandVisualsMaterials/FingerHighlightRight.mat

@@ -22,13 +22,13 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   private anchorArray : Anchor[] = [];
   private footprintArray : SceneObject[] = [];
 
-  private clicked : boolean = false;
-
   private log = new NativeLogger("AnchorPlacementController")
 
   private anchorSession?: AnchorSession;
 
   private previousPosition : vec3;
+
+  private creatorMode : boolean = true;
 
   async onAwake() {
     // this.log.d("Awoke");
@@ -40,10 +40,10 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
     this.previousPosition = this.camera.getTransform().getLocalPosition()
         this.createEvent("UpdateEvent").bind(() => {
-
+            
             var currentPosition = this.camera.getTransform().getLocalPosition();
-            if (currentPosition.distance(this.previousPosition) > 30) {
-                print("far enough away!")
+            if (this.creatorMode &&  currentPosition.distance(this.previousPosition) > 30) {
+                // print("far enough away!")
                 this.createAnchor();
                 this.previousPosition = currentPosition
             }  
@@ -57,13 +57,6 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     this.createAnchorButton.onButtonPinched.add(() => {
       // print("deleting")
       this.deleteAnchors();
-
-
-      // if (!this.clicked) {
-      //   this.createAnchor();
-      // } else {
-        // this.endAnchorSession();
-      // }
     });
 
 
@@ -107,8 +100,6 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     // Save the anchor so it's loaded in future sessions
     try {
       this.anchorSession.saveAnchor(anchor);
-      this.clicked = true;
-      // this.log.d("anchor created");
       this.anchorCount += 1;
       this.log.d("anchor count = " + this.anchorCount)
     } catch (error) {
@@ -118,9 +109,12 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   private attachNewObjectToAnchor(anchor: Anchor) {
     // Create a new object from the prefab
-    let object: SceneObject = this.prefab.instantiate(this.getSceneObject());
-    object.getTransform().setWorldScale(new vec3(.001,.001,.001));
-    object.setParent(this.getSceneObject());
+    var object: SceneObject = this.prefab.instantiate(this.getSceneObject());
+    // Line Below DOES NOT WORK, ASK WHY
+    object.getChild(0).getTransform().setLocalScale(new vec3(10,10,10));
+    object.getChild(0).getTransform().setLocalRotation(object.getTransform().getLocalRotation().multiply(new quat(-.5,.5,0,0)));
+    object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,-10,0)));
+    // object.setParent(this.getSceneObject());
 
     this.footprintArray.push(object);
 
@@ -139,6 +133,9 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
     for (var footprint of this.footprintArray) {
       footprint.destroy()
+      // footprint.getTransform().setLocalScale(footprint.getTransform().getLocalScale().add(new vec3(10,10,10)));
+      // footprint.getTransform().setLocalRotation(footprint.getTransform().getLocalRotation().multiply(new quat(-.5,.5,0,0)));
+      // footprint.getTransform().setLocalPosition(footprint.getTransform().getLocalPosition().add(new vec3(0,-10,0)));
     }
   }
 
@@ -146,7 +143,13 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     await this.anchorSession.close();
   }
 
-  public toggleUser() {
-    print("script toggled")
+  public toggleCreatorMode(creatorToggle : boolean) {
+    // print("script toggled")
+    this.creatorMode = creatorToggle
+
+  }
+
+  public setFloor(y : number) {
+    print("setting floor to: " + y)
   }
 }

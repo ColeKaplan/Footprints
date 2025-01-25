@@ -19,9 +19,7 @@ export class ToggleUserMode extends BaseScriptComponent {
 
     onStart() {
         this.toggleButton.onButtonPinched.add(() => {
-            print("toggleUser")
-            this.creatorScript.toggleUser();
-
+            // print("toggleUser")
             if (this.creatorMode) { // Switch to Explorer
                 this.userModeText.text = "Explorer"
 
@@ -30,6 +28,7 @@ export class ToggleUserMode extends BaseScriptComponent {
             }
 
             this.creatorMode = !this.creatorMode
+            this.creatorScript.toggleCreatorMode(this.creatorMode);
         })
     }
 }
