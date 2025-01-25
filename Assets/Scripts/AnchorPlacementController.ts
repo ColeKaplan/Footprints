@@ -20,6 +20,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   private anchorCount : number = 0;
   private anchorArray : Anchor[] = [];
+  private footprintArray : SceneObject[] = [];
 
   private clicked : boolean = false;
 
@@ -98,6 +99,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
     // Create the anchor
     let anchor = await this.anchorSession.createWorldAnchor(anchorPosition);
+    
 
     // Create the object and attach it to the anchor
     this.attachNewObjectToAnchor(anchor);
@@ -120,6 +122,8 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     object.getTransform().setWorldScale(new vec3(.001,.001,.001));
     object.setParent(this.getSceneObject());
 
+    this.footprintArray.push(object);
+
     // Associate the anchor with the object by adding an AnchorComponent to the
     // object and setting the anchor in the AnchorComponent.
     let anchorComponent = object.createComponent(
@@ -131,6 +135,10 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   private deleteAnchors() {
     for (var anchor of this.anchorArray) {
       this.anchorSession.deleteAnchor(anchor);
+    }
+
+    for (var footprint of this.footprintArray) {
+      footprint.destroy()
     }
   }
 
