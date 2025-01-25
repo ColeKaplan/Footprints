@@ -1,15 +1,15 @@
 // main.ts
 
 import { MicController } from "./voiceRecognition"
-import { EventDispatcher } from './eventDispatcher';
 
 type Mode = "creator" | "explorer" | "undefined";
 
 class User {
     mode: Mode;
-
+    trail_id: number;
     constructor(mode: Mode = "undefined") {
         this.mode = mode;
+        this.trail_id = -1;
     }
 
     setMode(mode: Mode) {
@@ -23,19 +23,15 @@ export class mainStateMachine extends BaseScriptComponent {
     private micController: MicController;
     private user: User;
 
+
+
     onAwake() {
         this.micController = new MicController();
         this.user = new User(); // Starts in "undefined" mode
-        this.setupEventListeners();
+        print('state machine awake')
     }
 
-    private setupEventListeners() {
-        this.micController.events.on('commandDetected', (command: string) => {
-            this.handleCommand(command);
-        });
-    }
-
-    private handleCommand(command: string) {
+    public handleCommand(command: string) {
         if (this.user.mode === "undefined") {
             if (command === "start") {
                 this.user.setMode("creator");
