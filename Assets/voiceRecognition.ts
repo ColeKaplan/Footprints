@@ -8,6 +8,7 @@ export class MicController extends BaseScriptComponent {
     private isListening: boolean = false;
     private stateMachine: mainStateMachine = new mainStateMachine();
 
+
     onAwake() {
         this.vmlModule.onListeningEnabled.add(() => {
             let options = VoiceML.ListeningOptions.create();
