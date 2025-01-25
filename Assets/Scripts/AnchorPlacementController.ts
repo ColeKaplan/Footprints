@@ -54,12 +54,15 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
 
     this.createAnchorButton.onButtonPinched.add(() => {
-      this.log.d("" + this.clicked);
-      if (!this.clicked) {
-        this.createAnchor();
-      } else {
+      print("deleting")
+      this.deleteAnchors();
+
+
+      // if (!this.clicked) {
+      //   this.createAnchor();
+      // } else {
         // this.endAnchorSession();
-      }
+      // }
     });
 
 
@@ -80,8 +83,8 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     // Invoked when a new Anchor is found
     this.anchorArray.push(anchor)
     this.anchorCount = this.anchorArray.length;
-    // this.attachNewObjectToAnchor(anchor)
-    this.anchorSession.deleteAnchor(anchor);
+    this.attachNewObjectToAnchor(anchor)
+    // this.anchorSession.deleteAnchor(anchor);
   }
 
   public async createAnchor(position? : mat4) {
@@ -123,6 +126,12 @@ export default class AnchorPlacementController extends BaseScriptComponent {
       AnchorComponent.getTypeName()
     ) as AnchorComponent;
     anchorComponent.anchor = anchor;
+  }
+
+  private deleteAnchors() {
+    for (var anchor of this.anchorArray) {
+      this.anchorSession.deleteAnchor(anchor);
+    }
   }
 
   private async endAnchorSession() {

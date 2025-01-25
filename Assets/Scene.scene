@@ -5,7 +5,6 @@
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> ff6c151e-214e-4216-8d76-8d4244e2a6e8
     - !<own> f68f0438-2abc-4fe4-afd7-77fb2758a16d
-    - !<own> c9c43e5e-2187-404d-842c-32e08024ff0d
     - !<own> 467c200f-0572-4d19-87a0-e77928883776
     - !<own> bc582229-1a66-4fa2-bafe-ad0b41bb8059
     - !<own> 5b27863a-05ae-42ff-92d1-2a1fa7bf17fb
@@ -13,6 +12,8 @@
     - !<own> 554c41bb-af69-4da9-b964-27fcf46f094c
     - !<own> e8e3fa59-7c32-493f-9a76-42f039b85f01
     - !<own> cfd93555-639f-4212-9f67-645acf374dc9
+    - !<own> 194f4d56-aeaa-4be7-b129-db3aa8ff1a44
+    - !<own> 69e15b93-16f0-4124-862b-63c1b4702346
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -2330,6 +2331,22 @@
   BlendNormals: true
   BlendShapes:
     Pinch: 0.000000
+- !<SceneObject/194f4d56-aeaa-4be7-b129-db3aa8ff1a44>
+  PrefabRemaps:
+    []
+  Name: Orthographic Camera
+  Enabled: true
+  Layers: 1048576
+  LocalTransform:
+    position: {x: -120.000000, y: 0.000000, z: 40.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> c9c43e5e-2187-404d-842c-32e08024ff0d
+  Components:
+    - !<own> 488f72da-1de4-4ddf-88f3-ca8b8f971e1d
+    - !<own> 30a1422f-7b1b-42d5-b0d6-12a8b79c138f
 - !<SceneObject/19c31f7f-3e70-4c81-b978-4aac7f103587>
   PrefabRemaps:
     []
@@ -3932,6 +3949,16 @@
     - !<own> 5173a6a1-dbb7-4e12-a52f-a3799a1fea13
   Components:
     []
+- !<DeviceTracking/30a1422f-7b1b-42d5-b0d6-12a8b79c138f>
+  PrefabRemaps:
+    []
+  Name: Device Tracking
+  Enabled: true
+  DeviceTrackingMode: Surface
+  RotationOptions: !<RotationOptions>
+    InvertRotation: false
+  SurfaceOptions: !<SurfaceOptions>
+    EnhanceWithNativeAR: false
 - !<ScriptComponent/30a344f8-7554-4aa0-b822-ab93feef4a04>
   PrefabRemaps:
     []
@@ -5118,6 +5145,36 @@
     - !<own> bb334943-28ee-416e-972c-a2495b86fefe
   Components:
     []
+- !<Camera/488f72da-1de4-4ddf-88f3-ca8b8f971e1d>
+  PrefabRemaps:
+    []
+  Name: Camera
+  Enabled: true
+  renderLayer: 1048576
+  MipmapLevel: 0
+  RenderOrder: 1
+  Size: 20.000000
+  Near: -1.000000
+  Far: 200.000000
+  Fov: 63.541019
+  ClearColor: !<CameraClearColor>
+    Mode: None
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+    InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  ClearDepth: !<CameraClearDepth>
+    Mode: Value
+    Value: 1.000000
+    InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  Aspect: 1.000000
+  CameraType: Orthographic
+  DepthMode: Regular
+  DeviceProperty: All
+  AspectPreset: Custom
+  OitLayers: NoOit
+  RenderTarget: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
+  DepthStencilRenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
+  MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/496dfe8d-7fa8-400f-a11a-ae1866ea10de>
   PrefabRemaps:
     []
@@ -7160,6 +7217,21 @@
   Components:
     - !<own> ddef3800-9018-4fe0-bbd1-a0e1b8df58ac
     - !<own> 42157a2f-0b27-4a7f-bfbe-a7102b5d1773
+- !<SceneObject/69e15b93-16f0-4124-862b-63c1b4702346>
+  PrefabRemaps:
+    []
+  Name: Camera
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: -120.000000, y: 0.000000, z: 40.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f5b3d329-2eeb-4179-8d1d-9f365e7537a6
 - !<SceneObject/6a494d0a-22f5-4ecc-922a-327c4421e056>
   PrefabRemaps:
     []
@@ -13620,7 +13692,7 @@
   Enabled: true
   Layers: 1
   LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    position: {x: 7.829407, y: 0.000000, z: -40.000000}
     rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
     scale: {x: 10.000000, y: 10.010000, z: 10.000000}
     hasSegmentScaleCompensation: false
@@ -15997,6 +16069,36 @@
   ScriptTypes:
     "":
       {}
+- !<Camera/f5b3d329-2eeb-4179-8d1d-9f365e7537a6>
+  PrefabRemaps:
+    []
+  Name: Camera
+  Enabled: true
+  renderLayer: 1
+  MipmapLevel: 0
+  RenderOrder: 0
+  Size: 20.000000
+  Near: 1.000000
+  Far: 1000.000000
+  Fov: 63.541019
+  ClearColor: !<CameraClearColor>
+    Mode: None
+    Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+    InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  ClearDepth: !<CameraClearDepth>
+    Mode: Value
+    Value: 1.000000
+    InputTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  Aspect: 1.000000
+  CameraType: Perspective
+  DepthMode: Regular
+  DeviceProperty: All
+  AspectPreset: Custom
+  OitLayers: NoOit
+  RenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
+  DepthStencilRenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
+  MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
+  RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScriptComponent/f5f034a0-d503-4083-8bda-b0dc37c1e8bd>
   PrefabRemaps:
     []
