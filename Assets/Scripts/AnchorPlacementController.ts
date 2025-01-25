@@ -28,6 +28,8 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   private previousPosition : vec3;
 
+  private explorerFootprintTrackingDistanceThreshold : number = 400;
+
   private creatorMode : boolean = true;
 
   async onAwake() {
@@ -42,10 +44,14 @@ export default class AnchorPlacementController extends BaseScriptComponent {
         this.createEvent("UpdateEvent").bind(() => {
             
             var currentPosition = this.camera.getTransform().getLocalPosition();
-            if (this.creatorMode &&  currentPosition.distance(this.previousPosition) > 30) {
+            if (currentPosition.distance(this.previousPosition) > 100) {
                 // print("far enough away!")
-                this.createAnchor();
-                this.previousPosition = currentPosition
+                if (this.creatorMode){
+                  this.createAnchor();
+                  this.previousPosition = currentPosition
+                } else {
+                  this.showNearbyExplorer();
+                }
             }  
         });
   }
@@ -75,7 +81,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   public onAnchorNearby(anchor: Anchor) {
     // Invoked when a new Anchor is found
-    this.attachNewObjectToAnchor(anchor)
+    this.attachNewObjectToAnchor(anchor, false)
     // this.anchorSession.deleteAnchor(anchor);
   }
 
@@ -93,7 +99,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     
 
     // Create the object and attach it to the anchor
-    this.attachNewObjectToAnchor(anchor);
+    this.attachNewObjectToAnchor(anchor, true);
 
     // Save the anchor so it's loaded in future sessions
     try {
@@ -103,19 +109,22 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     }
   }
 
-  private attachNewObjectToAnchor(anchor: Anchor) {
+  private attachNewObjectToAnchor(anchor: Anchor, enabled: boolean) {
     // Create a new object from the prefab
     var object: SceneObject = this.prefab.instantiate(this.getSceneObject());
     // Line Below DOES NOT WORK, ASK WHY
-    object.getChild(0).getTransform().setLocalScale(new vec3(10,10,10));
+    object.getChild(0).getTransform().setLocalScale(new vec3(30,30,30));
     object.getChild(0).getTransform().setLocalRotation(object.getTransform().getLocalRotation().multiply(new quat(-.2,.15,0,0)));
-    object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,-10,0)));
-    // object.setParent(this.getSceneObject());
+    object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,-50,0)));
+
+    if (!enabled) {
+      object.enabled = false
+    }
 
 
     // Add to arrays
     this.footprintArray.push(object);
-    this.decreaseOpacity();
+    if (this.footprintArray.length > 4) this.footprintArray[this.footprintArray.length - 5].enabled = false;
 
     this.anchorArray.push(anchor)
     this.anchorCount = this.anchorArray.length;
@@ -145,29 +154,38 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     await this.anchorSession.close();
   }
 
-  private decreaseOpacity() {
-    print("decreasing opacities")
-    // if (this.footprintArray.length > 5) {
-    //   var fifthToLastIndex = this.footprintArray.length - 5;
-
+  // Gets called when a new footprint is created to disable all but most recent.
+  // TODO, call once at start of session and then just disable the single 4th most recent footprint
+  private disableOldPrints() {
     for (var i: number = 0; i < this.footprintArray.length - 2; i++) {
-    // for (var footprint of this.footprintArray) {
-
-      // var footprint = this.footprintArray[fifthToLastIndex];
       this.footprintArray[i].enabled = false;
     }
   }
 
+
+  // Gets run only when Explorer just got toggled
   private startExplorer() {
+    this.showNearbyExplorer()
+  }
+
+  // Shows footprints in a radius around Explorer
+  // TODO: Only show footprints belonging to this trail
+  private showNearbyExplorer() {
     for (var footprint of this.footprintArray) {
       // print(footprint.getChild(0).getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()))
-      if (footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()) < 100) {
+      if (this.getDistanceFromCamera(footprint) < this.explorerFootprintTrackingDistanceThreshold) {
         footprint.enabled = true
       }
       else {footprint.enabled = false}
     }
   }
 
+  private getDistanceFromCamera(obj : SceneObject) {
+    //returns the distance between a sceneobject and the camera input
+    return obj.getTransform().getLocalPosition().distance( this.camera.getTransform().getLocalPosition() );
+  }
+
+  // Gets called by ToggleUserMode script, triggered currently by the user_toggle button
   public toggleCreatorMode(creatorToggle : boolean) {
     // print("script toggled")
     this.creatorMode = creatorToggle
@@ -175,6 +193,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   }
 
+  // Does not work, TODO: Find y value of floor to place footprints on
   public setFloor(y : number) {
     print("setting floor to: " + y)
   }
