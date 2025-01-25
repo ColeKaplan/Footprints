@@ -35,23 +35,43 @@ export class mainStateMachine extends BaseScriptComponent {
         if (this.user.mode === "undefined") {
             if (command === "start") {
                 this.user.setMode("creator");
-                this.createMemory();
+                this.createTrail();
             } else if (command === "join") {
                 this.user.setMode("explorer");
-                this.locateMemories();
+                let memoriesNearby = this.locateMemories();
+                if (memoriesNearby) {
+                    // join nearest trail
+                }
+                else {
+                    // play error sound
+                }
             }
-        } else {
-            print(`Command "${command}" ignored. Already in ${this.user.mode} mode.`);
+        }
+        if (command == "snap") {
+            if (this.user.mode === "undefined") {
+                this.createMemory(-1);
+            }
+            else {
+                this.createMemory(this.user.trail_id);
+            }
+
         }
     }
 
-    private createMemory() {
-        print("Creating memory");
+    private createTrail() {
+        print("Creating trail");
+        // Add logic for creating a trail here
+    }
+
+    private createMemory(trail_id: number = -1) {
+
+        print(`Creating memory for trail ${trail_id}`);
         // Add logic for creating a memory here
     }
 
-    private locateMemories() {
+    private locateMemories(): boolean {
         print("Finding memories nearby");
         // Add logic for locating memories here
+        return true; // Assuming the function returns true after locating memories
     }
 }

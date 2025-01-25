@@ -15,7 +15,6 @@ export class MicController extends BaseScriptComponent {
             this.vmlModule.onListeningUpdate.add(this.onSpeak);
             this.vmlModule.startListening(options);
             this.isListening = true;
-            // TODO set all the bubble visuals to ON
 
         });
         print("voice recognition awake")
@@ -24,13 +23,13 @@ export class MicController extends BaseScriptComponent {
     onSpeak = (result: VoiceML.ListeningUpdateEventArgs) => {
         if (result.isFinalTranscription) {
             const transcription = result.transcription.toLowerCase();
-            if (transcription.includes("start")) {
+            if (transcription.includes("start trail")) {
                 this.stateMachine.handleCommand("start")
             }
-            else if (transcription.includes("join")) {
+            else if (transcription.includes("join trail")) {
                 this.stateMachine.handleCommand("join")
             }
-            else if (transcription.includes("snap")) {
+            else if (transcription.includes("snap this")) {
                 this.stateMachine.handleCommand("snap")
             }
         }
