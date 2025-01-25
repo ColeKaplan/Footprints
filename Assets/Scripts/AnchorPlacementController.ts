@@ -175,11 +175,13 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   // Gets called when a new footprint is created to disable all but most recent.
   // TODO, call once at start of session and then just disable the single 4th most recent footprint
   private disableOldPrints() {
-    for (var i: number = 0; i < this.footprintArray.length - 6; i++) {
-      this.footprintArray[i].enabled = false;
-    }
-    for (var i: number = this.footprintArray.length - 6; i < this.footprintArray.length; i++) {
-      this.footprintArray[i].enabled = true;
+    if (this.footprintArray.length > 6) {
+      for (var i: number = 0; i < this.footprintArray.length - 6; i++) {
+        this.footprintArray[i].enabled = false;
+      }
+      for (var i: number = this.footprintArray.length - 6; i < this.footprintArray.length; i++) {
+        this.footprintArray[i].enabled = true;
+      }
     }
   }
 
