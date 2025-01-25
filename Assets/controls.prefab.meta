@@ -1,0 +1,143 @@
+- !<AssetImportMetadata/92c36de8-1542-4d4a-8507-8f72fe7732ec>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 4dcac15d-11f9-4ae5-8374-0120d00c18d4
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 4dcac15d-11f9-4ae5-8374-0120d00c18d4
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> e11795ae-06f5-45d5-bf9e-332df348fbf8
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/febd451a-b2e0-495b-8bf9-909437624139>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptComponent/378e52f4-d6d9-401d-b2da-1fd46af14caf>
+  PrefabRemaps:
+    []
+  Name: mainStateMachine
+  Enabled: true
+  ScriptAsset: !<reference> c95c4864-7866-46b8-b8c1-1e31dfeaaca0
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/43cbfc3f-dec3-4fae-a50a-eada6465a9ca>
+  PrefabRemaps:
+    []
+  Name: mainStateMachine
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 378e52f4-d6d9-401d-b2da-1fd46af14caf
+- !<ScriptComponent/68780296-9ff1-43e4-b363-0ca9b94ecb30>
+  PrefabRemaps:
+    []
+  Name: eventDispatcher
+  Enabled: true
+  ScriptAsset: !<reference> 4166ad85-7ff2-4b9b-a778-91a975bfe09b
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
+- !<ObjectPrefab/c329771c-fdec-422c-9bcd-8990fac3f643>
+  PackagePath: ""
+  objects:
+    - !<own> f9b8024b-a172-4f98-ae0b-1385b67888f5
+  LazyLoading: false
+  RetainAssets: true
+- !<SceneObject/c675138e-91b0-455c-b80e-874ce745ffda>
+  PrefabRemaps:
+    []
+  Name: voiceRecognition
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f8f6415e-a4ba-4f14-af78-693950a6762c
+- !<ObjectPrefabAssetData/e11795ae-06f5-45d5-bf9e-332df348fbf8>
+  SourceRemaps:
+    - 08e88e47-4bb1-4361-9a14-ee6bae9c1221: f8f6415e-a4ba-4f14-af78-693950a6762c
+    - 0b976b90-a4b9-4a06-a0e3-2b767fb73459: f9b8024b-a172-4f98-ae0b-1385b67888f5
+    - 38022f55-e27d-47e2-a4a7-aa11379a4e61: c675138e-91b0-455c-b80e-874ce745ffda
+    - 4dcac15d-11f9-4ae5-8374-0120d00c18d4: c329771c-fdec-422c-9bcd-8990fac3f643
+    - 6988c2ce-7a8a-44b1-a6cb-5b959a486de2: 378e52f4-d6d9-401d-b2da-1fd46af14caf
+    - 7496da46-d781-488d-97a6-0149b132c635: 68780296-9ff1-43e4-b363-0ca9b94ecb30
+    - c81df688-bce7-4538-b2c7-eba3b6acdf17: 43cbfc3f-dec3-4fae-a50a-eada6465a9ca
+    - c842400f-7620-4b0d-b228-c0a2c4e6b01e: f95d4bea-09d0-46d7-bb54-4035f0e4a5ca
+  SourceState: !<own> c329771c-fdec-422c-9bcd-8990fac3f643
+- !<ScriptComponent/f8f6415e-a4ba-4f14-af78-693950a6762c>
+  PrefabRemaps:
+    []
+  Name: voiceRecognition
+  Enabled: true
+  ScriptAsset: !<reference> 52cb046f-bfdd-4a44-b8b5-bdddcb42f2ef
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/f95d4bea-09d0-46d7-bb54-4035f0e4a5ca>
+  PrefabRemaps:
+    []
+  Name: eventDispatcher
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 68780296-9ff1-43e4-b363-0ca9b94ecb30
+- !<SceneObject/f9b8024b-a172-4f98-ae0b-1385b67888f5>
+  PrefabRemaps:
+    []
+  Name: controls
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> 43cbfc3f-dec3-4fae-a50a-eada6465a9ca
+    - !<own> c675138e-91b0-455c-b80e-874ce745ffda
+    - !<own> f95d4bea-09d0-46d7-bb54-4035f0e4a5ca
+  Components:
+    []
