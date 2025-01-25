@@ -1,7 +1,7 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 703
+    size: 702
     values:
       - Base 1.png
       - Base.png
@@ -693,7 +693,6 @@ CollapsedEntities:
       - bird.obj/Meshes
       - bird.obj/Meshes/Mesh 1
       - bird.obj/bird
-      - footp.obj
       - footp.obj/.hidden
       - footp.obj/.hidden/fp_s
       - footp.obj/.hidden/white
