@@ -55,7 +55,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
 
     this.createAnchorButton.onButtonPinched.add(() => {
-      print("deleting")
+      // print("deleting")
       this.deleteAnchors();
 
 
@@ -144,5 +144,9 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   private async endAnchorSession() {
     await this.anchorSession.close();
+  }
+
+  public toggleUser() {
+    print("script toggled")
   }
 }
