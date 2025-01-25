@@ -10,7 +10,7 @@ import { PinchButton } from './../SpectaclesInteractionKit/Components/UI/PinchBu
 import NativeLogger from '../SpectaclesInteractionKit/Utils/NativeLogger';
 
 @component
-export class AnchorPlacementController extends BaseScriptComponent {
+export default class AnchorPlacementController extends BaseScriptComponent {
   @input anchorModule: AnchorModule;
   @input createAnchorButton: PinchButton; 
   
@@ -18,22 +18,39 @@ export class AnchorPlacementController extends BaseScriptComponent {
   @input camera: SceneObject;
   @input prefab: ObjectPrefab;
 
+  private anchorCount : number = 0;
+  private anchorArray : Anchor[] = [];
+
   private clicked : boolean = false;
 
   private log = new NativeLogger("AnchorPlacementController")
 
   private anchorSession?: AnchorSession;
 
+  private previousPosition : vec3;
+
   async onAwake() {
-    this.log.d("Awoke");
+    // this.log.d("Awoke");
 
     this.createEvent('OnStartEvent').bind(() => {
       this.onStart();
     });
+
+
+    this.previousPosition = this.camera.getTransform().getLocalPosition()
+        this.createEvent("UpdateEvent").bind(() => {
+
+            var currentPosition = this.camera.getTransform().getLocalPosition();
+            if (currentPosition.distance(this.previousPosition) > 30) {
+                print("far enough away!")
+                this.createAnchor();
+                this.previousPosition = currentPosition
+            }  
+        });
   }
 
   async onStart() {
-    this.log.d("Started");
+    // this.log.d("Started");
 
 
     this.createAnchorButton.onButtonPinched.add(() => {
@@ -41,7 +58,7 @@ export class AnchorPlacementController extends BaseScriptComponent {
       if (!this.clicked) {
         this.createAnchor();
       } else {
-        this.endAnchorSession();
+        // this.endAnchorSession();
       }
     });
 
@@ -61,12 +78,18 @@ export class AnchorPlacementController extends BaseScriptComponent {
 
   public onAnchorNearby(anchor: Anchor) {
     // Invoked when a new Anchor is found
+    this.anchorArray.push(anchor)
+    this.anchorCount = this.anchorArray.length;
+    // this.attachNewObjectToAnchor(anchor)
+    this.anchorSession.deleteAnchor(anchor);
   }
 
-  private async createAnchor() {
+  public async createAnchor(position? : mat4) {
+
+
     // Compute the anchor position 5 units in front of user
-    let toWorldFromDevice = this.createAnchorButton.getTransform().getWorldTransform();
-    let anchorPosition = toWorldFromDevice.mult(
+    let toWorldFromDevice = this.camera.getTransform().getWorldTransform();
+    let anchorPosition = position? position : toWorldFromDevice.mult(
       mat4.fromTranslation(new vec3(1, 0, 0))
     );
 
@@ -80,6 +103,9 @@ export class AnchorPlacementController extends BaseScriptComponent {
     try {
       this.anchorSession.saveAnchor(anchor);
       this.clicked = true;
+      // this.log.d("anchor created");
+      this.anchorCount += 1;
+      this.log.d("anchor count = " + this.anchorCount)
     } catch (error) {
       print('Error saving anchor: ' + error);
     }

@@ -9,10 +9,10 @@
     - !<own> 467c200f-0572-4d19-87a0-e77928883776
     - !<own> bc582229-1a66-4fa2-bafe-ad0b41bb8059
     - !<own> 5b27863a-05ae-42ff-92d1-2a1fa7bf17fb
-    - !<own> 4417c0b6-d953-4936-89f3-ba149a7da74a
     - !<own> 6bcaf3da-7384-4069-a468-4b7fb2dd7790
     - !<own> 554c41bb-af69-4da9-b964-27fcf46f094c
     - !<own> e8e3fa59-7c32-493f-9a76-42f039b85f01
+    - !<own> cfd93555-639f-4212-9f67-645acf374dc9
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -4402,6 +4402,24 @@
     - !<own> 42b24038-f39b-4edb-9f38-84329f89b451
   Components:
     []
+- !<ScriptComponent/3912c279-a1bb-4c57-ba6b-8e47cfdd02fc>
+  PrefabRemaps:
+    []
+  Name: MovementHandler
+  Enabled: false
+  ScriptAsset: !<reference> aca7dd15-c9bc-4eb6-b273-c7bdfddc14e0
+  ScriptInputsDefault:
+    cam: true
+    prefab: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      cam: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      prefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/39a12ac7-a32e-41e8-bc50-2e10f187f2b0>
   PrefabRemaps:
     []
@@ -4817,21 +4835,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<SceneObject/4417c0b6-d953-4936-89f3-ba149a7da74a>
-  PrefabRemaps:
-    []
-  Name: MovementHandler
-  Enabled: false
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> b2ba19c0-a4bd-4db0-a93c-33f2192eee08
 - !<SceneObject/44fcbe2d-f52e-47f4-ab2e-28381068a9bc>
   PrefabRemaps:
     []
@@ -7869,7 +7872,7 @@
       anchorModule: !<MappingBased.AnchorModule> c4156b38-9fb4-4837-967e-66a3c710a8f7
       createAnchorButton: !<MappingBased.PinchButton> 66437331-90c7-426b-8cf0-c0a433c5277e
       camera: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
-      prefab: !<reference.ObjectPrefab> 78e2eaa2-28ba-4620-9f15-cf0b70a0e14f
+      prefab: !<reference.ObjectPrefab> 76421931-9cfd-435a-93f5-87f56d3875a2
   ScriptTypes:
     "":
       {}
@@ -11811,22 +11814,6 @@
     - !<own> 933ca421-582e-407b-bfc6-206a10cef5f3
   Components:
     []
-- !<ScriptComponent/b2ba19c0-a4bd-4db0-a93c-33f2192eee08>
-  PrefabRemaps:
-    []
-  Name: MovementHandler
-  Enabled: true
-  ScriptAsset: !<reference> aca7dd15-c9bc-4eb6-b273-c7bdfddc14e0
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      {}
-  ScriptTypes:
-    "":
-      {}
 - !<RenderMeshVisual/b2c9e5c9-1a4b-4301-8211-085cbeb237a2>
   PrefabRemaps:
     []
@@ -13633,9 +13620,9 @@
   Enabled: true
   Layers: 1
   LocalTransform:
-    position: {x: -13.742250, y: 0.000000, z: 0.000000}
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
     rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    scale: {x: 10.000000, y: 10.010000, z: 10.000000}
     hasSegmentScaleCompensation: false
   Children:
     []
@@ -13644,6 +13631,7 @@
     - !<own> 1f5e8906-2a4c-41b4-9fee-b9871cafe921
     - !<own> 3ebdc0d3-35cd-40f7-8c2e-516ede40816e
     - !<own> 66437331-90c7-426b-8cf0-c0a433c5277e
+    - !<own> 3912c279-a1bb-4c57-ba6b-8e47cfdd02fc
 - !<RenderMeshVisual/c9cd2679-ba09-4f0f-98d7-ec3140e249c7>
   PrefabRemaps:
     []
@@ -13665,6 +13653,23 @@
   BlendShapes:
     Pinch Horizontal: 0.000000
     Pinch Vertical: 0.000000
+- !<ScriptComponent/cadcbb53-87c6-41e7-bf84-56139cf84d25>
+  PrefabRemaps:
+    []
+  Name: MovementHandler
+  Enabled: true
+  ScriptAsset: !<reference> aca7dd15-c9bc-4eb6-b273-c7bdfddc14e0
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      cam: !<reference.Camera> 00000000-0000-0065-0000-000000000065
+      prefab: !<reference.ObjectPrefab> 78e2eaa2-28ba-4620-9f15-cf0b70a0e14f
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/cb14c3ea-7067-409a-83f3-618dbe55e547>
   PrefabRemaps:
     []
@@ -14102,6 +14107,21 @@
     - !<own> 6229e282-4449-48f3-8ef5-b90c67ba62fd
   Components:
     []
+- !<SceneObject/cfd93555-639f-4212-9f67-645acf374dc9>
+  PrefabRemaps:
+    []
+  Name: MovementHandler
+  Enabled: false
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> cadcbb53-87c6-41e7-bf84-56139cf84d25
 - !<ScreenTransform/d02de6b8-12a1-4901-b4fa-9d19c4742118>
   PrefabRemaps:
     []

@@ -1,7 +1,7 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 684
+    size: 659
     values:
       - Base.png
       - Behavior.js
@@ -50,8 +50,6 @@ CollapsedEntities:
       - Spatial Anchors/AnchorComponent.ts
       - Spatial Anchors/AnchorModule.ts
       - Spatial Anchors/AnchorSession.ts
-      - Spatial Anchors/SpatialPersistence
-      - Spatial Anchors/SpatialPersistence/Logging.ts
       - Spatial Anchors/SpatialPersistence/MapScanning.ts
       - Spatial Anchors/SpatialPersistence/MappingTrackingSession.ts
       - Spatial Anchors/SpatialPersistence/Model.ts
@@ -71,7 +69,6 @@ CollapsedEntities:
       - Spatial Anchors/WorldAnchor.ts
       - Spatial Anchors/package.native
       - SpectaclesInteractionKit
-      - SpectaclesInteractionKit/Assets
       - SpectaclesInteractionKit/Assets/Audio
       - SpectaclesInteractionKit/Assets/Audio/HoverAudioTrack.wav
       - SpectaclesInteractionKit/Assets/Audio/TriggerEndAudioTrack.wav
@@ -104,7 +101,6 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Textures
       - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/Textures/groundIcon.png
       - SpectaclesInteractionKit/Assets/Downloaded/Surface Detection.lspkg/package.native
-      - SpectaclesInteractionKit/Assets/Materials
       - SpectaclesInteractionKit/Assets/Materials/BaseHandVisualsMaterials
       - SpectaclesInteractionKit/Assets/Materials/BaseHandVisualsMaterials/FingerHighlightLeft.mat
       - SpectaclesInteractionKit/Assets/Materials/BaseHandVisualsMaterials/FingerHighlightRight.mat
@@ -114,7 +110,6 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Assets/Materials/BaseHandVisualsMaterials/RadialGradientOcclusion.mat
       - SpectaclesInteractionKit/Assets/Materials/BitmojiMaterial.mat
       - SpectaclesInteractionKit/Assets/Materials/ContainerImageMaterial.mat
-      - SpectaclesInteractionKit/Assets/Materials/LogoMaterial.mat
       - SpectaclesInteractionKit/Assets/Materials/NormalBasedTargetOutline.mat
       - SpectaclesInteractionKit/Assets/Materials/PinchButtonDarkInactive.mat
       - SpectaclesInteractionKit/Assets/Materials/PinchButtonDarkRadial.mat
@@ -229,7 +224,6 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Assets/Shaders/ToggleOn.ss_graph
       - SpectaclesInteractionKit/Assets/Shaders/ToggleOnSelect.ss_graph
       - SpectaclesInteractionKit/Assets/Shaders/simple_pbr.ss_graph
-      - SpectaclesInteractionKit/Assets/Textures
       - SpectaclesInteractionKit/Assets/Textures/2DBitmojiAvatar.png
       - SpectaclesInteractionKit/Assets/Textures/Base.png
       - SpectaclesInteractionKit/Assets/Textures/BaseHandVisualsTextures
@@ -259,7 +253,6 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Assets/Textures/Rectangle-Inactive.png
       - SpectaclesInteractionKit/Assets/Textures/Rectangle.png
       - SpectaclesInteractionKit/Assets/Textures/SIKContainerExampleImage.jpg
-      - SpectaclesInteractionKit/Assets/Textures/SIKLogo.png
       - SpectaclesInteractionKit/Assets/Textures/ScrollBarRectangle.png
       - SpectaclesInteractionKit/Components
       - SpectaclesInteractionKit/Components/Helpers
@@ -378,7 +371,6 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Components/UI/ToggleButton
       - SpectaclesInteractionKit/Components/UI/ToggleButton/ToggleButton.ts
       - SpectaclesInteractionKit/Connected Lens Module.connectedLensModule
-      - SpectaclesInteractionKit/Core
       - SpectaclesInteractionKit/Core/ConfigurationValidator
       - SpectaclesInteractionKit/Core/ConfigurationValidator/ConfigurationValidator.ts
       - SpectaclesInteractionKit/Core/HandInteractor
@@ -416,18 +408,12 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Core/Interactor/raycastAlgorithms/TimeScalarContainer.ts
       - SpectaclesInteractionKit/Core/Interactor/raycastAlgorithms/TimedVec2Container.ts
       - SpectaclesInteractionKit/Core/Interactor/raycastAlgorithms/TimedVec3Container.ts
-      - SpectaclesInteractionKit/Core/LogLevelConfiguration
-      - SpectaclesInteractionKit/Core/LogLevelConfiguration/LogLevelConfiguration.ts
-      - SpectaclesInteractionKit/Core/LogLevelConfiguration/SIKLogLevelConfiguration.ts
       - SpectaclesInteractionKit/Core/MobileInteractor
       - SpectaclesInteractionKit/Core/MobileInteractor/MobileInteractor.ts
       - SpectaclesInteractionKit/Core/MouseInteractor
       - SpectaclesInteractionKit/Core/MouseInteractor/MouseInteractor.ts
       - SpectaclesInteractionKit/Decorators
       - SpectaclesInteractionKit/Decorators/Singleton.ts
-      - SpectaclesInteractionKit/Examples
-      - SpectaclesInteractionKit/Examples/RocketWorkshop
-      - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Icons
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Icons/ModernBodyTube_icon.mat
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Icons/ModernFins_icon.mat
@@ -438,7 +424,6 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Icons/SpaceAgeBodyTube_icon.mat
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Icons/SpaceAgeFins_icon.mat
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Icons/SpaceAgeNoseCone_icon.mat
-      - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Objects
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Objects/SIK_Meteor.mat
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Objects/SIK_Planet.mat
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Objects/SIK_Planet_rings.mat
@@ -452,9 +437,7 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Objects/SIK_Rocket_plastic_01.mat
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Objects/SIK_Rocket_plastic_02.mat
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Objects/SIK_Rocket_plastic_03.mat
-      - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Objects/SIK_Rocket_plastic_03_logo.mat
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Objects/SIK_Rocket_white.mat
-      - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Objects/SIK_Rocket_white_logo.mat
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Materials/Objects/SIK_Satellite_blue.mat
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Meshes
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Meshes/Bases.fbx
@@ -536,15 +519,12 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Shaders/Planet_rings.ss_graph
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Shaders/Platform.ss_graph
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Shaders/Rocket.ss_graph
-      - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures/A-icon.png
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures/B-icon.png
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures/C-icon.png
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures/SIK_Meteor_bc.png
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures/SIK_Platforms_AO.jpg
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures/SIK_Rockets_AO.jpg
-      - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures/SIK_Snap_logo.png
-      - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures/SIK_Space_logo_TEMP.png
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures/ScrollViewThumbnails
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures/ScrollViewThumbnails/body-tube_rocket-A.png
       - SpectaclesInteractionKit/Examples/RocketWorkshop/Textures/ScrollViewThumbnails/body-tube_rocket-B.png
@@ -598,7 +578,6 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Prefabs
       - SpectaclesInteractionKit/Prefabs/ScrollViewListItem.prefab
       - SpectaclesInteractionKit/Prefabs/SpectaclesInteractionKit.prefab
-      - SpectaclesInteractionKit/Providers
       - SpectaclesInteractionKit/Providers/CameraProvider
       - SpectaclesInteractionKit/Providers/CameraProvider/ARCameraFinderProvider.ts
       - SpectaclesInteractionKit/Providers/CameraProvider/BaseCameraFinderProvider.ts
@@ -636,26 +615,20 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Providers/HandInputData/LeftHandAsset.handTracking3D
       - SpectaclesInteractionKit/Providers/HandInputData/RightHandAsset.handTracking3D
       - SpectaclesInteractionKit/Providers/HandInputData/TrackedHand.ts
-      - SpectaclesInteractionKit/Providers/InteractionConfigurationProvider
       - SpectaclesInteractionKit/Providers/InteractionConfigurationProvider/InteractionConfigurationProvider.ts
-      - SpectaclesInteractionKit/Providers/InteractionConfigurationProvider/LogLevelProvider.ts
-      - SpectaclesInteractionKit/Providers/InteractionConfigurationProvider/SIKLogLevelProvider.ts
       - SpectaclesInteractionKit/Providers/MobileInputData
       - SpectaclesInteractionKit/Providers/MobileInputData/MobileInputData.ts
       - SpectaclesInteractionKit/Providers/TargetProvider
       - SpectaclesInteractionKit/Providers/TargetProvider/TargetProvider.ts
       - SpectaclesInteractionKit/Providers/TargetProvider/TargetingData.ts
       - SpectaclesInteractionKit/SIK.ts
-      - SpectaclesInteractionKit/Utils
       - SpectaclesInteractionKit/Utils/BistableThreshold.ts
       - SpectaclesInteractionKit/Utils/Event.ts
       - SpectaclesInteractionKit/Utils/Filter.ts
       - SpectaclesInteractionKit/Utils/InputChecker.ts
       - SpectaclesInteractionKit/Utils/InspectorCallbacks.ts
       - SpectaclesInteractionKit/Utils/LensConfig.ts
-      - SpectaclesInteractionKit/Utils/LogLevel.ts
       - SpectaclesInteractionKit/Utils/MovingAverageFilter.ts
-      - SpectaclesInteractionKit/Utils/NativeLogger.ts
       - SpectaclesInteractionKit/Utils/OneEuroFilter.ts
       - SpectaclesInteractionKit/Utils/ReplayEvent.ts
       - SpectaclesInteractionKit/Utils/SafeReference.ts
@@ -672,7 +645,6 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Utils/color.ts
       - SpectaclesInteractionKit/Utils/debounce.ts
       - SpectaclesInteractionKit/Utils/lazyProperty.ts
-      - SpectaclesInteractionKit/Utils/logger.ts
       - SpectaclesInteractionKit/Utils/mathUtils.ts
       - SpectaclesInteractionKit/Utils/notEmpty.ts
       - SpectaclesInteractionKit/Utils/springAnimate.ts
@@ -684,7 +656,10 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Utils/views/MeshView.ts
       - SpectaclesInteractionKit/Utils/views/View.ts
       - SpectaclesInteractionKit/package.native
+      - bird.obj
       - bird.obj/Meshes
       - bird.obj/Meshes/Mesh 1
+      - bird.obj/bird
+      - footp.obj
       - simple_pbr.ss_graph
   options: 4
