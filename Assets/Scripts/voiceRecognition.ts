@@ -32,9 +32,9 @@ export class MicController extends BaseScriptComponent {
             print(transcription)
             if (this.textRecording) {
                 this.text += transcription
-                if (this.containsAnyOf(transcription, ["pop", "pap", "pup", "top"])) {
+                if (this.containsAnyOf(transcription, ["pop", "pap", "pup", "top", "pot"])) {
                     this.textRecording = false;
-                    const endSnapIndex = this.findEarliest(this.text, ["pop", "pap", "pup", "top"])
+                    const endSnapIndex = this.findEarliest(this.text, ["pop", "pap", "pup", "top", "pot"])
                     this.AnchorController.sendRecording(this.text.substring(0,endSnapIndex))
                     this.text = ""
                 }
@@ -45,16 +45,19 @@ export class MicController extends BaseScriptComponent {
             else if (this.containsAnyOf(transcription, ["join trail", "joint rail", "jiont trail", "join rail"])) {
                 this.AnchorController.toggleMode(2)
             }
-            else if (this.containsAnyOf(transcription, ["snap", "snip", "nap"])) {
+            else if (this.containsAnyOf(transcription, ["snap", "snip", "nap", "snack"])) {
                 this.textRecording = true;
                 print("recording")
+                this.AnchorController.playBubbleAudio()
                 // TODO: start recording transcript
                 // TODO: if "end snap" detected, stop transcription
                 // Optional: use GPT to perform grammatical correction
                 // Send to a text object that is connected to the bubble
                 // 
-            } else if (this.containsAnyOf(transcription, ["end trail", "in trail", "entrail", "into trail"])) {
+            } else if (this.containsAnyOf(transcription, ["end trail", "in trail", "entrail", "into trail", "in the trail"])) {
                 this.AnchorController.toggleMode(0)
+            } else if (this.containsAnyOf(transcription, ["clear", "clean"])) {
+                this.AnchorController.clear()
             }
         }
     }
@@ -91,5 +94,6 @@ export class MicController extends BaseScriptComponent {
             this.text = ""
         }
     }
+
 
 }

@@ -27,6 +27,7 @@
   MaxVisibility: Editable
   ScriptInputsHidden:
     anchorModule: false
+    bubbleAudio: false
     bubblePrefab: false
     camera: false
     deleteButton: false
@@ -41,7 +42,6 @@
   DefaultScriptInputs:
     - anchorModule: !<MappingBased.AnchorModule> 00000000-0000-0000-0000-000000000000
       camera: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      deleteButton: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       modeText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       pathCountText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       trailText: !<reference.Text> 00000000-0000-0000-0000-000000000000
@@ -49,6 +49,8 @@
       trailHeadPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
       bubblePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
       toggleAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      bubbleAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      deleteButton: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -63,3 +65,4 @@
     - // @input Asset.ObjectPrefab trailHeadPrefab
     - // @input Asset.ObjectPrefab bubblePrefab
     - // @input Component.AudioComponent toggleAudio
+    - // @input Component.AudioComponent bubbleAudio

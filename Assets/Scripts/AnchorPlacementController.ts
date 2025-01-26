@@ -31,6 +31,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   @input bubblePrefab: ObjectPrefab
 
   @input toggleAudio: AudioComponent
+  @input bubbleAudio: AudioComponent
 
   private anchorCount : number = 0;
   private anchorArray : Anchor[] = [];
@@ -86,7 +87,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
               } else {
                 this.createAnchor("footprint", "" + this.pathCount , "")
                 this.currentTrailPrintCount++
-                if (this.currentTrailPrintCount > 6) {
+                if (this.footprintArray.length > 6) {
                   this.footprintArray[this.footprintArray.length - 6].enabled = false
                 }
               }
@@ -106,11 +107,11 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   }
 
   async onStart() {
-    this.modeText.text = "undefined"
+    this.modeText.text = "Searching"
     this.startUndefined()
 
     this.pathCount = this.store.getInt("pathCount")
-    this.pathCountText.text = "pathCount: " + this.pathCount
+    this.pathCountText.text = "Total Trails: " + this.pathCount
     this.deleteButton.onButtonPinched.add(() => {
       this.deleteAnchors();
     });
@@ -149,9 +150,14 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     let yOnlyQuat = quat.fromEulerAngles(0, eulerRotation.y, 0);  
 
     if (prefab == "bubble") { 
-      let offset = new vec3(-1 * Math.sin(eulerRotation.y), 0, -1 * Math.cos(eulerRotation.y));
-      var anchorPosition = mat4.compose(this.camera.getTransform().getWorldPosition().add(offset.uniformScale(10)), yOnlyQuat, new vec3(1,1,1))
+      print("bubble prefab")
+      // let offset = new vec3(Math.cos(eulerRotation.y), 0, Math.sin(eulerRotation.y));
+      // let unitRight = this.camera.getTransform().right.normalize()
+      // let unitForward = this.camera.getTransform().forward.normalize()
+      let offset = this.camera.getTransform().right.uniformScale(100).add(this.camera.getTransform().forward.uniformScale(-80))
+      var anchorPosition = mat4.compose(this.camera.getTransform().getWorldPosition().add(offset), yOnlyQuat, new vec3(1,1,1))
     } else {
+      print("not bubble prefab")
       var anchorPosition = mat4.compose(this.camera.getTransform().getWorldPosition(), yOnlyQuat, new vec3(1,1,1))
     }
 
@@ -206,14 +212,15 @@ export default class AnchorPlacementController extends BaseScriptComponent {
       case "bubble":
         object = this.bubblePrefab.instantiate(this.getSceneObject())
         object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,0,0)));
-        object.getChild(0).getTransform().setLocalScale(new vec3(10,10,10));
+        object.getChild(0).getTransform().setLocalScale(new vec3(50,50,50));
         this.bubbleArray.push(object)
         var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
         this.pathArray.push(path)
         
         let textObj = object.getChild(0).getComponent("Component.Text") 
         if (textObj){
-          textObj.text = anchorData[2]
+          // textObj.text = anchorData[2]
+          textObj.text = "text test"
           textObj.horizontalOverflow = 4
         }
 
@@ -285,6 +292,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
     this.pathArray = []
     this.pathCount = 0
+    this.pathCountText.text = "Total Trails: "
 
     this.store.clear()
   }
@@ -363,9 +371,9 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     this.disableEverything()
     this.currentTrailPrintCount = 0
     this.pathCount += 1
-    this.pathCountText.text = "path: " + this.pathCount
+    this.pathCountText.text = "Total Trails: " + this.pathCount
     this.trail = "" + this.pathCount
-    this.trailText.text = "trail: " + this.trail
+    this.trailText.text = "Current Trail: " + this.trail
     this.store.putInt("pathCount", this.pathCount)
     this.trailHead = true
   }
@@ -406,7 +414,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   private startUndefined() {
     this.trail = "-1"
-    this.trailText.text = "trail: " + this.trail
+    this.trailText.text = "Current Trail: " + this.trail
 
     for (var footprint of this.footprintArray) {
       if ((footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition())) < this.footprintDistance) {
@@ -451,30 +459,41 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     
     if (this.mode == 0 && mode == 1) {
       this.mode = 1
-      this.modeText.text = "creator"
+      this.modeText.text = "Creator"
       this.startCreator()
     } else if (this.mode == 0 && mode == 2) {
       var trail = this.getNearestTrail()
       if (trail !== "-1") {
         this.mode = 2
-        this.modeText.text = "explorer"
+        this.modeText.text = "Explorer"
         this.trail = trail
-        this.trailText.text = "trail: " + trail
+        this.trailText.text = "Current Trail: " + trail
         this.startExplorer()
       }
     } else if (this.mode == 1 && mode == 0) {
       this.startUndefined()
       this.mode = 0
-      this.modeText.text = "undefined"
+      this.modeText.text = "Searching"
     } else if (this.mode == 2 && mode == 0) {
       this.startUndefined()
       this.mode = 0
-      this.modeText.text = "undefined"
+      this.modeText.text = "Searching"
     }
   }
 
   public sendRecording(text : string) {
     this.createAnchor("bubble", "" + this.trail , text)
+    this.playBubbleAudio()
+  }
+
+  public playBubbleAudio() {
+    this.bubbleAudio.play(1)
+  }
+
+  public clear() {
+    if (this.mode == 0) {
+      this.deleteAnchors()
+    }
   }
 
   // Does not work, TODO: Find y value of floor to place footprints on

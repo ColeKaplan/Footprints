@@ -1,0 +1,79 @@
+- !<AssetImportMetadata/411e3482-a14f-4608-9f9c-4eba3906e5be>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 29647314-9d37-4986-bdb9-feae24bd4d4d
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 29647314-9d37-4986-bdb9-feae24bd4d4d
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> ad911027-8c40-4a70-8767-2a18b809f159
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/90875c44-e4ae-46ec-90f6-8238461d71a1>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/768fa26a-4745-4f5c-b707-fadd93320d59>
+  PrefabRemaps:
+    []
+  Name: TrailHead
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 2.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> 98059a25-102d-40a6-97d6-af303e65cc16
+  Components:
+    []
+- !<ObjectPrefab/8210a41f-47fe-4073-9f43-2feeba15cba7>
+  PackagePath: ""
+  objects:
+    - !<own> 768fa26a-4745-4f5c-b707-fadd93320d59
+  LazyLoading: false
+  RetainAssets: true
+- !<SceneObject/98059a25-102d-40a6-97d6-af303e65cc16>
+  PrefabRemaps:
+    []
+  Name: Cylinder
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 10.000000, y: 30.000000, z: 10.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f7b42110-1cf4-4f81-8c5f-df76ea6675d2
+- !<ObjectPrefabAssetData/ad911027-8c40-4a70-8767-2a18b809f159>
+  SourceRemaps:
+    - 29647314-9d37-4986-bdb9-feae24bd4d4d: 8210a41f-47fe-4073-9f43-2feeba15cba7
+    - 6c35d5d5-589f-4516-893c-c76c7337fba7: 768fa26a-4745-4f5c-b707-fadd93320d59
+    - 8b9b52ae-45ab-4708-b859-3bd25051b1a1: 98059a25-102d-40a6-97d6-af303e65cc16
+    - d230b5e8-798a-485a-a1e1-2cd7d6ef87c9: f7b42110-1cf4-4f81-8c5f-df76ea6675d2
+  SourceState: !<own> 8210a41f-47fe-4073-9f43-2feeba15cba7
+- !<RenderMeshVisual/f7b42110-1cf4-4f81-8c5f-df76ea6675d2>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> fce2a2ab-a718-46b4-be9e-72ffc3f76b3d
+  Mesh: !<reference> 4c8420d1-44e2-4b47-b743-5177c55b234c
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
