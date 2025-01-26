@@ -18,6 +18,7 @@ interface Object_Path {
 export default class AnchorPlacementController extends BaseScriptComponent {
   @input anchorModule: AnchorModule;
   @input createAnchorButton: PinchButton; 
+  @input modeText: Text;
   
 
   @input camera: SceneObject;
@@ -33,6 +34,10 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   private bubbleArray : SceneObject[] = [];
   private pathCount : number = 0
   private trail : string = "-1"
+
+  private footprintDistance : number = 700
+  private trailHeadDistance: number = 12000
+  private bubbleDistance : number = 1400
 
   private trailHead : boolean = true
 
@@ -60,21 +65,20 @@ export default class AnchorPlacementController extends BaseScriptComponent {
         this.createEvent("UpdateEvent").bind(() => {
             
             var currentPosition = this.camera.getTransform().getLocalPosition();
-            if (currentPosition.distance(this.previousPosition) > 100) {
-                // print("far enough away!")
-                if (this.mode == 1){
-                  if(this.trailHead) {
-                    this.createAnchor("trailhead", "" + this.pathCount , "")
-                    this.trailHead = !this.trailHead
-                  } else {
-                    this.createAnchor("footprint", "" + this.pathCount , "")
-                  }
-                  this.previousPosition = currentPosition
-                }
+
+            if (currentPosition.distance(this.previousPosition) > 100 && this.mode == 1) {
+              if(this.trailHead) {
+                this.createAnchor("trailhead", "" + this.pathCount , "")
+                this.trailHead = false
+              } else {
+                this.createAnchor("footprint", "" + this.pathCount , "")
+              }
+              this.previousPosition = currentPosition
             }
 
-            if (this.mode == 2) {
+            else if (currentPosition.distance(this.previousPosition) > 20 && this.mode == 2) {
               this.showNearbyExplorer();
+              this.previousPosition = currentPosition
             }
           
         });
@@ -82,6 +86,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   async onStart() {
     // this.log.d("Started");
+    this.modeText.text = "undefined"
 
     this.pathCount = this.store.getInt("pathCount")
     this.createAnchorButton.onButtonPinched.add(() => {
@@ -168,17 +173,9 @@ export default class AnchorPlacementController extends BaseScriptComponent {
         object = this.bubblePrefab.instantiate(this.getSceneObject())
         object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,50,0)));
         this.bubbleArray.push(object)
+        var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
+        this.pathArray.push(path)
         break
-    }
-
-
-
-    // Create a new object from the prefab
-    if (!this.trailHead) {
-      var object: SceneObject = this.footprintPrefab.instantiate(this.getSceneObject());
-    } else {
-      var object: SceneObject = this.trailHeadPrefab.instantiate(this.getSceneObject());
-      this.trailHead = false
     }
 
     
@@ -238,7 +235,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   }
 
   // Gets called when a new footprint is created to disable all but most recent.
-  // TODO, call once at start of session and then just disable the single 4th most recent footprint
+  // Not relevant since we added dedicated trail creation
   private disableOldPrints() {
     if (this.footprintArray.length > 6) {
       for (var i: number = 0; i < this.footprintArray.length - 6; i++) {
@@ -253,6 +250,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   // Gets run only when Explorer just got toggled
   private startExplorer() {
+    this.disableEverything()
     this.showNearbyExplorer()
   }
 
@@ -260,28 +258,61 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   // TODO: Only show footprints belonging to this trail
   private showNearbyExplorer() {
 
-    var found = false
     for (var footprint of this.footprintArray) {
-      // print(footprint.getChild(0).getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()))
-      if (footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()) < 700) {
-        footprint.enabled = true
-        found = true
+      var distance = (footprint.getChild(0).getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()))
+      if (distance < this.footprintDistance) {
+        const objectPath = this.pathArray.find(item => item.sceneObject === footprint);
+        if (objectPath && objectPath.path_id == this.trail) {
+          footprint.enabled = true
+        }
       }
       else {footprint.enabled = false}
     }
 
-    if (!found) {
-      for (var trailhead of this.trailHeadArray) {
-        trailhead.enabled = true
+    for (var trailHead of this.trailHeadArray) {
+      var distance = (trailHead.getChild(0).getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()))
+      if (distance < this.trailHeadDistance) {
+        const objectPath = this.pathArray.find(item => item.sceneObject === trailHead);
+        if (objectPath && objectPath.path_id == this.trail) {
+          trailHead.enabled = true
+        }
       }
+      else {trailHead.enabled = false}
+    }
+
+    for (var bubble of this.bubbleArray) {
+      var distance = (bubble.getChild(0).getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()))
+      if (distance < this.bubbleDistance) {
+        const objectPath = this.pathArray.find(item => item.sceneObject === bubble);
+        if (objectPath && objectPath.path_id == this.trail) {
+          bubble.enabled = true
+        }
+      }
+      else {bubble.enabled = false}
     }
   }
 
+  // TODO: put a circle around player to indicate they have started creation
   private startCreator() {
-    this.disableOldPrints()
+    this.disableEverything()
     this.pathCount += 1
     this.store.putInt("pathCount", this.pathCount)
     this.trailHead = true
+  }
+
+  private disableEverything() {
+
+    for (var footprint of this.footprintArray) {
+      footprint.enabled = false;
+    }
+
+    for (var trailHead of this.trailHeadArray) {
+      trailHead.enabled = false;
+    }
+    
+    for (var bubble of this.bubbleArray) {
+      bubble.enabled = false;
+    }
   }
 
   // This is to get the closest trail to the user so they can join as an explorer. If none, return -1
@@ -292,7 +323,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     for (var footprint of this.footprintArray) {
 
       var distance = footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()) 
-      if (distance < 700) {
+      if (distance < this.footprintDistance) {
         if (distance < nearestTrailDistance) {
           nearestTrailDistance = distance
           const objectPath = this.pathArray.find(item => item.sceneObject === footprint);
@@ -300,9 +331,34 @@ export default class AnchorPlacementController extends BaseScriptComponent {
         }
       }
     }
-
-
     return nearestTrail
+  }
+
+  private startUndefined() {
+    for (var footprint of this.footprintArray) {
+      var distance = (footprint.getChild(0).getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()))
+      if (distance < this.footprintDistance) {
+        footprint.enabled = true
+      }
+      else {footprint.enabled = false}
+    }
+
+    for (var trailHead of this.trailHeadArray) {
+      var distance = (trailHead.getChild(0).getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()))
+      if (distance < this.trailHeadDistance) {
+        trailHead.enabled = true
+      }
+      else {trailHead.enabled = false}
+    }
+
+    for (var bubble of this.bubbleArray) {
+      var distance = (bubble.getChild(0).getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()))
+      if (distance < this.bubbleDistance) {
+        bubble.enabled = true
+      }
+      else {bubble.enabled = false}
+    }
+
   }
 
   // Gets called by ToggleUserMode script, triggered currently by the user_toggle button
@@ -320,21 +376,24 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   public toggleMode(mode : number) {
     if (this.mode == 0 && mode == 1) {
       this.mode = 1
+      this.modeText.text = "creator"
       this.startCreator()
     } else if (this.mode == 0 && mode == 2) {
       var trail = this.getNearestTrail()
       if (trail !== "-1") {
         this.mode = 2
+        this.modeText.text = "explorer"
         this.trail = trail
         this.startExplorer()
       }
     } else if (this.mode == 1 && mode == 0) {
-      this.endCreatorMode()
       this.startUndefined()
       this.mode = 0
+      this.modeText.text = "undefined"
     } else if (this.mode == 2 && mode == 0) {
       this.startUndefined()
       this.mode = 0
+      this.modeText.text = "undefined"
     }
   }
 

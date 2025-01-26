@@ -18,7 +18,7 @@ export class MicController extends BaseScriptComponent {
             this.isListening = true;
 
         });
-        // print("voice recognition awake")
+        print("voice recognition awake")
     }
 
     onSpeak = (result: VoiceML.ListeningUpdateEventArgs) => {

@@ -31,6 +31,7 @@
     camera: false
     createAnchorButton: false
     footprintPrefab: false
+    modeText: false
     trailHeadPrefab: false
   ScriptTypesHidden:
     {}
@@ -41,12 +42,14 @@
       trailHeadPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
       footprintPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
       bubblePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      modeText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input AnchorModule anchorModule
     - // @input PinchButton createAnchorButton
+    - // @input Component.Text modeText
     - // @input SceneObject camera
     - // @input Asset.ObjectPrefab footprintPrefab
     - // @input Asset.ObjectPrefab trailHeadPrefab
