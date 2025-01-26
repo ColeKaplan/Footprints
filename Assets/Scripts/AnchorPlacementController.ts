@@ -19,7 +19,7 @@ interface Object_Path {
 @component
 export default class AnchorPlacementController extends BaseScriptComponent {
   @input anchorModule: AnchorModule;
-  // @input deleteButton: PinchButton; 
+  @input deleteButton: PinchButton; 
   @input modeText: Text;
   @input pathCountText: Text;
   @input trailText: Text;
@@ -112,9 +112,9 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
     this.pathCount = this.store.getInt("pathCount")
     this.pathCountText.text = "Total Trails: " + this.pathCount
-    // this.deleteButton.onButtonPinched.add(() => {
-    //   this.deleteAnchors();
-    // });
+    this.deleteButton.onButtonPinched.add(() => {
+      this.deleteAnchors();
+    });
 
 
 

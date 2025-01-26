@@ -1,0 +1,38 @@
+- !<AssetImportMetadata/66a8b3ef-6684-43e7-945b-00b1cc505db1>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 97cd17d4-cfab-4060-be28-6209ace9265e
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 97cd17d4-cfab-4060-be28-6209ace9265e
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> deef2c9b-9443-4c2e-9439-56bec85cdaa3
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/b593cf8b-914a-4091-b0ec-ba0022be1ec5>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/deef2c9b-9443-4c2e-9439-56bec85cdaa3>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    UI: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - UI: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input PinchButton UI
