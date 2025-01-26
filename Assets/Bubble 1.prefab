@@ -1,48 +1,28 @@
-- !<ObjectPrefab/17ae23fd-a07a-4106-b181-58b953b35a0b>
+- !<ObjectPrefab/b00ac9ac-36a5-4b00-92d5-80bf5ad3151b>
   PackagePath: ""
   objects:
-    - !<own> 4d0f50b7-0d6d-4395-9f90-4fe3fdb81518
+    - !<own> 4b195d86-585c-43ac-a677-e1786697bbc8
   LazyLoading: false
   RetainAssets: true
-- !<ScriptComponent/2111498a-3bb7-4027-a9b8-87049ca900cf>
+- !<ColliderComponent/165e1273-e490-42b7-a5d1-1c44c8ba4774>
   PrefabRemaps:
     []
-  Name: Interactable
+  Name: Physics Collider
   Enabled: true
-  ScriptAsset: !<reference> c973d211-281b-4016-ae39-e12f3317bcae
-  ScriptInputsDefault:
-    enableInstantDrag: true
-    allowMultipleInteractors: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      targetingMode: !<float> 7.000000
-      enableInstantDrag: false
-      allowMultipleInteractors: true
-  ScriptTypes:
-    "":
-      {}
-- !<ScriptComponent/30fbe8ec-a312-48ad-b947-3e4d5ec23bbe>
-  PrefabRemaps:
-    []
-  Name: PinchButton
-  Enabled: true
-  ScriptAsset: !<reference> e66e07b4-5f11-478e-be75-73f3c76bdd61
-  ScriptInputsDefault:
-    onButtonPinchedFunctionNames: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      editEventCallbacks: true
-      customFunctionForOnButtonPinched: !<reference.ScriptComponent> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
-      onButtonPinchedFunctionNames: !<string[]>
-        []
-  ScriptTypes:
-    "":
-      {}
-- !<Text/3f34160b-9236-48c9-869e-b58b84bfb956>
+  Shape: !<Sphere>
+    FitVisual: true
+    Radius: 6.000000
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+- !<Text/29248e98-dff9-491a-8e26-d98f80c1bf50>
   PrefabRemaps:
     []
   Name: Text
@@ -118,7 +98,7 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
-- !<SceneObject/4d0f50b7-0d6d-4395-9f90-4fe3fdb81518>
+- !<SceneObject/4b195d86-585c-43ac-a677-e1786697bbc8>
   PrefabRemaps:
     []
   Name: Bubble
@@ -130,16 +110,16 @@
     scale: {x: 10.000000, y: 10.000000, z: 10.000000}
     hasSegmentScaleCompensation: false
   Children:
-    - !<own> ba0e7c9d-782a-457d-a83e-40c78948c2e9
+    - !<own> 8e580fdf-cc54-474b-acf3-79624ed19c85
   Components:
-    - !<own> b8835f49-3052-4cb7-8935-0aca59d045a0
-    - !<own> 2111498a-3bb7-4027-a9b8-87049ca900cf
-    - !<own> 30fbe8ec-a312-48ad-b947-3e4d5ec23bbe
-    - !<own> 76da79d8-4004-418b-a114-d64d70cec428
-    - !<own> 708c4fb6-24c6-49bc-b7b4-a4edeabd597b
-    - !<own> c4b227b9-13e8-48d3-b1b9-c35297b13285
-    - !<own> d0d3c6f4-3a26-46f5-ade1-91058f9df5ca
-- !<ScriptComponent/708c4fb6-24c6-49bc-b7b4-a4edeabd597b>
+    - !<own> faa0b84e-8eb0-4b79-8c5e-c2be9b144087
+    - !<own> 57a7f449-f268-441e-8f90-57aba8de76dc
+    - !<own> 79ec0391-f01f-4fc2-a691-12af151c212e
+    - !<own> 165e1273-e490-42b7-a5d1-1c44c8ba4774
+    - !<own> 531553aa-688e-476b-87fd-7acf1e4c1f38
+    - !<own> 9970669d-4865-47d4-a60e-576fde969694
+    - !<own> 960ad6f2-c9d7-4ca0-abab-ee8f82df2543
+- !<ScriptComponent/531553aa-688e-476b-87fd-7acf1e4c1f38>
   PrefabRemaps:
     []
   Name: InteractableAudioFeedback
@@ -157,46 +137,45 @@
   ScriptTypes:
     "":
       {}
-- !<ColliderComponent/76da79d8-4004-418b-a114-d64d70cec428>
+- !<ScriptComponent/57a7f449-f268-441e-8f90-57aba8de76dc>
   PrefabRemaps:
     []
-  Name: Physics Collider
+  Name: Interactable
   Enabled: true
-  Shape: !<Sphere>
-    FitVisual: true
-    Radius: 6.000000
-  Matter: !<reference> 00000000-0000-0000-0000-000000000000
-  Filter: !<reference> 00000000-0000-0000-0000-000000000000
-  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
-  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
-  EnableSmoothing: false
-  PositionTension: 30.000000
-  RotationTension: 30.000000
-  ForceCompound: false
-  Intangible: false
-  ShowCollider: true
-- !<RenderMeshVisual/b8835f49-3052-4cb7-8935-0aca59d045a0>
+  ScriptAsset: !<reference> c973d211-281b-4016-ae39-e12f3317bcae
+  ScriptInputsDefault:
+    enableInstantDrag: true
+    allowMultipleInteractors: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      targetingMode: !<float> 7.000000
+      enableInstantDrag: false
+      allowMultipleInteractors: true
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/79ec0391-f01f-4fc2-a691-12af151c212e>
   PrefabRemaps:
     []
-  Name: Render Mesh Visual
+  Name: PinchButton
   Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> 9b3f6550-083d-43ed-bafd-404cb0d6f508
-  Mesh: !<reference> 89d4fe22-573b-42e1-bc8e-620b4df6b699
-  Skin: !<reference> 00000000-0000-0000-0000-000000000000
-  BlendShapesEnabled: true
-  BlendNormals: false
-  BlendShapes:
-    Pinch: 0.000000
-    Z depth: 0.000000
-- !<SceneObject/ba0e7c9d-782a-457d-a83e-40c78948c2e9>
+  ScriptAsset: !<reference> e66e07b4-5f11-478e-be75-73f3c76bdd61
+  ScriptInputsDefault:
+    onButtonPinchedFunctionNames: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      editEventCallbacks: true
+      customFunctionForOnButtonPinched: !<reference.ScriptComponent> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
+      onButtonPinchedFunctionNames: !<string[]>
+        []
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/8e580fdf-cc54-474b-acf3-79624ed19c85>
   PrefabRemaps:
     []
   Name: Bubble Text
@@ -210,8 +189,25 @@
   Children:
     []
   Components:
-    - !<own> 3f34160b-9236-48c9-869e-b58b84bfb956
-- !<ScriptComponent/c4b227b9-13e8-48d3-b1b9-c35297b13285>
+    - !<own> 29248e98-dff9-491a-8e26-d98f80c1bf50
+- !<ScriptComponent/960ad6f2-c9d7-4ca0-abab-ee8f82df2543>
+  PrefabRemaps:
+    []
+  Name: DeployOnPop
+  Enabled: true
+  ScriptAsset: !<reference> bff703b2-f56a-4181-a795-7dfbbec3bc78
+  ScriptInputsDefault:
+    storedPrefab: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      storedPrefab: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      pinchButtonComponent: !<MappingBased.PinchButton> 79ec0391-f01f-4fc2-a691-12af151c212e
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/9970669d-4865-47d4-a60e-576fde969694>
   PrefabRemaps:
     []
   Name: ButtonFeedback
@@ -241,7 +237,7 @@
   ScriptInputs:
     "":
       buttonType: 0
-      renderMeshVisual: !<reference.RenderMeshVisual> b8835f49-3052-4cb7-8935-0aca59d045a0
+      renderMeshVisual: !<reference.RenderMeshVisual> faa0b84e-8eb0-4b79-8c5e-c2be9b144087
       useGlowMesh: false
       glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
       maxBlendShapeWeight: !<float> 1.000000
@@ -265,20 +261,24 @@
   ScriptTypes:
     "":
       {}
-- !<ScriptComponent/d0d3c6f4-3a26-46f5-ade1-91058f9df5ca>
+- !<RenderMeshVisual/faa0b84e-8eb0-4b79-8c5e-c2be9b144087>
   PrefabRemaps:
     []
-  Name: DeployOnPop
+  Name: Render Mesh Visual
   Enabled: true
-  ScriptAsset: !<reference> bff703b2-f56a-4181-a795-7dfbbec3bc78
-  ScriptInputsDefault:
-    storedPrefab: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      storedPrefab: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      pinchButtonComponent: !<MappingBased.PinchButton> 30fbe8ec-a312-48ad-b947-3e4d5ec23bbe
-  ScriptTypes:
-    "":
-      {}
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 9b3f6550-083d-43ed-bafd-404cb0d6f508
+  Mesh: !<reference> 89d4fe22-573b-42e1-bc8e-620b4df6b699
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    Pinch: 0.000000
+    Z depth: 0.000000

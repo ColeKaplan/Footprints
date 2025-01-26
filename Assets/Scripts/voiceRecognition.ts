@@ -34,12 +34,10 @@ export class MicController extends BaseScriptComponent {
             print(transcription)
             if (this.textRecording) {
                 this.text += transcription
-                if (transcription.includes("end snap")) {
+                if (transcription.includes("pop")) {
                     this.textRecording = false;
-                    const endSnapIndex = this.text.indexOf("end snap")
+                    const endSnapIndex = this.text.indexOf("pop")
                     this.AnchorController.sendRecording(this.text.substring(0,endSnapIndex))
-                    print(this.text)
-                    print(this.text.substring(0,endSnapIndex))
                     this.text = ""
                 }
             }
@@ -54,6 +52,7 @@ export class MicController extends BaseScriptComponent {
             else if (transcription.includes("snap")) {
                 this.stateMachine.handleCommand("snap")
                 this.textRecording = true;
+                print("recording")
                 // TODO: start recording transcript
                 // TODO: if "end snap" detected, stop transcription
                 // Optional: use GPT to perform grammatical correction

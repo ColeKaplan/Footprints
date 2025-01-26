@@ -132,7 +132,14 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     let toWorldFromDevice = this.camera.getTransform().getWorldRotation();
     let eulerRotation = toWorldFromDevice.toEulerAngles();
     let yOnlyQuat = quat.fromEulerAngles(0, eulerRotation.y, 0);  
-    let anchorPosition = mat4.compose(this.camera.getTransform().getWorldPosition(), yOnlyQuat, new vec3(1,1,1))
+
+    if (prefab == "bubble") { 
+      let offset = new vec3(-1 * Math.sin(eulerRotation.y), 0, -1 * Math.cos(eulerRotation.y));
+      var anchorPosition = mat4.compose(this.camera.getTransform().getWorldPosition().add(offset.uniformScale(10)), yOnlyQuat, new vec3(1,1,1))
+    } else {
+      var anchorPosition = mat4.compose(this.camera.getTransform().getWorldPosition(), yOnlyQuat, new vec3(1,1,1))
+    }
+
 
     // Create the anchor
     let anchor = await this.anchorSession.createWorldAnchor(anchorPosition);
@@ -188,6 +195,10 @@ export default class AnchorPlacementController extends BaseScriptComponent {
         this.bubbleArray.push(object)
         var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
         this.pathArray.push(path)
+
+        print("created bubble")
+        object.enabled = true
+        object.getChild(0).enabled = true
         break
     }
 

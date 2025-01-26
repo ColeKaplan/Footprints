@@ -1,0 +1,56 @@
+- !<ObjectPrefab/a5346ff0-2030-47b9-a50c-ca3b2bc6fd2d>
+  PackagePath: ""
+  objects:
+    - !<own> b7d8ead2-1f2f-4a61-9a7e-e9d2ac881bc1
+  LazyLoading: false
+  RetainAssets: true
+- !<SceneObject/521d1e29-1853-4635-aff7-691c64d1c8fc>
+  PrefabRemaps:
+    []
+  Name: Bubble
+  Enabled: false
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> d193ff53-0436-4c6e-a9ef-dff1b1d0c442
+- !<SceneObject/b7d8ead2-1f2f-4a61-9a7e-e9d2ac881bc1>
+  PrefabRemaps:
+    []
+  Name: BubbleObject
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 100.000000, y: 100.000000, z: 100.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> 521d1e29-1853-4635-aff7-691c64d1c8fc
+  Components:
+    []
+- !<RenderMeshVisual/d193ff53-0436-4c6e-a9ef-dff1b1d0c442>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> fce2a2ab-a718-46b4-be9e-72ffc3f76b3d
+  Mesh: !<reference> 976a4e23-2782-4344-9c99-70941e3bc3e5
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
