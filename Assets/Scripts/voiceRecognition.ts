@@ -34,7 +34,7 @@ export class MicController extends BaseScriptComponent {
                 this.text += transcription
                 if (this.containsAnyOf(transcription, ["pop", "pap", "pup", "top"])) {
                     this.textRecording = false;
-                    const endSnapIndex = this.findEarliest(transcription, ["pop", "pap", "pup", "top"])
+                    const endSnapIndex = this.findEarliest(this.text, ["pop", "pap", "pup", "top"])
                     this.AnchorController.sendRecording(this.text.substring(0,endSnapIndex))
                     this.text = ""
                 }

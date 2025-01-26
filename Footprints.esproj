@@ -21,13 +21,15 @@ metaInfo:
     []
   tags:
     []
-  lensName: Footprints v0.1
+  lensName: Specs Starter
   lensDescriptors:
     - EXPERIMENTAL_API
   lensApplicability:
     - Front
     - Back
   lensClientCompatibilities:
+    - Mobile
+    - Web
     - Spectacles
   platformBundlesEnabled: false
   iconHash: c47db7fea54d85805eb1897ffdb74542

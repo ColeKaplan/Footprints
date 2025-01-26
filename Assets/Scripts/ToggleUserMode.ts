@@ -1,3 +1,4 @@
+import { ButtonFeedback } from "../SpectaclesInteractionKit/Components/Helpers/ButtonFeedback";
 import { PinchButton } from "../SpectaclesInteractionKit/Components/UI/PinchButton/PinchButton";
 import AnchorPlacementController from "./AnchorPlacementController";
 import { MicController } from "./voiceRecognition";
@@ -5,9 +6,16 @@ import { MicController } from "./voiceRecognition";
 @component
 export class ToggleUserMode extends BaseScriptComponent {
 
-    @input undefined: PinchButton; 
-    @input creator: PinchButton; 
+    //search is in reference to search mode
+    @input search: PinchButton; 
+    @input searchBFComponent : ButtonFeedback;
+
+    @input creator: PinchButton;
+    @input creatorBFComponent : ButtonFeedback;
+
     @input explorer: PinchButton; 
+    @input explorerBFComponent : ButtonFeedback;
+
     @input creatorScript: AnchorPlacementController;
     @input voiceRecognition: MicController;
     @input userModeText: Text;
@@ -16,15 +24,23 @@ export class ToggleUserMode extends BaseScriptComponent {
 
     private creatorMode = true;
 
+    //sysset round 7 is unselected idle
+    //sysset round 2 is selected idle
+    @input unselectedMaterial : Material;
+    @input selectedMaterial : Material;
+
 
     onAwake() {
         this.createEvent('OnStartEvent').bind(() => {
+            //this.searchBFComponent.meshIdleMaterial = this.selectedMaterial;
+
+
             this.onStart();
           });
     }
 
     onStart() {
-        this.undefined.onButtonPinched.add(() => {
+        this.search.onButtonPinched.add(() => {
             this.creatorScript.toggleMode(0);
         })
 

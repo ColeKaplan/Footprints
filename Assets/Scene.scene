@@ -1021,7 +1021,7 @@
   MeshShadowMode: None
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
-  Text: 2
+  Text: Explore
   Editable: false
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
@@ -1649,6 +1649,57 @@
   Components:
     - !<own> 488f72da-1de4-4ddf-88f3-ca8b8f971e1d
     - !<own> 30a1422f-7b1b-42d5-b0d6-12a8b79c138f
+- !<ScriptComponent/1a500d93-a4cc-4534-8c51-13aa1632108b>
+  PrefabRemaps:
+    []
+  Name: ButtonFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c160a957-4b35-4342-9927-7fd2766d231d
+  ScriptInputsDefault:
+    buttonType: true
+    useGlowMesh: true
+    glowRenderMeshVisual: true
+    maxBlendShapeWeight: true
+    meshBlendShapeName: true
+    glowBlendShapeName: true
+    glowIdleMaterial: true
+    glowHoverMaterial: true
+    glowPinchedMaterial: true
+    meshStatePinchedMaterial: true
+    meshStateHoverMaterial: true
+    meshStateIdleMaterial: true
+    persistentPinchedState: true
+    defaultIcon: true
+    onIcon: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      buttonType: 0
+      renderMeshVisual: !<reference.RenderMeshVisual> aa6805dc-c1a0-4596-ae92-7da403bcaca4
+      useGlowMesh: false
+      glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
+      maxBlendShapeWeight: !<float> 1.000000
+      meshBlendShapeName: Pinch
+      meshIdleMaterial: !<reference.Material> 9b3f6550-083d-43ed-bafd-404cb0d6f508
+      meshHoverMaterial: !<reference.Material> f815b3fd-9acd-4427-8c85-ce9765c1b471
+      meshPinchedMaterial: !<reference.Material> d6ef8e2e-f4d2-44d4-88f3-3697486802d2
+      glowBlendShapeName: Pinch
+      glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowPinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledPinchedMaterial: !<reference.Material> 7567f7b4-b4fe-4f1f-9691-27bc68573cc7
+      meshToggledHoverMaterial: !<reference.Material> f815b3fd-9acd-4427-8c85-ce9765c1b471
+      meshToggledIdleMaterial: !<reference.Material> d6ef8e2e-f4d2-44d4-88f3-3697486802d2
+      meshStatePinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      persistentPinchedState: false
+      defaultIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      onIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScreenTransform/1a731ac7-66ca-47ad-92a9-6df9f54559ff>
   PrefabRemaps:
     []
@@ -1713,6 +1764,24 @@
   Components:
     - !<own> 2a571854-9c1a-4e6f-9965-d60156d26d84
     - !<own> 92737940-b030-4998-9544-b7191c1c1cd2
+- !<ScriptComponent/1ae1f00d-9991-4f54-8aee-a1fd0915bf7c>
+  PrefabRemaps:
+    []
+  Name: InteractableAudioFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c57fd4b4-b5d5-4eae-b45c-2f62c57e2bc3
+  ScriptInputsDefault:
+    hoverAudioTrack: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      hoverAudioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      triggerStartAudioTrack: !<reference.AudioTrackAsset> d531ff43-b8df-4401-839c-645878c5bd2e
+      triggerEndAudioTrack: !<reference.AudioTrackAsset> 7b58983a-a4ca-417f-8171-2a074e30c6d1
+  ScriptTypes:
+    "":
+      {}
 - !<Text/1b03ea12-c8ed-4285-b544-f639021a5acb>
   PrefabRemaps:
     []
@@ -1725,7 +1794,7 @@
   MeshShadowMode: None
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
-  Text: 1
+  Text: Create
   Editable: false
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
@@ -2226,7 +2295,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> f58df319-77d8-4f40-9c59-0ad876108ede
+    - !<reference> 9b3f6550-083d-43ed-bafd-404cb0d6f508
   Mesh: !<reference> c7b55f95-afed-4828-bc17-10c0093fa095
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -2594,7 +2663,7 @@
   PrefabRemaps:
     []
   Name: Path Count
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: -10.000000, y: 25.000000, z: -100.316704}
@@ -3932,7 +4001,7 @@
   PrefabRemaps:
     []
   Name: Current Trail
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 10.000000, y: 25.000000, z: -100.316704}
@@ -4217,7 +4286,7 @@
   Enabled: true
   Layers: 1
   LocalTransform:
-    position: {x: 5.000000, y: 14.500000, z: -50.000000}
+    position: {x: 9.496742, y: 14.500000, z: -50.000000}
     rotation: {x: 0.000000, y: -0.000000, z: 90.000000}
     scale: {x: 3.000000, y: 3.000000, z: 3.000000}
     hasSegmentScaleCompensation: false
@@ -4228,6 +4297,8 @@
     - !<own> 46f687ca-c217-45a5-8422-6239ac7a447b
     - !<own> 8d0db693-e360-4920-9921-fcdaa6c001ab
     - !<own> ea0f6a33-95bd-4f76-9ce9-515bd2a14667
+    - !<own> 1ae1f00d-9991-4f54-8aee-a1fd0915bf7c
+    - !<own> 7dd4c4d8-b4b5-44f5-b705-154a6cb11b6d
 - !<SceneObject/4527c113-2c46-40b1-bb7d-3acd00e22bd2>
   PrefabRemaps:
     []
@@ -5622,7 +5693,7 @@
   Enabled: true
   Layers: 1
   LocalTransform:
-    position: {x: 5.000000, y: 10.000000, z: -50.000000}
+    position: {x: 9.496742, y: 10.000000, z: -50.000000}
     rotation: {x: 0.000000, y: -0.000000, z: 90.000000}
     scale: {x: 3.000000, y: 3.000000, z: 3.000000}
     hasSegmentScaleCompensation: false
@@ -5633,6 +5704,8 @@
     - !<own> d3884bfc-c72f-44b6-9030-b41c5dce22ed
     - !<own> b9b2bd5d-b11a-40a4-a61a-8d6ca0eede6d
     - !<own> 0a4a34e4-d505-4555-aad5-c04689f4ca34
+    - !<own> 6d4da951-51fc-4297-919f-0b3e9101f9eb
+    - !<own> 8707bd64-9056-4207-b859-2737de8f6021
 - !<SceneObject/5e5af924-472c-42fc-b74e-6eb873878cd7>
   PrefabRemaps:
     []
@@ -5714,7 +5787,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> f58df319-77d8-4f40-9c59-0ad876108ede
+    - !<reference> 9b3f6550-083d-43ed-bafd-404cb0d6f508
   Mesh: !<reference> c7b55f95-afed-4828-bc17-10c0093fa095
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -5749,6 +5822,24 @@
   ScriptInputs:
     "":
       {}
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/61a9198f-3ca2-433b-b261-f28c1985f263>
+  PrefabRemaps:
+    []
+  Name: InteractableAudioFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c57fd4b4-b5d5-4eae-b45c-2f62c57e2bc3
+  ScriptInputsDefault:
+    hoverAudioTrack: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      hoverAudioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      triggerStartAudioTrack: !<reference.AudioTrackAsset> d531ff43-b8df-4401-839c-645878c5bd2e
+      triggerEndAudioTrack: !<reference.AudioTrackAsset> 7b58983a-a4ca-417f-8171-2a074e30c6d1
   ScriptTypes:
     "":
       {}
@@ -6691,6 +6782,24 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScriptComponent/6d4da951-51fc-4297-919f-0b3e9101f9eb>
+  PrefabRemaps:
+    []
+  Name: InteractableAudioFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c57fd4b4-b5d5-4eae-b45c-2f62c57e2bc3
+  ScriptInputsDefault:
+    hoverAudioTrack: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      hoverAudioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      triggerStartAudioTrack: !<reference.AudioTrackAsset> d531ff43-b8df-4401-839c-645878c5bd2e
+      triggerEndAudioTrack: !<reference.AudioTrackAsset> 7b58983a-a4ca-417f-8171-2a074e30c6d1
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/6d4e14b0-90fb-47b0-8368-e3cb543772be>
   PrefabRemaps:
     []
@@ -6995,6 +7104,60 @@
     bottom: -1.000000
     right: 1.000000
     top: 1.000000
+- !<ScriptComponent/711f620e-2f16-453a-b94c-ee4491e8be74>
+  PrefabRemaps:
+    []
+  Name: ButtonFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c160a957-4b35-4342-9927-7fd2766d231d
+  ScriptInputsDefault:
+    buttonType: true
+    useGlowMesh: true
+    glowRenderMeshVisual: true
+    maxBlendShapeWeight: true
+    meshBlendShapeName: true
+    glowBlendShapeName: true
+    glowIdleMaterial: true
+    glowHoverMaterial: true
+    glowPinchedMaterial: true
+    meshToggledPinchedMaterial: true
+    meshToggledHoverMaterial: true
+    meshToggledIdleMaterial: true
+    meshStatePinchedMaterial: true
+    meshStateHoverMaterial: true
+    meshStateIdleMaterial: true
+    persistentPinchedState: true
+    defaultIcon: true
+    onIcon: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      buttonType: 0
+      renderMeshVisual: !<reference.RenderMeshVisual> 2101b7e8-e2f5-4542-b731-b8a575bee65e
+      useGlowMesh: false
+      glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
+      maxBlendShapeWeight: !<float> 1.000000
+      meshBlendShapeName: Pinch
+      meshIdleMaterial: !<reference.Material> 9b3f6550-083d-43ed-bafd-404cb0d6f508
+      meshHoverMaterial: !<reference.Material> f815b3fd-9acd-4427-8c85-ce9765c1b471
+      meshPinchedMaterial: !<reference.Material> d6ef8e2e-f4d2-44d4-88f3-3697486802d2
+      glowBlendShapeName: Pinch
+      glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowPinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledPinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStatePinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      persistentPinchedState: false
+      defaultIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      onIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/711f9787-d880-4475-8f0a-0cf6b2492a6b>
   PrefabRemaps:
     []
@@ -8087,6 +8250,60 @@
     - !<own> 245cb741-c1b9-4805-b7c1-793674f0d7ed
   Components:
     []
+- !<ScriptComponent/7dd4c4d8-b4b5-44f5-b705-154a6cb11b6d>
+  PrefabRemaps:
+    []
+  Name: ButtonFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c160a957-4b35-4342-9927-7fd2766d231d
+  ScriptInputsDefault:
+    buttonType: true
+    useGlowMesh: true
+    glowRenderMeshVisual: true
+    maxBlendShapeWeight: true
+    meshBlendShapeName: true
+    glowBlendShapeName: true
+    glowIdleMaterial: true
+    glowHoverMaterial: true
+    glowPinchedMaterial: true
+    meshToggledPinchedMaterial: true
+    meshToggledHoverMaterial: true
+    meshToggledIdleMaterial: true
+    meshStatePinchedMaterial: true
+    meshStateHoverMaterial: true
+    meshStateIdleMaterial: true
+    persistentPinchedState: true
+    defaultIcon: true
+    onIcon: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      buttonType: 0
+      renderMeshVisual: !<reference.RenderMeshVisual> 5fdd0249-ff7b-43c5-8b73-260d1b799abd
+      useGlowMesh: false
+      glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
+      maxBlendShapeWeight: !<float> 1.000000
+      meshBlendShapeName: Pinch
+      meshIdleMaterial: !<reference.Material> 9b3f6550-083d-43ed-bafd-404cb0d6f508
+      meshHoverMaterial: !<reference.Material> f815b3fd-9acd-4427-8c85-ce9765c1b471
+      meshPinchedMaterial: !<reference.Material> d6ef8e2e-f4d2-44d4-88f3-3697486802d2
+      glowBlendShapeName: Pinch
+      glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowPinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledPinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStatePinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      persistentPinchedState: false
+      defaultIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      onIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/7deecf52-223d-4f77-ac95-fa2b779f5f09>
   PrefabRemaps:
     []
@@ -8563,6 +8780,60 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/8707bd64-9056-4207-b859-2737de8f6021>
+  PrefabRemaps:
+    []
+  Name: ButtonFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c160a957-4b35-4342-9927-7fd2766d231d
+  ScriptInputsDefault:
+    buttonType: true
+    useGlowMesh: true
+    glowRenderMeshVisual: true
+    maxBlendShapeWeight: true
+    meshBlendShapeName: true
+    glowBlendShapeName: true
+    glowIdleMaterial: true
+    glowHoverMaterial: true
+    glowPinchedMaterial: true
+    meshToggledPinchedMaterial: true
+    meshToggledHoverMaterial: true
+    meshToggledIdleMaterial: true
+    meshStatePinchedMaterial: true
+    meshStateHoverMaterial: true
+    meshStateIdleMaterial: true
+    persistentPinchedState: true
+    defaultIcon: true
+    onIcon: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      buttonType: 0
+      renderMeshVisual: !<reference.RenderMeshVisual> ccf26fb5-e8a8-46dd-ab75-beb766c6f2f6
+      useGlowMesh: false
+      glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
+      maxBlendShapeWeight: !<float> 1.000000
+      meshBlendShapeName: Pinch
+      meshIdleMaterial: !<reference.Material> 9b3f6550-083d-43ed-bafd-404cb0d6f508
+      meshHoverMaterial: !<reference.Material> f815b3fd-9acd-4427-8c85-ce9765c1b471
+      meshPinchedMaterial: !<reference.Material> d6ef8e2e-f4d2-44d4-88f3-3697486802d2
+      glowBlendShapeName: Pinch
+      glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowPinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledPinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStatePinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      persistentPinchedState: false
+      defaultIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      onIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<Text/87096967-a3bc-4d41-b656-a7c1fcc611d1>
   PrefabRemaps:
     []
@@ -9562,7 +9833,7 @@
 - !<SceneObject/98dcf8ea-4f42-4e42-bd1f-8a2a63e6884a>
   PrefabRemaps:
     []
-  Name: 1
+  Name: Create
   Enabled: true
   Layers: 1
   LocalTransform:
@@ -9578,6 +9849,8 @@
     - !<own> 7a531971-2e8b-4221-96b4-32dfc5bac67a
     - !<own> bcc3891e-d4cd-4e89-a053-46da4f0a3628
     - !<own> 6c36665b-b9d5-46dd-9b98-af75a219ed08
+    - !<own> c4ab3b5e-d220-419c-bda4-df1ee881d2b1
+    - !<own> cb34777c-cfd3-4332-8d04-5338bf6625b1
 - !<SceneObject/99f579a8-56f0-43e0-a8d6-487767601be0>
   PrefabRemaps:
     []
@@ -9726,6 +9999,24 @@
     "":
       _scrollBarMeshVisual: !<reference.RenderMeshVisual> ce8466fa-1f06-4ffe-9845-a396fcd77c99
       _boundingHeightOffset: !<float> 0.000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/9dc73189-672e-4af9-9894-ed451d8549de>
+  PrefabRemaps:
+    []
+  Name: InteractableAudioFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c57fd4b4-b5d5-4eae-b45c-2f62c57e2bc3
+  ScriptInputsDefault:
+    hoverAudioTrack: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      hoverAudioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      triggerStartAudioTrack: !<reference.AudioTrackAsset> d531ff43-b8df-4401-839c-645878c5bd2e
+      triggerEndAudioTrack: !<reference.AudioTrackAsset> 7b58983a-a4ca-417f-8171-2a074e30c6d1
   ScriptTypes:
     "":
       {}
@@ -10763,7 +11054,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> f58df319-77d8-4f40-9c59-0ad876108ede
+    - !<reference> 9b3f6550-083d-43ed-bafd-404cb0d6f508
   Mesh: !<reference> c7b55f95-afed-4828-bc17-10c0093fa095
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -10973,7 +11264,7 @@
 - !<SceneObject/aee6ffa0-84c6-4ff1-8b7b-1a3720b614df>
   PrefabRemaps:
     []
-  Name: 2
+  Name: Explore
   Enabled: true
   Layers: 1
   LocalTransform:
@@ -10989,6 +11280,8 @@
     - !<own> 94e77d96-6527-4eb2-80b4-d591817261e8
     - !<own> 67278f3c-ecad-4df6-a533-e8061d6cd9b1
     - !<own> 25200603-3a09-4529-9b77-f5acd73af64f
+    - !<own> 61a9198f-3ca2-433b-b261-f28c1985f263
+    - !<own> 711f620e-2f16-453a-b94c-ee4491e8be74
 - !<ScriptComponent/af18f812-3c7c-4c4d-b162-5fb8957ea933>
   PrefabRemaps:
     []
@@ -11974,6 +12267,24 @@
   Components:
     - !<own> 638efe86-613f-4735-a142-375f9fb83afe
     - !<own> 5367e022-22f0-4dfc-9033-fee474422327
+- !<ScriptComponent/c4ab3b5e-d220-419c-bda4-df1ee881d2b1>
+  PrefabRemaps:
+    []
+  Name: InteractableAudioFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c57fd4b4-b5d5-4eae-b45c-2f62c57e2bc3
+  ScriptInputsDefault:
+    hoverAudioTrack: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      hoverAudioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      triggerStartAudioTrack: !<reference.AudioTrackAsset> d531ff43-b8df-4401-839c-645878c5bd2e
+      triggerEndAudioTrack: !<reference.AudioTrackAsset> 7b58983a-a4ca-417f-8171-2a074e30c6d1
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/c4b1a1e6-7665-4e82-989c-66a8fab1e47d>
   PrefabRemaps:
     []
@@ -12288,7 +12599,7 @@
 - !<SceneObject/c92b3376-a1b1-4a9a-9b08-b318cb1f5a93>
   PrefabRemaps:
     []
-  Name: 0
+  Name: Search
   Enabled: true
   Layers: 1
   LocalTransform:
@@ -12304,6 +12615,8 @@
     - !<own> f7413b32-1e78-4cb6-8256-c87d6ce18f2c
     - !<own> ee2a63d5-9f26-4cb9-95fb-5081584550fd
     - !<own> 9384c7ee-f97c-46f0-807b-d7671644ddb5
+    - !<own> 9dc73189-672e-4af9-9894-ed451d8549de
+    - !<own> 1a500d93-a4cc-4534-8c51-13aa1632108b
 - !<RenderMeshVisual/c9cd2679-ba09-4f0f-98d7-ec3140e249c7>
   PrefabRemaps:
     []
@@ -12340,6 +12653,60 @@
     []
   Components:
     []
+- !<ScriptComponent/cb34777c-cfd3-4332-8d04-5338bf6625b1>
+  PrefabRemaps:
+    []
+  Name: ButtonFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c160a957-4b35-4342-9927-7fd2766d231d
+  ScriptInputsDefault:
+    buttonType: true
+    useGlowMesh: true
+    glowRenderMeshVisual: true
+    maxBlendShapeWeight: true
+    meshBlendShapeName: true
+    glowBlendShapeName: true
+    glowIdleMaterial: true
+    glowHoverMaterial: true
+    glowPinchedMaterial: true
+    meshToggledPinchedMaterial: true
+    meshToggledHoverMaterial: true
+    meshToggledIdleMaterial: true
+    meshStatePinchedMaterial: true
+    meshStateHoverMaterial: true
+    meshStateIdleMaterial: true
+    persistentPinchedState: true
+    defaultIcon: true
+    onIcon: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      buttonType: 0
+      renderMeshVisual: !<reference.RenderMeshVisual> efe0f86a-bb67-4c11-b356-80652fdc789b
+      useGlowMesh: false
+      glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
+      maxBlendShapeWeight: !<float> 1.000000
+      meshBlendShapeName: Pinch
+      meshIdleMaterial: !<reference.Material> 9b3f6550-083d-43ed-bafd-404cb0d6f508
+      meshHoverMaterial: !<reference.Material> f815b3fd-9acd-4427-8c85-ce9765c1b471
+      meshPinchedMaterial: !<reference.Material> d6ef8e2e-f4d2-44d4-88f3-3697486802d2
+      glowBlendShapeName: Pinch
+      glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowPinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledPinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStatePinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      persistentPinchedState: false
+      defaultIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      onIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<Text/cc59c548-1073-432f-a3f3-f7c64e11ed14>
   PrefabRemaps:
     []
@@ -12521,7 +12888,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> f58df319-77d8-4f40-9c59-0ad876108ede
+    - !<reference> 9b3f6550-083d-43ed-bafd-404cb0d6f508
   Mesh: !<reference> c7b55f95-afed-4828-bc17-10c0093fa095
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -12831,7 +13198,7 @@
   PrefabRemaps:
     []
   Name: Mode
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 29.173086, z: -100.316704}
@@ -14436,7 +14803,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> f58df319-77d8-4f40-9c59-0ad876108ede
+    - !<reference> 9b3f6550-083d-43ed-bafd-404cb0d6f508
   Mesh: !<reference> c7b55f95-afed-4828-bc17-10c0093fa095
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -14520,9 +14887,9 @@
   MeshShadowMode: None
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
-  Text: |
-    Bubble Start
-
+  Text: |-
+    Start
+    Message
   Editable: false
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
@@ -14770,7 +15137,9 @@
   MeshShadowMode: None
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
-  Text: 0
+  Text: |
+    Search
+
   Editable: false
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
@@ -14995,14 +15364,19 @@
     {}
   ScriptInputs:
     "":
-      undefined: !<MappingBased.PinchButton> ee2a63d5-9f26-4cb9-95fb-5081584550fd
+      search: !<MappingBased.PinchButton> ee2a63d5-9f26-4cb9-95fb-5081584550fd
+      searchBFComponent: !<MappingBased.ButtonFeedback> 1a500d93-a4cc-4534-8c51-13aa1632108b
       creator: !<MappingBased.PinchButton> bcc3891e-d4cd-4e89-a053-46da4f0a3628
+      creatorBFComponent: !<MappingBased.ButtonFeedback> cb34777c-cfd3-4332-8d04-5338bf6625b1
       explorer: !<MappingBased.PinchButton> 67278f3c-ecad-4df6-a533-e8061d6cd9b1
+      explorerBFComponent: !<MappingBased.ButtonFeedback> 711f620e-2f16-453a-b94c-ee4491e8be74
       creatorScript: !<MappingBased.AnchorPlacementController> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
       voiceRecognition: !<MappingBased.voiceRecognition> 6e2097e4-c769-456f-801e-9285a66d66cf
       userModeText: !<reference.Text> f3611df0-8436-4cd4-92b0-77c80741e278
       bubbleToggle: !<MappingBased.PinchButton> 0a4a34e4-d505-4555-aad5-c04689f4ca34
       bubbleToggleText: !<reference.Text> f0e17aa2-0330-435e-9716-7ac48019bf41
+      unselectedMaterial: !<reference.Material> 9b3f6550-083d-43ed-bafd-404cb0d6f508
+      selectedMaterial: !<reference.Material> 7567f7b4-b4fe-4f1f-9691-27bc68573cc7
   ScriptTypes:
     "":
       {}

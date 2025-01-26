@@ -29,9 +29,14 @@
     bubbleToggle: false
     bubbleToggleText: false
     creator: false
+    creatorBFComponent: false
     creatorScript: false
     explorer: false
-    undefined: false
+    explorerBFComponent: false
+    search: false
+    searchBFComponent: false
+    selectedMaterial: false
+    unselectedMaterial: false
     userModeText: false
     voiceRecognition: false
   ScriptTypesHidden:
@@ -39,21 +44,31 @@
   DefaultScriptInputs:
     - creatorScript: !<MappingBased.AnchorPlacementController> 00000000-0000-0000-0000-000000000000
       userModeText: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      undefined: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       creator: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       explorer: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       bubbleToggle: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       bubbleToggleText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       voiceRecognition: !<MappingBased.voiceRecognition> 00000000-0000-0000-0000-000000000000
+      creatorBFComponent: !<MappingBased.ButtonFeedback> 00000000-0000-0000-0000-000000000000
+      explorerBFComponent: !<MappingBased.ButtonFeedback> 00000000-0000-0000-0000-000000000000
+      search: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      searchBFComponent: !<MappingBased.ButtonFeedback> 00000000-0000-0000-0000-000000000000
+      unselectedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      selectedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input PinchButton undefined
+    - // @input PinchButton search
+    - // @input ButtonFeedback searchBFComponent
     - // @input PinchButton creator
+    - // @input ButtonFeedback creatorBFComponent
     - // @input PinchButton explorer
+    - // @input ButtonFeedback explorerBFComponent
     - // @input AnchorPlacementController creatorScript
     - // @input voiceRecognition voiceRecognition
     - // @input Component.Text userModeText
     - // @input PinchButton bubbleToggle
     - // @input Component.Text bubbleToggleText
+    - // @input Asset.Material unselectedMaterial
+    - // @input Asset.Material selectedMaterial
