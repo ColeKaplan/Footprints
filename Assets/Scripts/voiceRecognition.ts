@@ -32,20 +32,20 @@ export class MicController extends BaseScriptComponent {
             print(transcription)
             if (this.textRecording) {
                 this.text += transcription
-                if (transcription.includes("pop")) {
+                if (this.containsAnyOf(transcription, ["pop", "pap", "pup", "top"])) {
                     this.textRecording = false;
-                    const endSnapIndex = this.text.indexOf("pop")
+                    const endSnapIndex = this.findEarliest(transcription, ["pop", "pap", "pup", "top"])
                     this.AnchorController.sendRecording(this.text.substring(0,endSnapIndex))
                     this.text = ""
                 }
             }
-            else if (transcription.includes("start trail")) {
+            else if (this.containsAnyOf(transcription, ["start trail", "tart trail", "star trail"])) {
                 this.AnchorController.toggleMode(1)
             }
-            else if (transcription.includes("join trail")) {
+            else if (this.containsAnyOf(transcription, ["join trail", "joint rail", "jiont trail", "join rail"])) {
                 this.AnchorController.toggleMode(2)
             }
-            else if (transcription.includes("snap")) {
+            else if (this.containsAnyOf(transcription, ["snap", "snip", "nap"])) {
                 this.textRecording = true;
                 print("recording")
                 // TODO: start recording transcript
@@ -53,9 +53,42 @@ export class MicController extends BaseScriptComponent {
                 // Optional: use GPT to perform grammatical correction
                 // Send to a text object that is connected to the bubble
                 // 
-            } else if (transcription.includes("end trail")) {
+            } else if (this.containsAnyOf(transcription, ["end trail", "in trail", "entrail", "into trail"])) {
                 this.AnchorController.toggleMode(0)
             }
         }
     }
+
+    private containsAnyOf(transcription : string, keywords : string[]) : boolean {
+        var found = false;
+        for (var word of keywords) {
+            if (transcription.includes(word)) {
+                return true
+            }
+        }
+        return false
+    }
+
+    private findEarliest(transcription : string, keywords : string[]) : number {
+        var closestIndex = -1;
+        for (var word of keywords) {
+            if (transcription.includes(word)) {
+                var index = transcription.indexOf(word)
+                closestIndex = closestIndex == -1 ? index : Math.min(closestIndex, index)
+            }
+        }
+        return closestIndex
+    }
+
+    public toggleBubble() {
+        if (this.textRecording == false) {
+            this.textRecording = true;
+            print("recording")
+        } else {
+            this.textRecording = false;
+            this.AnchorController.sendRecording(this.text)
+            this.text = ""
+        }
+    }
+
 }

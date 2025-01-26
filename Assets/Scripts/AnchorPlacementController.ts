@@ -8,6 +8,8 @@ import { AnchorComponent } from './../Spatial Anchors/AnchorComponent';
 import { AnchorModule } from './../Spatial Anchors/AnchorModule';
 import { PinchButton } from './../SpectaclesInteractionKit/Components/UI/PinchButton/PinchButton';
 import NativeLogger from '../SpectaclesInteractionKit/Utils/NativeLogger';
+import { Interactable } from '../SpectaclesInteractionKit/Components/Interaction/Interactable/Interactable';
+import { InteractorEvent } from '../SpectaclesInteractionKit/Core/Interactor/InteractorEvent';
 
 interface Object_Path {
   sceneObject : SceneObject
@@ -27,6 +29,8 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   @input footprintPrefab: ObjectPrefab;
   @input trailHeadPrefab: ObjectPrefab;
   @input bubblePrefab: ObjectPrefab
+
+  @input toggleAudio: AudioComponent
 
   private anchorCount : number = 0;
   private anchorArray : Anchor[] = [];
@@ -201,28 +205,29 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
       case "bubble":
         object = this.bubblePrefab.instantiate(this.getSceneObject())
-        print("testing components")
-        print(object.getChild(0).getComponent("Component.Text"))
-        var bubbleComponent = object.getComponent("Component.Text")
         object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,0,0)));
         object.getChild(0).getTransform().setLocalScale(new vec3(10,10,10));
         this.bubbleArray.push(object)
         var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
         this.pathArray.push(path)
-
-
         
         let textObj = object.getChild(0).getComponent("Component.Text") 
         if (textObj){
           textObj.text = anchorData[2]
-          textObj.horizontalOverflow = 3
+          textObj.horizontalOverflow = 4
         }
 
-        // object.getChild(0).getComponent("Component.ScriptComponent").add(() => {
-        //   () => {
+        let buttonInteraction = object.getChild(0).getComponent(
+          Interactable.getTypeName()
+        );
 
-        //   }
-        // });
+        let onTriggerStartCallback = (event: InteractorEvent) => {
+          if (textObj){
+            textObj.horizontalOverflow = textObj.horizontalOverflow == 4 ? 2 : 4
+          }
+        };
+    
+        buttonInteraction.onInteractorTriggerStart(onTriggerStartCallback);
 
         
 
@@ -441,6 +446,9 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   // Gets called from voice command, 0 = undefined | 1 = creator | 2 = explorer
   public toggleMode(mode : number) {
+
+    this.toggleAudio.play(1);
+    
     if (this.mode == 0 && mode == 1) {
       this.mode = 1
       this.modeText.text = "creator"

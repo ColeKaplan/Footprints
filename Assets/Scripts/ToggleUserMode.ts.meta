@@ -26,11 +26,14 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
+    bubbleToggle: false
+    bubbleToggleText: false
     creator: false
     creatorScript: false
     explorer: false
     undefined: false
     userModeText: false
+    voiceRecognition: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
@@ -39,6 +42,9 @@
       undefined: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       creator: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       explorer: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      bubbleToggle: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      bubbleToggleText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      voiceRecognition: !<MappingBased.voiceRecognition> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -47,4 +53,7 @@
     - // @input PinchButton creator
     - // @input PinchButton explorer
     - // @input AnchorPlacementController creatorScript
+    - // @input voiceRecognition voiceRecognition
     - // @input Component.Text userModeText
+    - // @input PinchButton bubbleToggle
+    - // @input Component.Text bubbleToggleText

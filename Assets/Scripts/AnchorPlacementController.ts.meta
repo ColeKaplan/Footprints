@@ -33,6 +33,7 @@
     footprintPrefab: false
     modeText: false
     pathCountText: false
+    toggleAudio: false
     trailHeadPrefab: false
     trailText: false
   ScriptTypesHidden:
@@ -47,6 +48,7 @@
       pathCountText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       trailText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       deleteButton: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      toggleAudio: !<MappingBased.AudioPlayback> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -60,3 +62,4 @@
     - // @input Asset.ObjectPrefab footprintPrefab
     - // @input Asset.ObjectPrefab trailHeadPrefab
     - // @input Asset.ObjectPrefab bubblePrefab
+    - // @input Component.AudioComponent toggleAudio
