@@ -9,6 +9,11 @@ import { AnchorModule } from './../Spatial Anchors/AnchorModule';
 import { PinchButton } from './../SpectaclesInteractionKit/Components/UI/PinchButton/PinchButton';
 import NativeLogger from '../SpectaclesInteractionKit/Utils/NativeLogger';
 
+interface Object_Path {
+  sceneObject : SceneObject
+  path_id : string
+}
+
 @component
 export default class AnchorPlacementController extends BaseScriptComponent {
   @input anchorModule: AnchorModule;
@@ -23,9 +28,11 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   private anchorCount : number = 0;
   private anchorArray : Anchor[] = [];
   private footprintArray : SceneObject[] = [];
-  private pathArray : string[] = [];
-  private trailHeads : string[] = [];
+  private pathArray : Object_Path[] = [];
+  private trailHeadArray : SceneObject[] = [];
+  private bubbleArray : SceneObject[] = [];
   private pathCount : number = 0
+  private trail : string = "-1"
 
   private trailHead : boolean = true
 
@@ -35,7 +42,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   private previousPosition : vec3;
 
-  private creatorMode : boolean = true;
+  private mode : number = 0
 
   private store = global.persistentStorageSystem.store;
 
@@ -55,7 +62,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
             var currentPosition = this.camera.getTransform().getLocalPosition();
             if (currentPosition.distance(this.previousPosition) > 100) {
                 // print("far enough away!")
-                if (this.creatorMode){
+                if (this.mode == 1){
                   if(this.trailHead) {
                     this.createAnchor("trailhead", "" + this.pathCount , "")
                     this.trailHead = !this.trailHead
@@ -66,7 +73,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
                 }
             }
 
-            if (!this.creatorMode) {
+            if (this.mode == 2) {
               this.showNearbyExplorer();
             }
           
@@ -105,18 +112,6 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     // let toStore = ["prefab (footprint | trailhead | bubble)", "trail number (-1 if none)", "if bubble, text goes here"]
     // print(anchorData)
 
-    var prefab : ObjectPrefab
-    switch(anchorData[0]) {
-      case "footprint":
-        prefab = this.footprintPrefab
-        break
-      case "trailhead":
-        prefab = this.trailHeadPrefab
-        break
-      case "bubble":
-        prefab = this.bubblePrefab
-        break
-    }
     this.attachNewObjectToAnchor(anchor, false, anchorData)
     // this.anchorSession.deleteAnchor(anchor);
   }
@@ -138,7 +133,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     this.store.putStringArray(anchor.id, toStore)
 
     // Create the object and attach it to the anchor
-    this.attachNewObjectToAnchor(anchor, true);
+    this.attachNewObjectToAnchor(anchor, true, toStore);
 
     // Save the anchor so it's loaded in future sessions
     try {
@@ -148,7 +143,36 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     }
   }
 
-  private attachNewObjectToAnchor(anchor: Anchor, enabled: boolean) {
+  private attachNewObjectToAnchor(anchor: Anchor, enabled: boolean, anchorData : string[]) {
+
+    var object : SceneObject
+    switch(anchorData[0]) {
+      case "footprint":
+        object = this.footprintPrefab.instantiate(this.getSceneObject())
+        object.getChild(0).getTransform().setLocalScale(new vec3(30,30,30));
+        object.getChild(0).getTransform().setLocalRotation(object.getTransform().getLocalRotation().multiply(new quat(-.2,.15,0,0)));
+        object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,-150,0)));
+        this.footprintArray.push(object);
+        if (this.footprintArray.length > 7) this.footprintArray[this.footprintArray.length - 8].enabled = false;
+
+        var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
+        this.pathArray.push(path)
+        break
+      case "trailhead":
+        object = this.trailHeadPrefab.instantiate(this.getSceneObject())
+        this.trailHeadArray.push(object)
+        var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
+        this.pathArray.push(path)
+        break
+      case "bubble":
+        object = this.bubblePrefab.instantiate(this.getSceneObject())
+        object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,50,0)));
+        this.bubbleArray.push(object)
+        break
+    }
+
+
+
     // Create a new object from the prefab
     if (!this.trailHead) {
       var object: SceneObject = this.footprintPrefab.instantiate(this.getSceneObject());
@@ -157,9 +181,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
       this.trailHead = false
     }
 
-    object.getChild(0).getTransform().setLocalScale(new vec3(30,30,30));
-    object.getChild(0).getTransform().setLocalRotation(object.getTransform().getLocalRotation().multiply(new quat(-.2,.15,0,0)));
-    object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,-150,0)));
+    
 
     if (!enabled) {
       object.enabled = false
@@ -167,13 +189,12 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
 
     // Add to arrays
-    this.footprintArray.push(object);
+    // this.footprintArray.push(object);
     // print(this.footprintArray)
-    if (this.footprintArray.length > 7) this.footprintArray[this.footprintArray.length - 8].enabled = false;
 
     this.anchorArray.push(anchor)
     this.anchorCount = this.anchorArray.length;
-    this.pathArray.push("" + this.pathCount)
+    // this.pathArray.push("" + this.pathCount)
 
 
     // Associate the anchor with the object by adding an AnchorComponent to the
@@ -193,6 +214,16 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     for (var footprint of this.footprintArray) {
       // footprint.enabled = false;
       footprint.destroy()
+    }
+    this.footprintArray = []
+
+    for (var trailHead of this.trailHeadArray) {
+      trailHead.destroy()
+    }
+    this.trailHeadArray = []
+    
+    for (var bubble of this.bubbleArray) {
+      bubble.destroy()
     }
     this.footprintArray = []
 
@@ -240,12 +271,8 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     }
 
     if (!found) {
-      var prevPath = ""
-      for (var i: number = 0; i < this.footprintArray.length; i++) {
-        if (this.pathArray[i] != prevPath) {
-          this.footprintArray[i].enabled = true;
-          prevPath = this.pathArray[i]
-        }
+      for (var trailhead of this.trailHeadArray) {
+        trailhead.enabled = true
       }
     }
   }
@@ -257,17 +284,58 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     this.trailHead = true
   }
 
+  // This is to get the closest trail to the user so they can join as an explorer. If none, return -1
+  private getNearestTrail() : string{
+
+    var nearestTrail = "-1"
+    var nearestTrailDistance = 1000
+    for (var footprint of this.footprintArray) {
+
+      var distance = footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()) 
+      if (distance < 700) {
+        if (distance < nearestTrailDistance) {
+          nearestTrailDistance = distance
+          const objectPath = this.pathArray.find(item => item.sceneObject === footprint);
+          nearestTrail = objectPath? objectPath.path_id : "-1"
+        }
+      }
+    }
+
+
+    return nearestTrail
+  }
+
   // Gets called by ToggleUserMode script, triggered currently by the user_toggle button
   public toggleCreatorMode(creatorToggle : boolean) {
     // print("script toggled")
-    this.creatorMode = creatorToggle
+    this.mode = creatorToggle? 1 : 2
     if (creatorToggle) {
       this.startCreator();
     } else {
       this.startExplorer()
     }
-      
+  }
 
+  // Gets called from voice command, 0 = undefined | 1 = creator | 2 = explorer
+  public toggleMode(mode : number) {
+    if (this.mode == 0 && mode == 1) {
+      this.mode = 1
+      this.startCreator()
+    } else if (this.mode == 0 && mode == 2) {
+      var trail = this.getNearestTrail()
+      if (trail !== "-1") {
+        this.mode = 2
+        this.trail = trail
+        this.startExplorer()
+      }
+    } else if (this.mode == 1 && mode == 0) {
+      this.endCreatorMode()
+      this.startUndefined()
+      this.mode = 0
+    } else if (this.mode == 2 && mode == 0) {
+      this.startUndefined()
+      this.mode = 0
+    }
   }
 
   // Does not work, TODO: Find y value of floor to place footprints on
