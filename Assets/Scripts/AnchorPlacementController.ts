@@ -31,6 +31,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   @input bubblePrefab: ObjectPrefab
 
   @input toggleAudio: AudioComponent
+  @input bubbleAudio: AudioComponent
 
   private anchorCount : number = 0;
   private anchorArray : Anchor[] = [];
@@ -149,9 +150,14 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     let yOnlyQuat = quat.fromEulerAngles(0, eulerRotation.y, 0);  
 
     if (prefab == "bubble") { 
-      let offset = new vec3(-1 * Math.sin(eulerRotation.y), 0, -1 * Math.cos(eulerRotation.y));
-      var anchorPosition = mat4.compose(this.camera.getTransform().getWorldPosition().add(offset.uniformScale(10)), yOnlyQuat, new vec3(1,1,1))
+      print("bubble prefab")
+      // let offset = new vec3(Math.cos(eulerRotation.y), 0, Math.sin(eulerRotation.y));
+      // let unitRight = this.camera.getTransform().right.normalize()
+      // let unitForward = this.camera.getTransform().forward.normalize()
+      let offset = this.camera.getTransform().right.uniformScale(100).add(this.camera.getTransform().forward.uniformScale(-80))
+      var anchorPosition = mat4.compose(this.camera.getTransform().getWorldPosition().add(offset), yOnlyQuat, new vec3(1,1,1))
     } else {
+      print("not bubble prefab")
       var anchorPosition = mat4.compose(this.camera.getTransform().getWorldPosition(), yOnlyQuat, new vec3(1,1,1))
     }
 
@@ -206,14 +212,15 @@ export default class AnchorPlacementController extends BaseScriptComponent {
       case "bubble":
         object = this.bubblePrefab.instantiate(this.getSceneObject())
         object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,0,0)));
-        object.getChild(0).getTransform().setLocalScale(new vec3(10,10,10));
+        object.getChild(0).getTransform().setLocalScale(new vec3(50,50,50));
         this.bubbleArray.push(object)
         var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
         this.pathArray.push(path)
         
         let textObj = object.getChild(0).getComponent("Component.Text") 
         if (textObj){
-          textObj.text = anchorData[2]
+          // textObj.text = anchorData[2]
+          textObj.text = "text test"
           textObj.horizontalOverflow = 4
         }
 
@@ -476,6 +483,11 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   public sendRecording(text : string) {
     this.createAnchor("bubble", "" + this.trail , text)
+    this.playBubbleAudio()
+  }
+
+  public playBubbleAudio() {
+    this.bubbleAudio.play(1)
   }
 
   public clear() {

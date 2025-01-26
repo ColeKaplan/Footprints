@@ -27,6 +27,7 @@
   MaxVisibility: Editable
   ScriptInputsHidden:
     anchorModule: false
+    bubbleAudio: false
     bubblePrefab: false
     camera: false
     footprintPrefab: false
@@ -47,6 +48,7 @@
       trailHeadPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
       bubblePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
       toggleAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      bubbleAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -60,3 +62,4 @@
     - // @input Asset.ObjectPrefab trailHeadPrefab
     - // @input Asset.ObjectPrefab bubblePrefab
     - // @input Component.AudioComponent toggleAudio
+    - // @input Component.AudioComponent bubbleAudio
