@@ -1,38 +1,38 @@
 // voice.ts
 
-import { EventDispatcher2 } from './eventDispatcher2';
+import { mainStateMachine } from './mainStateMachine';
 
 @component
-export class voiceRecognition2 extends BaseScriptComponent {
+export class MicController extends BaseScriptComponent {
     private vmlModule: VoiceMLModule = require("LensStudio:VoiceMLModule");
     private isListening: boolean = false;
+    private stateMachine: mainStateMachine = new mainStateMachine();
 
-    public events: EventDispatcher2 = new EventDispatcher2();
 
     onAwake() {
-        this.createEvent('OnStartEvent').bind(() => {
-            this.onStart();
-          });
-    }
-
-    onStart() {
         this.vmlModule.onListeningEnabled.add(() => {
             let options = VoiceML.ListeningOptions.create();
             options.shouldReturnInterimAsrTranscription = true;
             this.vmlModule.onListeningUpdate.add(this.onSpeak);
             this.vmlModule.startListening(options);
             this.isListening = true;
+
         });
+        // print("voice recognition awake")
     }
 
     onSpeak = (result: VoiceML.ListeningUpdateEventArgs) => {
         if (result.isFinalTranscription) {
             const transcription = result.transcription.toLowerCase();
-            if (transcription.includes("start")) {
-                this.events.emit('commandDetected', 'start');
+            // print(transcription)
+            if (transcription.includes("start trail")) {
+                this.stateMachine.handleCommand("start")
             }
-            else if (transcription.includes("join")) {
-                this.events.emit('commandDetected', 'join');
+            else if (transcription.includes("join trail")) {
+                this.stateMachine.handleCommand("join")
+            }
+            else if (transcription.includes("snap")) {
+                this.stateMachine.handleCommand("snap")
             }
         }
     }

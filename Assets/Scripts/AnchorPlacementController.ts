@@ -16,8 +16,9 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   
 
   @input camera: SceneObject;
-  @input prefab: ObjectPrefab;
+  @input footprintPrefab: ObjectPrefab;
   @input trailHeadPrefab: ObjectPrefab;
+  @input bubblePrefab: ObjectPrefab
 
   private anchorCount : number = 0;
   private anchorArray : Anchor[] = [];
@@ -36,6 +37,10 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   private creatorMode : boolean = true;
 
+  private store = global.persistentStorageSystem.store;
+
+
+
   async onAwake() {
     // this.log.d("Awoke");
 
@@ -51,7 +56,12 @@ export default class AnchorPlacementController extends BaseScriptComponent {
             if (currentPosition.distance(this.previousPosition) > 100) {
                 // print("far enough away!")
                 if (this.creatorMode){
-                  this.createAnchor();
+                  if(this.trailHead) {
+                    this.createAnchor("trailhead", "" + this.pathCount , "")
+                    this.trailHead = !this.trailHead
+                  } else {
+                    this.createAnchor("footprint", "" + this.pathCount , "")
+                  }
                   this.previousPosition = currentPosition
                 }
             }
@@ -66,7 +76,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   async onStart() {
     // this.log.d("Started");
 
-
+    this.pathCount = this.store.getInt("pathCount")
     this.createAnchorButton.onButtonPinched.add(() => {
       // print("deleting")
       this.deleteAnchors();
@@ -77,6 +87,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     // Set up the AnchorSession options to scan for World Anchors
     const anchorSessionOptions = new AnchorSessionOptions();
     anchorSessionOptions.scanForWorldAnchors = true;
+    anchorSessionOptions.area = "area"
 
     // Start scanning for anchors
     this.anchorSession =
@@ -88,21 +99,43 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   public onAnchorNearby(anchor: Anchor) {
     // Invoked when a new Anchor is found
-    this.attachNewObjectToAnchor(anchor, false)
+
+    let anchorData = this.store.getStringArray(anchor.id)
+
+    // let toStore = ["prefab (footprint | trailhead | bubble)", "trail number (-1 if none)", "if bubble, text goes here"]
+    // print(anchorData)
+
+    var prefab : ObjectPrefab
+    switch(anchorData[0]) {
+      case "footprint":
+        prefab = this.footprintPrefab
+        break
+      case "trailhead":
+        prefab = this.trailHeadPrefab
+        break
+      case "bubble":
+        prefab = this.bubblePrefab
+        break
+    }
+    this.attachNewObjectToAnchor(anchor, false, anchorData)
     // this.anchorSession.deleteAnchor(anchor);
   }
 
-  public async createAnchor(position? : mat4) {
+  public async createAnchor(prefab : string, trailNumber : string, text : string) {
 
 
     let toWorldFromDevice = this.camera.getTransform().getWorldTransform();
-    let anchorPosition = position? position : toWorldFromDevice.mult(
+    let anchorPosition = toWorldFromDevice.mult(
       mat4.fromTranslation(new vec3(1, 0, 0))
     );
 
     // Create the anchor
     let anchor = await this.anchorSession.createWorldAnchor(anchorPosition);
-    
+
+    // let toStore = ["prefab (footprint | trailhead | bubble)", "trail number (-1 if none)", "if bubble, text goes here"]
+
+    let toStore = [prefab, trailNumber, text]
+    this.store.putStringArray(anchor.id, toStore)
 
     // Create the object and attach it to the anchor
     this.attachNewObjectToAnchor(anchor, true);
@@ -118,11 +151,10 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   private attachNewObjectToAnchor(anchor: Anchor, enabled: boolean) {
     // Create a new object from the prefab
     if (!this.trailHead) {
-      var object: SceneObject = this.prefab.instantiate(this.getSceneObject());
+      var object: SceneObject = this.footprintPrefab.instantiate(this.getSceneObject());
     } else {
       var object: SceneObject = this.trailHeadPrefab.instantiate(this.getSceneObject());
       this.trailHead = false
-      print("trailhead created")
     }
 
     object.getChild(0).getTransform().setLocalScale(new vec3(30,30,30));
@@ -166,6 +198,8 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
     this.pathArray = []
     this.pathCount = 0
+
+    this.store.clear
   }
 
   private async endAnchorSession() {
@@ -219,6 +253,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   private startCreator() {
     this.disableOldPrints()
     this.pathCount += 1
+    this.store.putInt("pathCount", this.pathCount)
     this.trailHead = true
   }
 

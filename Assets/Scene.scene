@@ -15,6 +15,8 @@
     - !<own> 2e49ef71-e25e-4509-845c-6102de4718bd
     - !<own> aba1fef1-7c1d-4340-8abf-8bc3a42113cc
     - !<own> 27bb5a25-40d6-44ac-981a-b39c8949a961
+    - !<own> ac5f8c66-5ae3-4db2-a479-22bda322efb4
+    - !<own> 11f727dd-8979-4a54-adff-0ab97b871960
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -1077,6 +1079,22 @@
     - !<own> 511aa840-3b12-48da-8eb3-6d4a20316ec0
   Components:
     []
+- !<SceneObject/11f727dd-8979-4a54-adff-0ab97b871960>
+  PrefabRemaps:
+    - 11f727dd-8979-4a54-adff-0ab97b871960: 583f31ad-6e27-4fbb-80a4-d07ceddc2b5f
+    - d5a39517-3b9c-4bd3-a352-14e7d64e1f7f: d8a5a85f-36b2-43d5-9396-884354136b17
+  Name: Bubble
+  Enabled: false
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 100.000000, y: 100.000000, z: 100.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> d5a39517-3b9c-4bd3-a352-14e7d64e1f7f
 - !<ScriptComponent/1208900c-b1bf-459d-b7ae-c9ce081d8a33>
   PrefabRemaps:
     []
@@ -3525,6 +3543,21 @@
   Components:
     - !<own> a420efdf-55b7-41cd-8bb5-89bc9e34d8f4
     - !<own> 66258ab8-1a60-4dc2-aee5-820ac8efc2e0
+- !<SceneObject/3b8d51d3-f3a1-4af2-9f94-49cf63a2ab27>
+  PrefabRemaps:
+    []
+  Name: voiceRecognition
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 6e2097e4-c769-456f-801e-9285a66d66cf
 - !<ScriptComponent/3bb57980-131b-4baf-851e-391c60970a75>
   PrefabRemaps:
     []
@@ -6179,6 +6212,22 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/6e2097e4-c769-456f-801e-9285a66d66cf>
+  PrefabRemaps:
+    []
+  Name: voiceRecognition
+  Enabled: true
+  ScriptAsset: !<reference> 65852cf3-d700-4c5b-9dc4-e855348127cb
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/6e614c30-2b6d-4b3c-a625-ebfa1e1bf580>
   PrefabRemaps:
     []
@@ -6535,8 +6584,9 @@
       anchorModule: !<MappingBased.AnchorModule> c4156b38-9fb4-4837-967e-66a3c710a8f7
       createAnchorButton: !<MappingBased.PinchButton> ea0f6a33-95bd-4f76-9ce9-515bd2a14667
       camera: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
-      prefab: !<reference.ObjectPrefab> 76421931-9cfd-435a-93f5-87f56d3875a2
+      footprintPrefab: !<reference.ObjectPrefab> 76421931-9cfd-435a-93f5-87f56d3875a2
       trailHeadPrefab: !<reference.ObjectPrefab> 41883c03-0881-415f-9a66-33f054c048da
+      bubblePrefab: !<reference.ObjectPrefab> 4e8b00b8-ff4b-4cc1-bce7-293c5e24469e
   ScriptTypes:
     "":
       {}
@@ -10113,6 +10163,21 @@
     - !<own> 0deb320d-887e-4b1a-b988-f11b2c4d951b
   Components:
     []
+- !<SceneObject/ac5f8c66-5ae3-4db2-a479-22bda322efb4>
+  PrefabRemaps:
+    []
+  Name: voice recog
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    - !<own> 3b8d51d3-f3a1-4af2-9f94-49cf63a2ab27
+  Components:
+    []
 - !<SceneObject/acede8c7-aa51-4bd1-b85f-732bd8508449>
   PrefabRemaps:
     []
@@ -11870,6 +11935,26 @@
     - !<own> daaa4347-1049-4c69-908c-884fdc3fcdf5
   Components:
     - !<own> 95ed011f-c8a5-469d-8a2b-cd95475e2dc9
+- !<RenderMeshVisual/d5a39517-3b9c-4bd3-a352-14e7d64e1f7f>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> fce2a2ab-a718-46b4-be9e-72ffc3f76b3d
+  Mesh: !<reference> 976a4e23-2782-4344-9c99-70941e3bc3e5
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<ScriptComponent/d5a99a27-d079-430b-86ef-2ad6c533f962>
   PrefabRemaps:
     []
