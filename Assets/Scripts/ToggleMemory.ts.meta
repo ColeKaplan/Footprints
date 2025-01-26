@@ -26,14 +26,19 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    {}
+    memoryButtonText: false
+    toggleButton: false
+    uiObject: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    -
-      {}
+    - toggleButton: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      memoryButtonText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      uiObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    []
+    - // @input PinchButton toggleButton
+    - // @input Component.Text memoryButtonText
+    - // @input SceneObject uiObject

@@ -1,0 +1,23 @@
+- !<AssetImportMetadata/0482dc29-f0e1-4524-b252-db76f7c5e616>
+  ImportedAssetIds:
+    .hidden/Panel Default: !<reference> 0ddafccf-a428-432a-ac2c-1ba2f043b9d2
+    Materials/Panel Default: !<reference> 4e4c7148-2367-4020-8371-f2d02fb24f4c
+    Materials/Panel Default|Panel Default|GraphPassInfo: !<reference> a1f5f10d-de39-4d31-959a-92b9fd2a7404
+    Modules/DestructionHelper_120: !<reference> 8b844524-5e54-40d7-a722-621c39cb0e8e
+    Modules/EventModule_100: !<reference> 4457e86f-e33a-4989-9926-90f128b71674
+    Modules/UIWidgetsModule_120: !<reference> c2409a75-5199-42b4-9d8f-a908346349e6
+    Scripts/UI Panel/UI Panel: !<reference> 482928c3-3f3b-47f0-b442-d0b96a988160
+    Textures/Panel_10X: !<reference> fbd7f381-31db-4de0-892a-ff416b68c7ac
+  ImporterName: LensCoreImporter
+  PrimaryAsset: !<reference> 482928c3-3f3b-47f0-b442-d0b96a988160
+  PackageType: LegacyPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    {}
+  DependentFiles:
+    []
+  ImporterSettings: !<LensCoreImporterSettings/6b2ba13c-1285-4bc2-bc29-ec71631283d9>
+    PersistentIdGenerationAlgorithm: DescriptorBased
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
