@@ -24,11 +24,11 @@ fullscreenSpectaclesSimulation:
   options: 4
 lastPosition:
   type: vec3
-  value: {x: 0.000000, y: 0.000000, z: 0.000000}
+  value: {x: -194.876831, y: 0.000000, z: 1359.896240}
   options: 4
 lastRotation:
   type: vec3
-  value: {x: -9.750010, y: -8.549998, z: 0.000000}
+  value: {x: 162.422897, y: -13.069559, z: -179.996506}
   options: 4
 mirrorHorizontally:
   type: bool
@@ -36,7 +36,7 @@ mirrorHorizontally:
   options: 4
 previewSource:
   type: string
-  value: /Applications/Lens Studio.app/Contents/MacOS/../Resources/InteractiveResources.bundle/Scenes/Sunlit Room
+  value: /Applications/Lens Studio.app/Contents/Resources/InteractiveResources.bundle/Scenes/Sunlit Outdoor
   options: 4
 previewType:
   type: string

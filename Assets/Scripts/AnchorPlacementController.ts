@@ -129,11 +129,10 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   public async createAnchor(prefab : string, trailNumber : string, text : string) {
 
-
-    let toWorldFromDevice = this.camera.getTransform().getWorldTransform();
-    let anchorPosition = toWorldFromDevice.mult(
-      mat4.fromTranslation(new vec3(1, 0, 0))
-    );
+    let toWorldFromDevice = this.camera.getTransform().getWorldRotation();
+    let eulerRotation = toWorldFromDevice.toEulerAngles();
+    let yOnlyQuat = quat.fromEulerAngles(0, eulerRotation.y, 0);  
+    let anchorPosition = mat4.compose(this.camera.getTransform().getWorldPosition(), yOnlyQuat, new vec3(1,1,1))
 
     // Create the anchor
     let anchor = await this.anchorSession.createWorldAnchor(anchorPosition);
@@ -161,8 +160,10 @@ export default class AnchorPlacementController extends BaseScriptComponent {
       case "footprint":
         object = this.footprintPrefab.instantiate(this.getSceneObject())
         object.getChild(0).getTransform().setLocalScale(new vec3(30,30,30));
-        object.getChild(0).getTransform().setLocalRotation(object.getTransform().getLocalRotation().multiply(new quat(-.2,.15,0,0)));
         object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,-150,0)));
+        object.getChild(0).getTransform().setLocalRotation(object.getTransform().getLocalRotation().multiply(new quat(-.2,.15,0,0)));
+
+
         this.footprintArray.push(object);
         // if (this.footprintArray.length > 7) this.footprintArray[this.footprintArray.length - 8].enabled = false;
         var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
@@ -171,6 +172,11 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
       case "trailhead":
         object = this.trailHeadPrefab.instantiate(this.getSceneObject())
+        
+        // var cameraRotation = this.camera.getTransform().getWorldRotation()
+        // var YRotation = quat.fromEulerAngles(0, cameraRotation.toEulerAngles().y, 0)
+        // object.getChild(0).getTransform().setWorldRotation(YRotation)
+
         this.trailHeadArray.push(object)
         var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
         this.pathArray.push(path)
@@ -353,6 +359,8 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   }
 
   private startUndefined() {
+    this.trail = "-1"
+
     for (var footprint of this.footprintArray) {
       if ((footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition())) < this.footprintDistance) {
         footprint.enabled = true
@@ -413,6 +421,10 @@ export default class AnchorPlacementController extends BaseScriptComponent {
       this.mode = 0
       this.modeText.text = "undefined"
     }
+  }
+
+  public sendRecording(text : string) {
+    this.createAnchor("bubble", "" + this.trail , text)
   }
 
   // Does not work, TODO: Find y value of floor to place footprints on

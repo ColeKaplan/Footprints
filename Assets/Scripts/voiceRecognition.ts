@@ -12,6 +12,9 @@ export class MicController extends BaseScriptComponent {
     private isListening: boolean = false;
     private stateMachine: mainStateMachine = new mainStateMachine();
 
+    private text : string = "";
+    private textRecording : boolean = false
+
 
     onAwake() {
         this.vmlModule.onListeningEnabled.add(() => {
@@ -29,7 +32,18 @@ export class MicController extends BaseScriptComponent {
         if (result.isFinalTranscription) {
             const transcription = result.transcription.toLowerCase();
             print(transcription)
-            if (transcription.includes("start trail")) {
+            if (this.textRecording) {
+                this.text += transcription
+                if (transcription.includes("end snap")) {
+                    this.textRecording = false;
+                    const endSnapIndex = this.text.indexOf("end snap")
+                    this.AnchorController.sendRecording(this.text.substring(0,endSnapIndex))
+                    print(this.text)
+                    print(this.text.substring(0,endSnapIndex))
+                    this.text = ""
+                }
+            }
+            else if (transcription.includes("start trail")) {
                 this.stateMachine.handleCommand("start")
                 this.AnchorController.toggleMode(1)
             }
@@ -39,6 +53,12 @@ export class MicController extends BaseScriptComponent {
             }
             else if (transcription.includes("snap")) {
                 this.stateMachine.handleCommand("snap")
+                this.textRecording = true;
+                // TODO: start recording transcript
+                // TODO: if "end snap" detected, stop transcription
+                // Optional: use GPT to perform grammatical correction
+                // Send to a text object that is connected to the bubble
+                // 
             } else if (transcription.includes("end trail")) {
                 this.AnchorController.toggleMode(0)
             }

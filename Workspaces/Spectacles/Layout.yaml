@@ -10,7 +10,7 @@ dock:
                   - persistentName: Snap.Plugin.Gui.SpectaclesMonitorPanel
                     Uuid: 761d383d-c455-46cb-97eb-fc5607f9be8b
                 type: section
-                current: 1
+                current: 0
               - items:
                   - persistentName: Snap.Plugin.Gui.AssetBrowser
                     Uuid: b644b329-5fbd-40ea-8856-a449cae2149a
