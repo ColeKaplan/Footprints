@@ -1,0 +1,38 @@
+- !<AssetImportMetadata/02a0a203-aafa-4572-bb87-5afe8492ae98>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 65852cf3-d700-4c5b-9dc4-e855348127cb
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 65852cf3-d700-4c5b-9dc4-e855348127cb
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> da49a59b-d562-4cf6-ac62-b3c4d927ebfc
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/ef1af1d3-543f-44b4-9004-efec3957baec>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/da49a59b-d562-4cf6-ac62-b3c4d927ebfc>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    AnchorController: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - AnchorController: !<MappingBased.AnchorPlacementController> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input AnchorPlacementController AnchorController

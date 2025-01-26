@@ -1,0 +1,63 @@
+- !<AssetImportMetadata/5ff21525-1a78-42f1-a69c-50e98ec94d39>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 76c6a228-e8ee-45b1-a9ac-6295cbbb0c9e
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 76c6a228-e8ee-45b1-a9ac-6295cbbb0c9e
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 8046494a-94b5-4c70-8b9f-bd88ddb09a4c
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/65ebe76c-158a-4410-8524-699405e8f1be>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefabAssetData/8046494a-94b5-4c70-8b9f-bd88ddb09a4c>
+  SourceRemaps:
+    - 76c6a228-e8ee-45b1-a9ac-6295cbbb0c9e: eff9e050-d339-4e1f-91c8-941ac5ccf42f
+    - 78a2872d-8dd5-4b0d-8983-299655906d10: bd04e157-3ea8-4ced-8aca-d27844b3e5b1
+    - d450b0de-5e21-4e3f-8b85-700b1d4948d0: ff058710-7f50-4a47-933f-93f512efea21
+  SourceState: !<own> eff9e050-d339-4e1f-91c8-941ac5ccf42f
+- !<SceneObject/bd04e157-3ea8-4ced-8aca-d27844b3e5b1>
+  PrefabRemaps:
+    []
+  Name: Cylinder
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 2.608738, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 10.000000, y: 300.000000, z: 10.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ff058710-7f50-4a47-933f-93f512efea21
+- !<ObjectPrefab/eff9e050-d339-4e1f-91c8-941ac5ccf42f>
+  PackagePath: ""
+  objects:
+    - !<own> bd04e157-3ea8-4ced-8aca-d27844b3e5b1
+  LazyLoading: false
+  RetainAssets: true
+- !<RenderMeshVisual/ff058710-7f50-4a47-933f-93f512efea21>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 38f1bc78-58c3-434d-b04a-7198c5609f2e
+  Mesh: !<reference> 4c8420d1-44e2-4b47-b743-5177c55b234c
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}

@@ -1,0 +1,195 @@
+- !<AssetImportMetadata/5a33b1cf-e5fb-44d9-805f-249f37ddea80>
+  ImportedAssetIds:
+    .hidden/SpritePreset.lsmat: !<reference> d67d0e94-e13f-479e-a584-66c66daef223
+    .hidden/SpritePreset.lsmat|SpritePreset.lsmat|GraphPassInfo: !<reference> 43066408-3438-489f-8ab7-bd5faf31f080
+    .hidden/SpritePreset.lsmat|SpritePreset2.lsmat|GraphPassInfo: !<reference> 3e1effc7-510e-4ad6-b835-3a2233ec6604
+    .hidden/SpritePreset1.lsmat: !<reference> 2e46160e-2dc5-4fd6-8163-2d772ac5d7f3
+    .hidden/SpritePreset2.lsmat: !<reference> 4f1c8239-e644-4296-b03d-dcc49da5b386
+    189beecc660e6374: !<reference> 59ab35b0-b861-4811-9697-3387534c69ed
+    817e454b61377552: !<reference> 1c3dd042-e3f2-42b1-bae7-6f0577994f57
+    90290e2da5966704: !<reference> 7607fec8-679b-4014-8e66-4ef568f60f58
+    9ad02a224393be49: !<reference> 699ac7cf-bc67-48a3-a3fc-842ab2fe4d0f
+    Default Prefabs/Toggle Background: !<reference> b2939a7a-18e1-4858-b19f-31d086d9972a
+    Default Prefabs/Toggle Handle: !<reference> 26ab474f-6b05-4267-a7e5-ac658a98da45
+    Modules/DestructionHelper_120: !<reference> 1fb6e37d-1f76-49b3-bbd2-bcf09b95517c
+    Modules/EventModule_100: !<reference> b87f5514-6d49-4234-9fc7-9648ca44be80
+    Modules/UIWidgetsModule_120: !<reference> 76c1afe0-e86b-4f0f-80a6-e4508956cbf6
+    Scripts/UI Toggle/UI Toggle: !<reference> a71ee5e4-4572-4014-ba01-a18457879f0a
+    Textures/Button_10X: !<reference> af5c4e4f-5243-4eb2-9d14-f9b4c2103b90
+    Textures/Toggle Bg: !<reference> e64eb978-cfd5-437a-a851-3a6bd1b91c0e
+    a82ce336edfd5dec: !<reference> 7967fd37-0d1c-4c18-8c6e-3ce3512ed562
+    e0ac72b130e51e8c: !<reference> 4188c5e8-6cd8-4cba-a74b-74572e0e4250
+  ImporterName: LensCoreImporter
+  PrimaryAsset: !<reference> a71ee5e4-4572-4014-ba01-a18457879f0a
+  PackageType: LegacyPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    Default Prefabs/Toggle Background: !<own> 80d341a6-ec14-4387-9530-4a3c508b70f9
+    Default Prefabs/Toggle Handle: !<own> 4bf5210c-280e-4328-a6df-9efd49f4b3c2
+  DependentFiles:
+    []
+  ImporterSettings: !<LensCoreImporterSettings/50403688-4bc8-43f5-80b9-daee6ccf2637>
+    PersistentIdGenerationAlgorithm: DescriptorBased
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefabAssetData/4bf5210c-280e-4328-a6df-9efd49f4b3c2>
+  SourceRemaps:
+    - 26ab474f-6b05-4267-a7e5-ac658a98da45: 7a6b9954-e0ff-4946-a08a-077b7c7e06f5
+    - 59ab35b0-b861-4811-9697-3387534c69ed: 6fbd8462-8c68-4296-91f7-a68481af2a5b
+    - 699ac7cf-bc67-48a3-a3fc-842ab2fe4d0f: 4d994ae0-d1bd-49ac-bbd2-2099b3f21277
+    - 7967fd37-0d1c-4c18-8c6e-3ce3512ed562: 514c4569-3151-4e69-a18e-04fb8fadc124
+  SourceState: !<own> 7a6b9954-e0ff-4946-a08a-077b7c7e06f5
+- !<SceneObject/4d994ae0-d1bd-49ac-bbd2-2099b3f21277>
+  PrefabRemaps:
+    []
+  Name: Toggle Handle
+  Enabled: true
+  Layers: 1048576
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 6fbd8462-8c68-4296-91f7-a68481af2a5b
+    - !<own> 514c4569-3151-4e69-a18e-04fb8fadc124
+- !<Image/514c4569-3151-4e69-a18e-04fb8fadc124>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 4f1c8239-e644-4296-b03d-dcc49da5b386
+  FlipX: false
+  FlipY: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<ScreenTransform/6fbd8462-8c68-4296-91f7-a68481af2a5b>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -0.750000
+    right: 1.000000
+    top: 0.750000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
+- !<ObjectPrefab/7a6b9954-e0ff-4946-a08a-077b7c7e06f5>
+  PackagePath: Default Prefabs/Toggle Handle
+  objects:
+    - !<own> 4d994ae0-d1bd-49ac-bbd2-2099b3f21277
+  LazyLoading: false
+  RetainAssets: true
+- !<ObjectPrefabAssetData/80d341a6-ec14-4387-9530-4a3c508b70f9>
+  SourceRemaps:
+    - 1c3dd042-e3f2-42b1-bae7-6f0577994f57: c4a89751-eda4-477b-8578-34817a008aac
+    - 4188c5e8-6cd8-4cba-a74b-74572e0e4250: e7655c0d-33f1-4d69-9905-f4da0a78fe0c
+    - 7607fec8-679b-4014-8e66-4ef568f60f58: 849de736-e3e5-4dfa-b1e8-3678901bc91d
+    - b2939a7a-18e1-4858-b19f-31d086d9972a: fa7994c0-a2a3-4f26-b439-1ad855bf9d01
+  SourceState: !<own> fa7994c0-a2a3-4f26-b439-1ad855bf9d01
+- !<SceneObject/849de736-e3e5-4dfa-b1e8-3678901bc91d>
+  PrefabRemaps:
+    []
+  Name: Toggle Background
+  Enabled: true
+  Layers: 1048576
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: -1.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c4a89751-eda4-477b-8578-34817a008aac
+    - !<own> e7655c0d-33f1-4d69-9905-f4da0a78fe0c
+- !<Image/c4a89751-eda4-477b-8578-34817a008aac>
+  PrefabRemaps:
+    []
+  Name: Image 2
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> d67d0e94-e13f-479e-a584-66c66daef223
+  FlipX: false
+  FlipY: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<ScreenTransform/e7655c0d-33f1-4d69-9905-f4da0a78fe0c>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: -1.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
+- !<ObjectPrefab/fa7994c0-a2a3-4f26-b439-1ad855bf9d01>
+  PackagePath: Default Prefabs/Toggle Background
+  objects:
+    - !<own> 849de736-e3e5-4dfa-b1e8-3678901bc91d
+  LazyLoading: false
+  RetainAssets: true

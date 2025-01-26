@@ -1,0 +1,59 @@
+- !<AssetImportMetadata/b06f153a-d547-48e6-967c-7ba813999710>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 4ecc0bfe-c65b-48d3-9b86-1777b46bd86c
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 4ecc0bfe-c65b-48d3-9b86-1777b46bd86c
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 8cc32574-8917-45ef-ad59-af2d49fe3e94
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/b99b6d5e-fe20-4b1a-8a63-c717eaa5f636>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/8cc32574-8917-45ef-ad59-af2d49fe3e94>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    bubbleToggle: false
+    bubbleToggleText: false
+    creator: false
+    creatorScript: false
+    explorer: false
+    undefined: false
+    userModeText: false
+    voiceRecognition: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - creatorScript: !<MappingBased.AnchorPlacementController> 00000000-0000-0000-0000-000000000000
+      userModeText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      undefined: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      creator: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      explorer: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      voiceRecognition: !<MappingBased.voiceRecognition> 00000000-0000-0000-0000-000000000000
+      bubbleToggle: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      bubbleToggleText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input PinchButton undefined
+    - // @input PinchButton creator
+    - // @input PinchButton explorer
+    - // @input AnchorPlacementController creatorScript
+    - // @input voiceRecognition voiceRecognition
+    - // @input Component.Text userModeText
+    - // @input PinchButton bubbleToggle
+    - // @input Component.Text bubbleToggleText

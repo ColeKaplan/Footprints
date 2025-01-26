@@ -1,0 +1,41 @@
+- !<AssetImportMetadata/48c53089-5f3b-43a6-9482-af326640caed>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 6f5df80c-c20d-42b8-81b9-2f5668aeb057
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 6f5df80c-c20d-42b8-81b9-2f5668aeb057
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 0c648d37-19b7-45a8-8c43-0bb37d4ecec6
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/951898a1-b2ab-4117-a34c-9f91d6e3c6a2>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/0c648d37-19b7-45a8-8c43-0bb37d4ecec6>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    anchorScript: false
+    camObj: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - camObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      anchorScript: !<MappingBased.AnchorPlacementController> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject camObj
+    - // @input AnchorPlacementController anchorScript
