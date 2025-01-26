@@ -1,7 +1,7 @@
 MIT Reality Hack    
 Readme file for Footprints Project
 
-Inspiration  
+
 We were inspired by the seamless and unburdensome AR technology of the Snap Spectacles along with their recent addition of global Anchor Points to create an experience where people can leave trails that guide others through the world just as they experienced it
 
 The project is built with 3 featured modes of use:  
