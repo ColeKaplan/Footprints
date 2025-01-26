@@ -4,7 +4,9 @@ import AnchorPlacementController from "./AnchorPlacementController";
 @component
 export class ToggleUserMode extends BaseScriptComponent {
 
-    @input toggleButton: PinchButton; 
+    @input undefined: PinchButton; 
+    @input creator: PinchButton; 
+    @input explorer: PinchButton; 
     @input creatorScript: AnchorPlacementController;
     @input userModeText: Text;
 
@@ -18,17 +20,16 @@ export class ToggleUserMode extends BaseScriptComponent {
     }
 
     onStart() {
-        this.toggleButton.onButtonPinched.add(() => {
-            // print("toggleUser")
-            if (this.creatorMode) { // Switch to Explorer
-                this.userModeText.text = "Explorer"
+        this.undefined.onButtonPinched.add(() => {
+            this.creatorScript.toggleMode(0);
+        })
 
-            } else { // Switch to Creator
-                this.userModeText.text = "Creator"
-            }
+        this.creator.onButtonPinched.add(() => {
+            this.creatorScript.toggleMode(1);
+        })
 
-            this.creatorMode = !this.creatorMode
-            this.creatorScript.toggleCreatorMode(this.creatorMode);
+        this.explorer.onButtonPinched.add(() => {
+            this.creatorScript.toggleMode(2);
         })
     }
 }

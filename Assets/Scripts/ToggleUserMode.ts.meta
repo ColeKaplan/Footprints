@@ -26,19 +26,25 @@
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
+    creator: false
     creatorScript: false
-    toggleButton: false
+    explorer: false
+    undefined: false
     userModeText: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    - toggleButton: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
-      creatorScript: !<MappingBased.AnchorPlacementController> 00000000-0000-0000-0000-000000000000
+    - creatorScript: !<MappingBased.AnchorPlacementController> 00000000-0000-0000-0000-000000000000
       userModeText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      undefined: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      creator: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      explorer: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input PinchButton toggleButton
+    - // @input PinchButton undefined
+    - // @input PinchButton creator
+    - // @input PinchButton explorer
     - // @input AnchorPlacementController creatorScript
     - // @input Component.Text userModeText
