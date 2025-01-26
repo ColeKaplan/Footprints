@@ -36,6 +36,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   private bubbleArray : SceneObject[] = [];
   private pathCount : number = 0
   private trail : string = "-1"
+  private currentTrailPrintCount : number = 0
 
   private footprintDistance : number = 700
   private trailHeadDistance: number = 12000
@@ -74,6 +75,10 @@ export default class AnchorPlacementController extends BaseScriptComponent {
                 this.trailHead = false
               } else {
                 this.createAnchor("footprint", "" + this.pathCount , "")
+                this.currentTrailPrintCount++
+                if (this.currentTrailPrintCount > 6) {
+                  this.footprintArray[this.footprintArray.length - 6].enabled = false
+                }
               }
               this.previousPosition = currentPosition
             }
@@ -191,7 +196,9 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
       case "bubble":
         object = this.bubblePrefab.instantiate(this.getSceneObject())
-        object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,50,0)));
+        object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,0,0)));
+        object.getChild(0).getTransform().setLocalScale(new vec3(10,10,10));
+        print(object.getChild(0).getTransform().getLocalScale())
         this.bubbleArray.push(object)
         var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
         this.pathArray.push(path)
@@ -329,6 +336,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   // TODO: put a circle around player to indicate they have started creation
   private startCreator() {
     this.disableEverything()
+    this.currentTrailPrintCount = 0
     this.pathCount += 1
     this.pathCountText.text = "path: " + this.pathCount
     this.store.putInt("pathCount", this.pathCount)
