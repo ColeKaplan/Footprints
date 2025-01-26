@@ -3895,21 +3895,6 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
-- !<SceneObject/3b8d51d3-f3a1-4af2-9f94-49cf63a2ab27>
-  PrefabRemaps:
-    []
-  Name: voiceRecognition
-  Enabled: true
-  Layers: 1
-  LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    hasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 6e2097e4-c769-456f-801e-9285a66d66cf
 - !<ScriptComponent/3bb57980-131b-4baf-851e-391c60970a75>
   PrefabRemaps:
     []
@@ -3943,6 +3928,21 @@
     []
   Components:
     - !<own> ccd4982c-8d88-4450-acd4-704a826c9f69
+- !<SceneObject/3c364a70-1f89-4873-a8c4-d8b91a947d39>
+  PrefabRemaps:
+    []
+  Name: voiceRecognition
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 95dcba69-d010-41c9-b064-86cdab826cf8
 - !<RenderMeshVisual/3ce0edb2-6916-4124-a47a-c94e3b9cab61>
   PrefabRemaps:
     []
@@ -6711,22 +6711,6 @@
   BlendNormals: false
   BlendShapes:
     {}
-- !<ScriptComponent/6e2097e4-c769-456f-801e-9285a66d66cf>
-  PrefabRemaps:
-    []
-  Name: voiceRecognition
-  Enabled: true
-  ScriptAsset: !<reference> 65852cf3-d700-4c5b-9dc4-e855348127cb
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      AnchorController: !<MappingBased.AnchorPlacementController> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
-  ScriptTypes:
-    "":
-      {}
 - !<ScriptComponent/6e614c30-2b6d-4b3c-a625-ebfa1e1bf580>
   PrefabRemaps:
     []
@@ -9378,6 +9362,22 @@
   ScriptTypes:
     "":
       {}
+- !<ScriptComponent/95dcba69-d010-41c9-b064-86cdab826cf8>
+  PrefabRemaps:
+    []
+  Name: voiceRecognition
+  Enabled: true
+  ScriptAsset: !<reference> 65852cf3-d700-4c5b-9dc4-e855348127cb
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      AnchorController: !<MappingBased.AnchorPlacementController> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/95ed011f-c8a5-469d-8a2b-cd95475e2dc9>
   PrefabRemaps:
     []
@@ -10893,7 +10893,7 @@
     scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   Children:
-    - !<own> 3b8d51d3-f3a1-4af2-9f94-49cf63a2ab27
+    - !<own> 3c364a70-1f89-4873-a8c4-d8b91a947d39
   Components:
     []
 - !<SceneObject/acede8c7-aa51-4bd1-b85f-732bd8508449>
@@ -14999,7 +14999,7 @@
       creator: !<MappingBased.PinchButton> bcc3891e-d4cd-4e89-a053-46da4f0a3628
       explorer: !<MappingBased.PinchButton> 67278f3c-ecad-4df6-a533-e8061d6cd9b1
       creatorScript: !<MappingBased.AnchorPlacementController> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
-      voiceRecognition: !<MappingBased.voiceRecognition> 6e2097e4-c769-456f-801e-9285a66d66cf
+      voiceRecognition: !<MappingBased.voiceRecognition> 95dcba69-d010-41c9-b064-86cdab826cf8
       userModeText: !<reference.Text> f3611df0-8436-4cd4-92b0-77c80741e278
       bubbleToggle: !<MappingBased.PinchButton> 0a4a34e4-d505-4555-aad5-c04689f4ca34
       bubbleToggleText: !<reference.Text> f0e17aa2-0330-435e-9716-7ac48019bf41

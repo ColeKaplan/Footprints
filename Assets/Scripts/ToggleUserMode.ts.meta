@@ -42,9 +42,9 @@
       undefined: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       creator: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       explorer: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      voiceRecognition: !<MappingBased.voiceRecognition> 00000000-0000-0000-0000-000000000000
       bubbleToggle: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       bubbleToggleText: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      voiceRecognition: !<MappingBased.voiceRecognition> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
