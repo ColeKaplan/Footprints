@@ -11,7 +11,7 @@ import NativeLogger from '../SpectaclesInteractionKit/Utils/NativeLogger';
 
 interface Object_Path {
   sceneObject : SceneObject
-  path_id : string
+  path_id : string 
 }
 
 @component
@@ -80,6 +80,10 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
             else if ( this.mode == 2) {
               this.showNearbyExplorer();
+              this.previousPosition = currentPosition
+            
+            } else if ( this.mode == 0) {
+              this.startUndefined();
               this.previousPosition = currentPosition
             }
           
@@ -350,7 +354,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   private startUndefined() {
     for (var footprint of this.footprintArray) {
-      if ((footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition())) < 700) {
+      if ((footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition())) < this.footprintDistance) {
         footprint.enabled = true
       }
       else {footprint.enabled = false}
