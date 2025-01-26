@@ -1,27 +1,33 @@
-- !<AssetImportMetadata/1a2a52fc-6861-4a10-8eb5-11ac721a089f>
+- !<AssetImportMetadata/7e8d90f3-3f7e-45d4-8a66-fd91ebc1f110>
   ImportedAssetIds:
-    ObjectPrefab: !<reference> 41883c03-0881-415f-9a66-33f054c048da
+    ObjectPrefab: !<reference> ca39b213-7a67-4606-b973-89ef519d1324
   ImporterName: ObjectPrefabImporter
-  PrimaryAsset: !<reference> 41883c03-0881-415f-9a66-33f054c048da
+  PrimaryAsset: !<reference> ca39b213-7a67-4606-b973-89ef519d1324
   PackageType: NotAPackage
   PackagePolicy: CannotBeUnpacked
   ExtraData:
     {}
   AssetDataMap:
-    ObjectPrefab: !<own> 0ad29446-a880-408d-9daa-83298bd7c473
+    ObjectPrefab: !<own> 6e6f572b-332c-414e-8c6b-40db76fd8f8a
   DependentFiles:
     []
-  ImporterSettings: !<AssetImporterSettings/0d27a587-8690-476b-a663-0344c8704931>
+  ImporterSettings: !<AssetImporterSettings/4b464b95-e5dc-47f1-a473-6eee25697068>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<ObjectPrefabAssetData/0ad29446-a880-408d-9daa-83298bd7c473>
+- !<ObjectPrefab/60b508d9-3fb3-4621-acf2-7e056b0a1cf9>
+  PackagePath: ""
+  objects:
+    - !<own> 81d6c76b-b3fc-44bc-a6ac-aafe404180b3
+  LazyLoading: false
+  RetainAssets: true
+- !<ObjectPrefabAssetData/6e6f572b-332c-414e-8c6b-40db76fd8f8a>
   SourceRemaps:
-    - 27ca67aa-c5b1-4c5e-943f-34225f16cd63: a16a6437-2907-4b4b-8066-1dc22e7640df
-    - 41883c03-0881-415f-9a66-33f054c048da: 7b7d2489-a5c5-4635-a32e-05bec3e36c8d
-    - bff215a1-18d1-4ae6-a1d5-44d3ce801cc7: 56b66c1f-f7b6-4bf4-a5d7-fd89ea1e3990
-    - d33ede09-f965-4426-8a56-0eaa61c71048: 36bf83e1-548c-491a-8086-8aed67e73654
-  SourceState: !<own> 7b7d2489-a5c5-4635-a32e-05bec3e36c8d
-- !<SceneObject/36bf83e1-548c-491a-8086-8aed67e73654>
+    - 0252646f-7c7f-4e06-bb86-0813d8f4d958: b5ca0b91-b044-4f8a-969a-c8337ece4d08
+    - 8b653e8e-5c9f-4d30-950b-4d8e3c481571: d0a762a4-5d2f-4f07-8e70-fa13a7423481
+    - 96b3dffc-599a-408a-9567-4e40ada41dca: 81d6c76b-b3fc-44bc-a6ac-aafe404180b3
+    - ca39b213-7a67-4606-b973-89ef519d1324: 60b508d9-3fb3-4621-acf2-7e056b0a1cf9
+  SourceState: !<own> 60b508d9-3fb3-4621-acf2-7e056b0a1cf9
+- !<SceneObject/81d6c76b-b3fc-44bc-a6ac-aafe404180b3>
   PrefabRemaps:
     []
   Name: TrailHead
@@ -30,39 +36,13 @@
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
     rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    scale: {x: 1.000000, y: 2.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   Children:
-    - !<own> a16a6437-2907-4b4b-8066-1dc22e7640df
+    - !<own> b5ca0b91-b044-4f8a-969a-c8337ece4d08
   Components:
     []
-- !<RenderMeshVisual/56b66c1f-f7b6-4bf4-a5d7-fd89ea1e3990>
-  PrefabRemaps:
-    []
-  Name: Render Mesh Visual
-  Enabled: true
-  RenderOrder: 0
-  StretchMode: Stretch
-  VerticalAlignment: Center
-  HorizontalAlignment: Center
-  MeshShadowMode: None
-  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-  ShadowDensity: 1.000000
-  Materials:
-    - !<reference> 38f1bc78-58c3-434d-b04a-7198c5609f2e
-  Mesh: !<reference> 4c8420d1-44e2-4b47-b743-5177c55b234c
-  Skin: !<reference> 00000000-0000-0000-0000-000000000000
-  BlendShapesEnabled: true
-  BlendNormals: false
-  BlendShapes:
-    {}
-- !<ObjectPrefab/7b7d2489-a5c5-4635-a32e-05bec3e36c8d>
-  PackagePath: ""
-  objects:
-    - !<own> 36bf83e1-548c-491a-8086-8aed67e73654
-  LazyLoading: false
-  RetainAssets: true
-- !<SceneObject/a16a6437-2907-4b4b-8066-1dc22e7640df>
+- !<SceneObject/b5ca0b91-b044-4f8a-969a-c8337ece4d08>
   PrefabRemaps:
     []
   Name: Cylinder
@@ -76,4 +56,24 @@
   Children:
     []
   Components:
-    - !<own> 56b66c1f-f7b6-4bf4-a5d7-fd89ea1e3990
+    - !<own> d0a762a4-5d2f-4f07-8e70-fa13a7423481
+- !<RenderMeshVisual/d0a762a4-5d2f-4f07-8e70-fa13a7423481>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> dbacf074-68aa-4d8b-a3e1-8e561f6e6f31
+  Mesh: !<reference> 4c8420d1-44e2-4b47-b743-5177c55b234c
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}

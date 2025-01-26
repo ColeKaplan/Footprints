@@ -1,7 +1,6 @@
 // voice.ts
 
 import AnchorPlacementController from './AnchorPlacementController';
-import { mainStateMachine } from './mainStateMachine';
 
 @component
 export class MicController extends BaseScriptComponent {
@@ -10,7 +9,6 @@ export class MicController extends BaseScriptComponent {
 
     private vmlModule: VoiceMLModule = require("LensStudio:VoiceMLModule");
     private isListening: boolean = false;
-    private stateMachine: mainStateMachine = new mainStateMachine();
 
     private text : string = "";
     private textRecording : boolean = false
@@ -42,15 +40,12 @@ export class MicController extends BaseScriptComponent {
                 }
             }
             else if (transcription.includes("start trail")) {
-                this.stateMachine.handleCommand("start")
                 this.AnchorController.toggleMode(1)
             }
             else if (transcription.includes("join trail")) {
-                this.stateMachine.handleCommand("join")
                 this.AnchorController.toggleMode(2)
             }
             else if (transcription.includes("snap")) {
-                this.stateMachine.handleCommand("snap")
                 this.textRecording = true;
                 print("recording")
                 // TODO: start recording transcript

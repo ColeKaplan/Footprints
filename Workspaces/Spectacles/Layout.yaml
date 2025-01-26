@@ -6,9 +6,9 @@ dock:
           - items:
               - items:
                   - persistentName: Snap.Plugin.Gui.SceneHierarchyEditor
-                    Uuid: c1126813-4af6-4695-9c21-929dce8ecfec
-                  - persistentName: Snap.Plugin.Gui.SceneHierarchyEditor
                     Uuid: 2d9f2ce7-953e-4528-acb1-586507ab78d9
+                  - persistentName: Snap.Plugin.Gui.SceneHierarchyEditor
+                    Uuid: c1126813-4af6-4695-9c21-929dce8ecfec
                   - persistentName: Snap.Plugin.Gui.SpectaclesMonitorPanel
                     Uuid: 761d383d-c455-46cb-97eb-fc5607f9be8b
                 type: section
@@ -29,6 +29,8 @@ dock:
                     Uuid: 780d9164-e681-4de1-b586-5213ed5523b9
                   - persistentName: Snap.Plugin.Gui.SceneEditor
                     Uuid: 3cc626c1-9bfe-48da-822a-60a1388844e7
+                  - persistentName: Snap.Plugin.Gui.Graph.Editor
+                    Uuid: 69293038-da91-4f3d-b5a9-ef6c8a12e8a9
                 type: section
                 current: 0
               - items:
@@ -54,7 +56,7 @@ dock:
           - persistentName: Snap.Plugin.Gui.ScriptEditorPanel
             Uuid: 58a22b7f-276e-468d-8a31-761b80e25f05
         type: section
-        current: 0
+        current: 1
     sizes:
       - 977
       - 453

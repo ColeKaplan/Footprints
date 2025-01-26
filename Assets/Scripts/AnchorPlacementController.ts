@@ -58,6 +58,12 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   async onAwake() {
     // this.log.d("Awoke");
+    // print("printing text object here")
+    // var textObject = this.sampleTextPrefab.instantiate(this.getSceneObject())
+    // var textComponent = textObject.getComponent("Component.Text")
+    // if (textComponent){
+    //   textComponent.text = "updated"
+    // }
 
     this.createEvent('OnStartEvent').bind(() => {
       this.onStart();
@@ -185,9 +191,8 @@ export default class AnchorPlacementController extends BaseScriptComponent {
       case "trailhead":
         object = this.trailHeadPrefab.instantiate(this.getSceneObject())
         
-        // var cameraRotation = this.camera.getTransform().getWorldRotation()
-        // var YRotation = quat.fromEulerAngles(0, cameraRotation.toEulerAngles().y, 0)
-        // object.getChild(0).getTransform().setWorldRotation(YRotation)
+        object.getChild(0).getTransform().setLocalScale(new vec3(20,200,20));
+        object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,-75,0)));
 
         this.trailHeadArray.push(object)
         var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
@@ -196,16 +201,34 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
       case "bubble":
         object = this.bubblePrefab.instantiate(this.getSceneObject())
+        print("testing components")
+        print(object.getChild(0).getComponent("Component.Text"))
+        var bubbleComponent = object.getComponent("Component.Text")
         object.getChild(0).getTransform().setLocalPosition(object.getTransform().getLocalPosition().add(new vec3(0,0,0)));
         object.getChild(0).getTransform().setLocalScale(new vec3(10,10,10));
-        print(object.getChild(0).getTransform().getLocalScale())
         this.bubbleArray.push(object)
         var path : Object_Path = {sceneObject : object, path_id : anchorData[1]}
         this.pathArray.push(path)
 
-        print("created bubble")
+
+        
+        let textObj = object.getChild(0).getComponent("Component.Text") 
+        if (textObj){
+          textObj.text = anchorData[2]
+          textObj.horizontalOverflow = 3
+        }
+
+        // object.getChild(0).getComponent("Component.ScriptComponent").add(() => {
+        //   () => {
+
+        //   }
+        // });
+
+        
+
         object.enabled = true
         object.getChild(0).enabled = true
+
         break
     }
 
@@ -289,15 +312,12 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   // TODO: Only show footprints belonging to this trail
   private showNearbyExplorer() {
 
-    print("footprint array length: " + this.footprintArray.length)
     for (var footprint of this.footprintArray) {
       var distance = (footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition()))
       // print("distance is: " + distance)
       if (distance < this.footprintDistance) {
-        print("footprint: " + footprint.uniqueIdentifier + " is in the distance. With distance " + distance)
         const objectPath = this.pathArray.find(item => item.sceneObject === footprint);
         if (objectPath && objectPath.path_id == this.trail) {
-          print("footprint: " + footprint.uniqueIdentifier + " is in our trail")
           footprint.enabled = true
         } else {
           footprint.enabled = false
@@ -339,6 +359,8 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     this.currentTrailPrintCount = 0
     this.pathCount += 1
     this.pathCountText.text = "path: " + this.pathCount
+    this.trail = "" + this.pathCount
+    this.trailText.text = "trail: " + this.trail
     this.store.putInt("pathCount", this.pathCount)
     this.trailHead = true
   }
@@ -379,6 +401,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   private startUndefined() {
     this.trail = "-1"
+    this.trailText.text = "trail: " + this.trail
 
     for (var footprint of this.footprintArray) {
       if ((footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition())) < this.footprintDistance) {

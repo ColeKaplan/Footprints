@@ -1,10 +1,10 @@
-- !<ObjectPrefab/41883c03-0881-415f-9a66-33f054c048da>
+- !<ObjectPrefab/ca39b213-7a67-4606-b973-89ef519d1324>
   PackagePath: ""
   objects:
-    - !<own> d33ede09-f965-4426-8a56-0eaa61c71048
+    - !<own> 96b3dffc-599a-408a-9567-4e40ada41dca
   LazyLoading: false
   RetainAssets: true
-- !<SceneObject/27ca67aa-c5b1-4c5e-943f-34225f16cd63>
+- !<SceneObject/0252646f-7c7f-4e06-bb86-0813d8f4d958>
   PrefabRemaps:
     []
   Name: Cylinder
@@ -18,8 +18,8 @@
   Children:
     []
   Components:
-    - !<own> bff215a1-18d1-4ae6-a1d5-44d3ce801cc7
-- !<RenderMeshVisual/bff215a1-18d1-4ae6-a1d5-44d3ce801cc7>
+    - !<own> 8b653e8e-5c9f-4d30-950b-4d8e3c481571
+- !<RenderMeshVisual/8b653e8e-5c9f-4d30-950b-4d8e3c481571>
   PrefabRemaps:
     []
   Name: Render Mesh Visual
@@ -32,14 +32,14 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> 38f1bc78-58c3-434d-b04a-7198c5609f2e
+    - !<reference> dbacf074-68aa-4d8b-a3e1-8e561f6e6f31
   Mesh: !<reference> 4c8420d1-44e2-4b47-b743-5177c55b234c
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
   BlendNormals: false
   BlendShapes:
     {}
-- !<SceneObject/d33ede09-f965-4426-8a56-0eaa61c71048>
+- !<SceneObject/96b3dffc-599a-408a-9567-4e40ada41dca>
   PrefabRemaps:
     []
   Name: TrailHead
@@ -48,9 +48,9 @@
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
     rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    scale: {x: 1.000000, y: 2.000000, z: 1.000000}
     hasSegmentScaleCompensation: false
   Children:
-    - !<own> 27ca67aa-c5b1-4c5e-943f-34225f16cd63
+    - !<own> 0252646f-7c7f-4e06-bb86-0813d8f4d958
   Components:
     []
