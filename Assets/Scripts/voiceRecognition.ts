@@ -53,8 +53,10 @@ export class MicController extends BaseScriptComponent {
                 // Optional: use GPT to perform grammatical correction
                 // Send to a text object that is connected to the bubble
                 // 
-            } else if (this.containsAnyOf(transcription, ["end trail", "in trail", "entrail", "into trail"])) {
+            } else if (this.containsAnyOf(transcription, ["end trail", "in trail", "entrail", "into trail", "in the trail"])) {
                 this.AnchorController.toggleMode(0)
+            } else if (this.containsAnyOf(transcription, ["clear", "clean"])) {
+                this.AnchorController.clear()
             }
         }
     }
@@ -91,5 +93,6 @@ export class MicController extends BaseScriptComponent {
             this.text = ""
         }
     }
+
 
 }

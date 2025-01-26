@@ -29,7 +29,6 @@
     anchorModule: false
     bubblePrefab: false
     camera: false
-    deleteButton: false
     footprintPrefab: false
     modeText: false
     pathCountText: false
@@ -41,7 +40,6 @@
   DefaultScriptInputs:
     - anchorModule: !<MappingBased.AnchorModule> 00000000-0000-0000-0000-000000000000
       camera: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      deleteButton: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       modeText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       pathCountText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       trailText: !<reference.Text> 00000000-0000-0000-0000-000000000000
@@ -54,7 +52,6 @@
       {}
   InputLines:
     - // @input AnchorModule anchorModule
-    - // @input PinchButton deleteButton
     - // @input Component.Text modeText
     - // @input Component.Text pathCountText
     - // @input Component.Text trailText

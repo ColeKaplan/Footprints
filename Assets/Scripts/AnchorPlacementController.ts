@@ -19,7 +19,7 @@ interface Object_Path {
 @component
 export default class AnchorPlacementController extends BaseScriptComponent {
   @input anchorModule: AnchorModule;
-  @input deleteButton: PinchButton; 
+  // @input deleteButton: PinchButton; 
   @input modeText: Text;
   @input pathCountText: Text;
   @input trailText: Text;
@@ -86,7 +86,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
               } else {
                 this.createAnchor("footprint", "" + this.pathCount , "")
                 this.currentTrailPrintCount++
-                if (this.currentTrailPrintCount > 6) {
+                if (this.footprintArray.length > 6) {
                   this.footprintArray[this.footprintArray.length - 6].enabled = false
                 }
               }
@@ -106,14 +106,14 @@ export default class AnchorPlacementController extends BaseScriptComponent {
   }
 
   async onStart() {
-    this.modeText.text = "undefined"
+    this.modeText.text = "Searching"
     this.startUndefined()
 
     this.pathCount = this.store.getInt("pathCount")
-    this.pathCountText.text = "pathCount: " + this.pathCount
-    this.deleteButton.onButtonPinched.add(() => {
-      this.deleteAnchors();
-    });
+    this.pathCountText.text = "Total Trails: " + this.pathCount
+    // this.deleteButton.onButtonPinched.add(() => {
+    //   this.deleteAnchors();
+    // });
 
 
 
@@ -285,6 +285,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
     this.pathArray = []
     this.pathCount = 0
+    this.pathCountText.text = "Total Trails: "
 
     this.store.clear()
   }
@@ -363,9 +364,9 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     this.disableEverything()
     this.currentTrailPrintCount = 0
     this.pathCount += 1
-    this.pathCountText.text = "path: " + this.pathCount
+    this.pathCountText.text = "Total Trails: " + this.pathCount
     this.trail = "" + this.pathCount
-    this.trailText.text = "trail: " + this.trail
+    this.trailText.text = "Current Trail: " + this.trail
     this.store.putInt("pathCount", this.pathCount)
     this.trailHead = true
   }
@@ -406,7 +407,7 @@ export default class AnchorPlacementController extends BaseScriptComponent {
 
   private startUndefined() {
     this.trail = "-1"
-    this.trailText.text = "trail: " + this.trail
+    this.trailText.text = "Current Trail: " + this.trail
 
     for (var footprint of this.footprintArray) {
       if ((footprint.getTransform().getLocalPosition().distance(this.camera.getTransform().getLocalPosition())) < this.footprintDistance) {
@@ -451,30 +452,36 @@ export default class AnchorPlacementController extends BaseScriptComponent {
     
     if (this.mode == 0 && mode == 1) {
       this.mode = 1
-      this.modeText.text = "creator"
+      this.modeText.text = "Creator"
       this.startCreator()
     } else if (this.mode == 0 && mode == 2) {
       var trail = this.getNearestTrail()
       if (trail !== "-1") {
         this.mode = 2
-        this.modeText.text = "explorer"
+        this.modeText.text = "Explorer"
         this.trail = trail
-        this.trailText.text = "trail: " + trail
+        this.trailText.text = "Current Trail: " + trail
         this.startExplorer()
       }
     } else if (this.mode == 1 && mode == 0) {
       this.startUndefined()
       this.mode = 0
-      this.modeText.text = "undefined"
+      this.modeText.text = "Searching"
     } else if (this.mode == 2 && mode == 0) {
       this.startUndefined()
       this.mode = 0
-      this.modeText.text = "undefined"
+      this.modeText.text = "Searching"
     }
   }
 
   public sendRecording(text : string) {
     this.createAnchor("bubble", "" + this.trail , text)
+  }
+
+  public clear() {
+    if (this.mode == 0) {
+      this.deleteAnchors()
+    }
   }
 
   // Does not work, TODO: Find y value of floor to place footprints on

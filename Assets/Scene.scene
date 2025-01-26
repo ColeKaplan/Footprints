@@ -2523,9 +2523,9 @@
       {}
 - !<SceneObject/27bb5a25-40d6-44ac-981a-b39c8949a961>
   PrefabRemaps:
-    - 27bb5a25-40d6-44ac-981a-b39c8949a961: 96b3dffc-599a-408a-9567-4e40ada41dca
-    - 94d44bfd-4a27-485f-be78-0120e79d0e4a: 8b653e8e-5c9f-4d30-950b-4d8e3c481571
-    - cecdc7b4-d3f8-4d9c-8f99-412de26c42b4: 0252646f-7c7f-4e06-bb86-0813d8f4d958
+    - 27bb5a25-40d6-44ac-981a-b39c8949a961: 6c35d5d5-589f-4516-893c-c76c7337fba7
+    - 94d44bfd-4a27-485f-be78-0120e79d0e4a: d230b5e8-798a-485a-a1e1-2cd7d6ef87c9
+    - cecdc7b4-d3f8-4d9c-8f99-412de26c42b4: 8b9b52ae-45ab-4708-b859-3bd25051b1a1
   Name: TrailHead
   Enabled: false
   Layers: 1
@@ -4214,7 +4214,7 @@
   PrefabRemaps:
     []
   Name: Cap_Delete
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 5.000000, y: 14.500000, z: -50.000000}
@@ -5619,7 +5619,7 @@
   PrefabRemaps:
     []
   Name: Bubble Start
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 5.000000, y: 10.000000, z: -50.000000}
@@ -7065,13 +7065,12 @@
   ScriptInputs:
     "":
       anchorModule: !<MappingBased.AnchorModule> c4156b38-9fb4-4837-967e-66a3c710a8f7
-      deleteButton: !<MappingBased.PinchButton> ea0f6a33-95bd-4f76-9ce9-515bd2a14667
       modeText: !<reference.Text> 74e81495-241b-485c-863b-53ee1c342b65
       pathCountText: !<reference.Text> 3b6a9b0f-ccea-4bf0-9f13-c964471041e5
       trailText: !<reference.Text> ccd4982c-8d88-4450-acd4-704a826c9f69
       camera: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
       footprintPrefab: !<reference.ObjectPrefab> 76421931-9cfd-435a-93f5-87f56d3875a2
-      trailHeadPrefab: !<reference.ObjectPrefab> ca39b213-7a67-4606-b973-89ef519d1324
+      trailHeadPrefab: !<reference.ObjectPrefab> 29647314-9d37-4986-bdb9-feae24bd4d4d
       bubblePrefab: !<reference.ObjectPrefab> 14838a6c-1427-4766-8f46-b7da49f9a434
       toggleAudio: !<reference.AudioComponent> b7d5345f-af10-4be2-b485-5acf96e1a3de
   ScriptTypes:
@@ -7706,7 +7705,7 @@
   PrefabRemaps:
     []
   Name: ToggleUserMode
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -9337,7 +9336,7 @@
   ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   ShadowDensity: 1.000000
   Materials:
-    - !<reference> dbacf074-68aa-4d8b-a3e1-8e561f6e6f31
+    - !<reference> fce2a2ab-a718-46b4-be9e-72ffc3f76b3d
   Mesh: !<reference> 4c8420d1-44e2-4b47-b743-5177c55b234c
   Skin: !<reference> 00000000-0000-0000-0000-000000000000
   BlendShapesEnabled: true
@@ -9563,7 +9562,7 @@
   PrefabRemaps:
     []
   Name: 1
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: -10.000000, y: 12.250000, z: -50.000000}
@@ -10974,7 +10973,7 @@
   PrefabRemaps:
     []
   Name: 2
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: -10.000000, y: 10.000000, z: -50.000000}
@@ -12289,7 +12288,7 @@
   PrefabRemaps:
     []
   Name: 0
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform:
     position: {x: -10.000000, y: 14.500000, z: -50.000000}
