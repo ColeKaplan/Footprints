@@ -1,0 +1,41 @@
+- !<AssetImportMetadata/bb4e3f15-f437-4a3a-83db-10dca88301c7>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> bff703b2-f56a-4181-a795-7dfbbec3bc78
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> bff703b2-f56a-4181-a795-7dfbbec3bc78
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> bbee183e-826a-4f9c-aef0-dd3b619ef24f
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/31615b26-25b2-4ab2-812e-f5b5a6e5dc6e>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/bbee183e-826a-4f9c-aef0-dd3b619ef24f>
+  SvgIcon: ""
+  Description: ""
+  InternalVersion: 0
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    pinchButtonComponent: false
+    storedPrefab: false
+  ScriptTypesHidden:
+    {}
+  DefaultScriptInputs:
+    - storedPrefab: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      pinchButtonComponent: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input Asset.ObjectPrefab storedPrefab
+    - // @input PinchButton pinchButtonComponent

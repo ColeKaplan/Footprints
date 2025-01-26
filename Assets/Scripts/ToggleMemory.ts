@@ -15,7 +15,6 @@ export class ToggleMemory extends BaseScriptComponent {
     onAwake() {
         this.createEvent('OnStartEvent').bind(() => {
             this.uiObject.enabled = this.initialUiObjectState;
-            print("initial")
             this.onStart();
           });
     }

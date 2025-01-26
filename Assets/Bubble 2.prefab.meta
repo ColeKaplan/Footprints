@@ -1,0 +1,221 @@
+- !<AssetImportMetadata/8b8fce60-0faa-407a-aff2-e1ee0cbeeace>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> cd40cb72-314c-4265-9633-7f7eb95a3644
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> cd40cb72-314c-4265-9633-7f7eb95a3644
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 0c339a76-beb7-4cc5-aa96-ae4f004ae6c4
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings/136a9066-ac03-4a6e-b0ac-ebdb49d4702c>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptComponent/06507620-75f8-46e2-a8bd-c7139d601754>
+  PrefabRemaps:
+    []
+  Name: PinchButton
+  Enabled: true
+  ScriptAsset: !<reference> e66e07b4-5f11-478e-be75-73f3c76bdd61
+  ScriptInputsDefault:
+    onButtonPinchedFunctionNames: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      editEventCallbacks: true
+      customFunctionForOnButtonPinched: !<reference.ScriptComponent> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
+      onButtonPinchedFunctionNames: !<string[]>
+        []
+  ScriptTypes:
+    "":
+      {}
+- !<ObjectPrefab/09b58ab1-e1f2-429f-a796-1c73f4f58f4a>
+  PackagePath: ""
+  objects:
+    - !<own> d630d0ce-38e4-4f41-b781-b04dee41387e
+  LazyLoading: false
+  RetainAssets: true
+- !<ObjectPrefabAssetData/0c339a76-beb7-4cc5-aa96-ae4f004ae6c4>
+  SourceRemaps:
+    - 3a262824-d4ea-4a2b-abc3-53562c2202cb: c75b1ad3-55d7-4c02-9990-1339c03d81c3
+    - 3f3f67a5-d2e1-4738-9110-6152bc0735b9: 553ef981-fcc8-4c14-a1c1-47bbeaa878bd
+    - 7c9c069e-9d5e-401c-ac43-f0c006d18362: 20380b2a-e775-4411-8798-78c06ef9f134
+    - 963db1f3-451b-4c44-ae74-841ce3f2c127: d630d0ce-38e4-4f41-b781-b04dee41387e
+    - a967bb12-4e5a-4e50-abbf-6a22e12449b6: 47f20ccd-33e6-498d-88a5-657738c398e0
+    - b6444ae8-15a9-4f4d-868b-538e4f7148ad: c971ad5b-13b6-44a5-9c21-cdf9e37a10e3
+    - cd40cb72-314c-4265-9633-7f7eb95a3644: 09b58ab1-e1f2-429f-a796-1c73f4f58f4a
+    - ef4f1c9f-5cd2-4ba9-ac1d-14aaa5417caf: 06507620-75f8-46e2-a8bd-c7139d601754
+    - f1a538e8-a7ca-444b-8838-f40c3a78e275: 7a92cd4d-6305-46d1-99fe-aea0916580ae
+  SourceState: !<own> 09b58ab1-e1f2-429f-a796-1c73f4f58f4a
+- !<ColliderComponent/20380b2a-e775-4411-8798-78c06ef9f134>
+  PrefabRemaps:
+    []
+  Name: Physics Collider
+  Enabled: true
+  Shape: !<Box>
+    FitVisual: true
+    Size: {x: 15.000000, y: 15.000000, z: 15.000000}
+  Matter: !<reference> 00000000-0000-0000-0000-000000000000
+  Filter: !<reference> 00000000-0000-0000-0000-000000000000
+  OverlapFilter: !<reference> 00000000-0000-0000-0000-000000000000
+  WorldSettings: !<reference> 00000000-0000-0000-0000-000000000000
+  EnableSmoothing: false
+  PositionTension: 30.000000
+  RotationTension: 30.000000
+  ForceCompound: false
+  Intangible: false
+  ShowCollider: false
+- !<ScriptComponent/47f20ccd-33e6-498d-88a5-657738c398e0>
+  PrefabRemaps:
+    []
+  Name: DeployOnPop
+  Enabled: true
+  ScriptAsset: !<reference> bff703b2-f56a-4181-a795-7dfbbec3bc78
+  ScriptInputsDefault:
+    storedPrefab: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      storedPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      pinchButtonComponent: !<MappingBased.PinchButton> 06507620-75f8-46e2-a8bd-c7139d601754
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/553ef981-fcc8-4c14-a1c1-47bbeaa878bd>
+  PrefabRemaps:
+    []
+  Name: InteractableAudioFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c57fd4b4-b5d5-4eae-b45c-2f62c57e2bc3
+  ScriptInputsDefault:
+    triggerEndAudioTrack: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      hoverAudioTrack: !<reference.AudioTrackAsset> d531ff43-b8df-4401-839c-645878c5bd2e
+      triggerStartAudioTrack: !<reference.AudioTrackAsset> 7b58983a-a4ca-417f-8171-2a074e30c6d1
+      triggerEndAudioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/7a92cd4d-6305-46d1-99fe-aea0916580ae>
+  PrefabRemaps:
+    []
+  Name: Interactable
+  Enabled: true
+  ScriptAsset: !<reference> c973d211-281b-4016-ae39-e12f3317bcae
+  ScriptInputsDefault:
+    enableInstantDrag: true
+    allowMultipleInteractors: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      targetingMode: !<float> 7.000000
+      enableInstantDrag: false
+      allowMultipleInteractors: true
+  ScriptTypes:
+    "":
+      {}
+- !<RenderMeshVisual/c75b1ad3-55d7-4c02-9990-1339c03d81c3>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 9b3f6550-083d-43ed-bafd-404cb0d6f508
+  Mesh: !<reference> 89d4fe22-573b-42e1-bc8e-620b4df6b699
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    Pinch: 0.000000
+    Z depth: 0.000000
+- !<ScriptComponent/c971ad5b-13b6-44a5-9c21-cdf9e37a10e3>
+  PrefabRemaps:
+    []
+  Name: ButtonFeedback
+  Enabled: true
+  ScriptAsset: !<reference> c160a957-4b35-4342-9927-7fd2766d231d
+  ScriptInputsDefault:
+    buttonType: true
+    useGlowMesh: true
+    glowRenderMeshVisual: true
+    maxBlendShapeWeight: true
+    meshBlendShapeName: true
+    glowBlendShapeName: true
+    glowIdleMaterial: true
+    glowHoverMaterial: true
+    glowPinchedMaterial: true
+    meshToggledPinchedMaterial: true
+    meshToggledHoverMaterial: true
+    meshToggledIdleMaterial: true
+    meshStatePinchedMaterial: true
+    meshStateHoverMaterial: true
+    meshStateIdleMaterial: true
+    persistentPinchedState: true
+    defaultIcon: true
+    onIcon: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      buttonType: 0
+      renderMeshVisual: !<reference.RenderMeshVisual> c75b1ad3-55d7-4c02-9990-1339c03d81c3
+      useGlowMesh: false
+      glowRenderMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
+      maxBlendShapeWeight: !<float> 1.000000
+      meshBlendShapeName: Pinch
+      meshIdleMaterial: !<reference.Material> 9b3f6550-083d-43ed-bafd-404cb0d6f508
+      meshHoverMaterial: !<reference.Material> 43cbc95f-b089-4e59-a639-ca3950ebd1b5
+      meshPinchedMaterial: !<reference.Material> 43cbc95f-b089-4e59-a639-ca3950ebd1b5
+      glowBlendShapeName: Pinch
+      glowIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      glowPinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledPinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshToggledIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStatePinchedMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateHoverMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      meshStateIdleMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      persistentPinchedState: false
+      defaultIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      onIcon: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/d630d0ce-38e4-4f41-b781-b04dee41387e>
+  PrefabRemaps:
+    []
+  Name: Bubble
+  Enabled: true
+  Layers: 1
+  LocalTransform:
+    position: {x: 0.000000, y: 0.000000, z: -61.714523}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 10.000000, y: 10.000000, z: 10.000000}
+    hasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c75b1ad3-55d7-4c02-9990-1339c03d81c3
+    - !<own> 7a92cd4d-6305-46d1-99fe-aea0916580ae
+    - !<own> 06507620-75f8-46e2-a8bd-c7139d601754
+    - !<own> 20380b2a-e775-4411-8798-78c06ef9f134
+    - !<own> 553ef981-fcc8-4c14-a1c1-47bbeaa878bd
+    - !<own> c971ad5b-13b6-44a5-9c21-cdf9e37a10e3
+    - !<own> 47f20ccd-33e6-498d-88a5-657738c398e0

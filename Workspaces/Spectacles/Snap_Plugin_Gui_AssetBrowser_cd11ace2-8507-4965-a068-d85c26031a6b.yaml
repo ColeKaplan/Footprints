@@ -1,14 +1,23 @@
 CollapsedEntities:
   type: stringset
   value:
-    size: 720
+    size: 727
     values:
+      - Audio
+      - Audio/bubblepop.mp3
       - Base.png
       - Behavior.js
+      - Bubble.prefab
       - Echopark.hdr
       - Empty.ss_graph
       - Ground Segmentation
-      - Kitty
+      - Images
+      - Images/frown dark.png
+      - Images/frown.png
+      - Images/gift dark.png
+      - Images/gift.png
+      - Images/smile dark.png
+      - Images/smile.png
       - Kitty/Kitty__ADD_TO_SCENE.prefab
       - Kitty/Resources
       - Kitty/Resources/3D Objects
@@ -39,12 +48,12 @@ CollapsedEntities:
       - Kitty/Resources/Textures/cat_normal_02.pvr
       - Kitty/Resources/Textures/cat_param_02.pvr
       - PBR 1.mat
+      - PBR 3.mat
       - Scene.scene
-      - Scripts
       - Scripts/AnchorPlacementController.ts
+      - Scripts/DeployOnPop.ts
       - Scripts/MovementHandler.ts
       - Scripts/ToggleMemory.ts
-      - Smile_Image.png
       - Spatial Anchors
       - Spatial Anchors/AlignmentProvider.ts
       - Spatial Anchors/Anchor.ts
@@ -71,7 +80,7 @@ CollapsedEntities:
       - Spatial Anchors/Util/debounce.ts
       - Spatial Anchors/WorldAnchor.ts
       - Spatial Anchors/package.native
-      - SpectaclesInteractionKit/Assets/Audio
+      - SpectaclesInteractionKit
       - SpectaclesInteractionKit/Assets/Audio/HoverAudioTrack.wav
       - SpectaclesInteractionKit/Assets/Audio/TriggerEndAudioTrack.wav
       - SpectaclesInteractionKit/Assets/Audio/TriggerStartAudioTrack.wav
@@ -222,6 +231,7 @@ CollapsedEntities:
       - SpectaclesInteractionKit/Assets/Textures/SIKContainerExampleImage.jpg
       - SpectaclesInteractionKit/Assets/Textures/SIKLogo.png
       - SpectaclesInteractionKit/Assets/Textures/ScrollBarRectangle.png
+      - SpectaclesInteractionKit/Components
       - SpectaclesInteractionKit/Components/Helpers/ButtonFeedback.ts
       - SpectaclesInteractionKit/Components/Helpers/CapsuleMeshCustomizer.ts
       - SpectaclesInteractionKit/Components/Helpers/InteractableAudioFeedback.ts
@@ -719,8 +729,5 @@ CollapsedEntities:
       - footp.obj/Meshes/Object__0_1
       - footp.obj/Meshes/Object__0_2
       - footp.obj/footp
-      - free-gift-icon-download-in-svg-png-gif-file-formats--present-box-surprise-user-interface-pack-icons-1502346.png
-      - frown.png
       - simple_pbr.ss_graph
-      - smile.png
   options: 4
