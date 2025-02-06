@@ -1,6 +1,5 @@
-MIT Reality Hack    
-Readme file for Footprints Project
-
+# MIT Reality Hack 2025    
+Winner of Snap Spectacles Track
 
 We were inspired by the seamless and unburdensome AR technology of the Snap Spectacles along with their recent addition of global Anchor Points to create an experience where people can leave trails that guide others through the world just as they experienced it
 
