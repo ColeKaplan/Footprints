@@ -30,6 +30,7 @@
     bubbleAudio: false
     bubblePrefab: false
     camera: false
+    deleteButton: false
     footprintPrefab: false
     modeText: false
     pathCountText: false
@@ -49,11 +50,13 @@
       bubblePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
       toggleAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
       bubbleAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      deleteButton: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input AnchorModule anchorModule
+    - // @input PinchButton deleteButton
     - // @input Component.Text modeText
     - // @input Component.Text pathCountText
     - // @input Component.Text trailText
