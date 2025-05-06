@@ -39,11 +39,11 @@
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    - anchorModule: !<MappingBased.AnchorModule> 00000000-0000-0000-0000-000000000000
-      camera: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+    - anchorModule: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       modeText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       pathCountText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       trailText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      camera: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       footprintPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
       trailHeadPrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
       bubblePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
@@ -53,7 +53,7 @@
     -
       {}
   InputLines:
-    - // @input AnchorModule anchorModule
+    - // @input AssignableType anchorModule
     - // @input Component.Text modeText
     - // @input Component.Text pathCountText
     - // @input Component.Text trailText
@@ -64,3 +64,6 @@
     - // @input Component.AudioComponent toggleAudio
     - // @input Component.AudioComponent bubbleAudio
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  SetupScript:
+    code: ""
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000

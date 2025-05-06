@@ -30,10 +30,13 @@
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    - AnchorController: !<MappingBased.AnchorPlacementController> 00000000-0000-0000-0000-000000000000
+    - AnchorController: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input AnchorPlacementController AnchorController
+    - // @input AssignableType AnchorController
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  SetupScript:
+    code: ""
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000

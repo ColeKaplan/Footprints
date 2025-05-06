@@ -3036,7 +3036,7 @@
     {}
   ScriptInputs:
     "":
-      rocketConfigurator: !<MappingBased.RocketConfigurator> a97c37a8-109a-4866-9e37-56d6c8a9c1f8
+      rocketConfigurator: !<MappingBased.AssignableType> a97c37a8-109a-4866-9e37-56d6c8a9c1f8
       objectPrefabs: !<reference.ObjectPrefab[]>
         - !<reference> 8104e815-4316-48be-ad1a-2021666f989f
         - !<reference> b9b3aff4-658d-4c76-ab3d-b479d4a722c8
@@ -3286,6 +3286,7 @@
       PlaybackSpeed: 1.000000
       Begin: 0.000000
       End: 400.000000
+      Offset: 0.000000
       Reversed: false
       Disabled: false
       BlendMode: Default
@@ -3298,6 +3299,7 @@
       PlaybackSpeed: 1.000000
       Begin: 0.000000
       End: 420.000000
+      Offset: 0.000000
       Reversed: false
       Disabled: false
       BlendMode: Default
@@ -3310,6 +3312,7 @@
       PlaybackSpeed: 1.000000
       Begin: 0.000000
       End: 360.000000
+      Offset: 0.000000
       Reversed: false
       Disabled: false
       BlendMode: Default
@@ -4248,6 +4251,7 @@
     LineSpacing: 1.000000
     CapitalizationOverride: None
     CapitilizationOverride: None
+  EnableBatching: false
   ShadowMode: None
 - !<SceneObject/6b8948bf-e1c5-4626-9164-fb0631b13322>
   PrefabRemaps:
@@ -9863,16 +9867,16 @@
     {}
   ScriptInputs:
     "":
-      slider: !<MappingBased.Slider> 83fdf92e-7285-4864-b7f7-b56573f0e2e8
+      slider: !<MappingBased.AssignableType> 83fdf92e-7285-4864-b7f7-b56573f0e2e8
       animationAButton: !<reference.SceneObject> a77c1eb1-9593-4438-87b1-ae63ecf14f5d
       animationBButton: !<reference.SceneObject> 6c6cb8b7-3a98-4d0b-aacc-d52cbec6726a
       animationCButton: !<reference.SceneObject> 4448e178-da1e-466c-832d-cb35015a7100
       launchButton: !<reference.SceneObject> 4eef3acd-6894-43d4-b6e6-bba4bc729457
-      rocketConf: !<MappingBased.RocketConfigurator> a97c37a8-109a-4866-9e37-56d6c8a9c1f8
+      rocketConf: !<MappingBased.AssignableType_1> a97c37a8-109a-4866-9e37-56d6c8a9c1f8
       launchSparks: !<reference.SceneObject> 6b8948bf-e1c5-4626-9164-fb0631b13322
       rocketAnimationPlayer: !<reference.AnimationPlayer> 4b15a9f7-2cc8-41c8-ba9e-c6c69e562721
       flightPathText: !<reference.Text> d2e60671-ae1e-419a-ac5e-3759a34df741
-      launchPlatformToggleButton: !<MappingBased.ToggleButton> 7b503393-b7d7-4fee-bebc-2e0a0a158c3e
+      launchPlatformToggleButton: !<MappingBased.AssignableType_2> 7b503393-b7d7-4fee-bebc-2e0a0a158c3e
       launchPlatform: !<reference.SceneObject> 10ef1717-a0b6-4e65-a7d9-44f91b6017cd
   ScriptTypes:
     "":

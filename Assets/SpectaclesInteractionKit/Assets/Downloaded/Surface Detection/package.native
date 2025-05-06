@@ -6,8 +6,18 @@
     patch: 0
     build: 25050505
     type: Unset
-  Description: "RIght Click and Unpack to use\n\nDrag prefab to scene\n\nSet Camera input and make sure your camera has Device Simulation Component\n\nEnable Interactive Environment in the Preview Panel\n"
+  Description: |
+    RIght Click and Unpack to use
+    
+    Drag prefab to scene
+    
+    Set Camera input and make sure your camera has Device Simulation Component
+    
+    Enable Interactive Environment in the Preview Panel
+
   SvgIcon: ""
+  SetupScript:
+    code: ""
   InternalVersion: 0
   VersionMajor: 1
   VersionMinor: 0
@@ -17,6 +27,7 @@
   ComponentUid: f6093983-0c86-4e1e-97b4-a24c036d37db
   CurrentVisibility: Editable
   MaxVisibility: Editable
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
   Instantiable: !<reference> 00000000-0000-0000-0000-000000000000
   AssetLibraryDependencyStructure: !<AssetLibraryDependencyStructure>
     Name: ""
@@ -28,4 +39,4 @@
       patch: 0
       build: 0
   coreVersion: 309
-  clientVersion: 13.3800001
+  clientVersion: 13.380000

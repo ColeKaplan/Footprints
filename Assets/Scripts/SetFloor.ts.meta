@@ -32,11 +32,14 @@
     {}
   DefaultScriptInputs:
     - camObj: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      anchorScript: !<MappingBased.AnchorPlacementController> 00000000-0000-0000-0000-000000000000
+      anchorScript: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input SceneObject camObj
-    - // @input AnchorPlacementController anchorScript
+    - // @input AssignableType anchorScript
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  SetupScript:
+    code: ""
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000

@@ -5,12 +5,16 @@
   PrimaryAsset: !<reference> ede79e05-2456-4fe6-895b-518ddb32ee0a
   PackageType: NotAPackage
   PackagePolicy: CannotBeUnpacked
-  AssetDataMap: {}
-  DependentFiles: []
-  ImporterSettings: !<AssetImporterSettings> {}
+  AssetDataMap:
+    {}
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
   CompressionSettings: !<SingleCompressionSettings>
     CompressorName: Performance
     CompressionSettings: !<TextureCompressionMipmapSettings>
       Level: Medium
       Mipmap: false
-  ExtraData: {}
+  ExtraData:
+    {}

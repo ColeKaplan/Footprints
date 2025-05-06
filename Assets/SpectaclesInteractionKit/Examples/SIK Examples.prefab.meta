@@ -681,6 +681,7 @@
     CapitalizationOverride: None
     CapitilizationOverride: None
   ShadowMode: None
+  EnableBatching: false
 - !<RenderMeshVisual/0fba4b93-4ed1-4ad0-9e9a-7abd2ea2040e>
   PrefabRemaps:
     []
@@ -3904,16 +3905,16 @@
     {}
   ScriptInputs:
     "":
-      slider: !<MappingBased.Slider> c5e4e2f6-6a4c-4c04-bfea-f04b7efc0e39
+      slider: !<MappingBased.AssignableType> c5e4e2f6-6a4c-4c04-bfea-f04b7efc0e39
       animationAButton: !<reference.SceneObject> bf9ec558-adb7-4b56-9b86-f3af03dd7d3d
       animationBButton: !<reference.SceneObject> cd03d3c5-a16f-46ed-8a51-1f377d8f3a92
       animationCButton: !<reference.SceneObject> 268d83d8-6f2e-443f-ba85-15477ea4c95c
       launchButton: !<reference.SceneObject> e00e14e8-dc62-4125-8226-d9548ccd872f
-      rocketConf: !<MappingBased.RocketConfigurator> ce2fde66-cadc-4d86-97a4-9c45b257d536
+      rocketConf: !<MappingBased.AssignableType_1> ce2fde66-cadc-4d86-97a4-9c45b257d536
       launchSparks: !<reference.SceneObject> 6015cc18-9414-4f3b-9aa4-4283771ed4d7
       rocketAnimationPlayer: !<reference.AnimationPlayer> 55406b2c-4d46-4d85-ba95-0c9e50a1493f
       flightPathText: !<reference.Text> e5dd6f7d-966d-4ed8-bfeb-f37db6b48658
-      launchPlatformToggleButton: !<MappingBased.ToggleButton> 1bf0d431-ce81-4485-891a-20241a415173
+      launchPlatformToggleButton: !<MappingBased.AssignableType_2> 1bf0d431-ce81-4485-891a-20241a415173
       launchPlatform: !<reference.SceneObject> b3172fd7-fb4c-4a27-b922-7deb73d24d68
   ScriptTypes:
     "":
@@ -4019,6 +4020,7 @@
       BlendMode: Default
       ScaleMode: Multiply
       PlaybackMode: Single
+      Offset: 0.000000
     - !<AnimationClip>
       AnimationAsset: !<reference> 7eba6aa9-4ba6-4792-9195-8471fd86103b
       Name: Base Layer Rocket 2
@@ -4031,6 +4033,7 @@
       BlendMode: Default
       ScaleMode: Multiply
       PlaybackMode: Single
+      Offset: 0.000000
     - !<AnimationClip>
       AnimationAsset: !<reference> af080ccb-4a5a-400a-aa23-a9f0d85ad3e1
       Name: Base Layer Rocket 3
@@ -4043,6 +4046,7 @@
       BlendMode: Default
       ScaleMode: Multiply
       PlaybackMode: Single
+      Offset: 0.000000
 - !<Text/55e72539-f87e-4da6-ae9d-697e297631fc>
   PrefabRemaps:
     []
@@ -8405,7 +8409,7 @@
     {}
   ScriptInputs:
     "":
-      rocketConfigurator: !<MappingBased.RocketConfigurator> ce2fde66-cadc-4d86-97a4-9c45b257d536
+      rocketConfigurator: !<MappingBased.AssignableType> ce2fde66-cadc-4d86-97a4-9c45b257d536
       objectPrefabs: !<reference.ObjectPrefab[]>
         - !<reference> 8104e815-4316-48be-ad1a-2021666f989f
         - !<reference> b9b3aff4-658d-4c76-ab3d-b479d4a722c8

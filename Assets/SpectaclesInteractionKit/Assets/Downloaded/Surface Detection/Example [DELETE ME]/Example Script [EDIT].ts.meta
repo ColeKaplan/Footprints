@@ -32,11 +32,14 @@
     {}
   DefaultScriptInputs:
     - objectVisuals: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      surfaceDetection: !<MappingBased.SurfaceDetection> 00000000-0000-0000-0000-000000000000
+      surfaceDetection: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input SceneObject objectVisuals
-    - // @input SurfaceDetection surfaceDetection
+    - // @input AssignableType surfaceDetection
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  SetupScript:
+    code: ""
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000

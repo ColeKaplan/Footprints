@@ -4,6 +4,12 @@
     - !<own> 3428837e-1a88-494b-a4ac-abeea509b069
 - !<PassInfo/3428837e-1a88-494b-a4ac-abeea509b069>
   CachedProperties:
+    - overrideTimeElapsed:
+        typeIdx: 1
+        value: 0.000000
+    - overrideTimeEnabled:
+        typeIdx: 0
+        value: 0
     - texture_mapBorderColor:
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
@@ -105,12 +111,6 @@
     black_height:
       typeIdx: 1
       value: 1.000000
-    overrideTimeElapsed:
-      typeIdx: 1
-      value: 0.000000
-    overrideTimeEnabled:
-      typeIdx: 0
-      value: 0
     texture_map:
       typeIdx: 9
       value:

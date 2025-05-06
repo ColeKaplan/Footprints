@@ -72,6 +72,7 @@
   DepthStencilRenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
   MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
   RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
+  DevicePropertiesSource: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/0005641c-028d-459a-0000-000000014b4d>
   PrefabRemaps:
     []
@@ -565,7 +566,7 @@
     "":
       camObj: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
       visualObj: !<reference.SceneObject> 7b41cd9e-c004-4dd8-abab-1c8246444e4e
-      animation: !<MappingBased.CircleAnimation> a30415d6-6c0a-4542-9a43-969289e5819c
+      animation: !<MappingBased.AssignableType> a30415d6-6c0a-4542-9a43-969289e5819c
   ScriptTypes:
     "":
       {}
@@ -1121,6 +1122,7 @@
     LineSpacing: 1.000000
     CapitalizationOverride: None
     CapitilizationOverride: None
+  EnableBatching: false
   ShadowMode: None
 - !<ScriptComponent/1178b66b-8768-412a-b9d9-22cd62eb75b6>
   PrefabRemaps:
@@ -4622,6 +4624,7 @@
   DepthStencilRenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
   MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
   RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
+  DevicePropertiesSource: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/496dfe8d-7fa8-400f-a11a-ae1866ea10de>
   PrefabRemaps:
     []
@@ -7211,7 +7214,7 @@
     {}
   ScriptInputs:
     "":
-      anchorModule: !<MappingBased.AnchorModule> c4156b38-9fb4-4837-967e-66a3c710a8f7
+      anchorModule: !<MappingBased.AssignableType> c4156b38-9fb4-4837-967e-66a3c710a8f7
       modeText: !<reference.Text> 74e81495-241b-485c-863b-53ee1c342b65
       pathCountText: !<reference.Text> 3b6a9b0f-ccea-4bf0-9f13-c964471041e5
       trailText: !<reference.Text> ccd4982c-8d88-4450-acd4-704a826c9f69
@@ -8575,16 +8578,16 @@
     {}
   ScriptInputs:
     "":
-      slider: !<MappingBased.Slider> bb1bcce0-ba3e-493a-a321-bfd9d4b75942
+      slider: !<MappingBased.AssignableType> bb1bcce0-ba3e-493a-a321-bfd9d4b75942
       animationAButton: !<reference.SceneObject> a6a33942-2295-4ffb-b9b7-ccc78ac22bdb
       animationBButton: !<reference.SceneObject> afc699c7-a1ac-4bb9-9288-3b00af3d4f6e
       animationCButton: !<reference.SceneObject> 0218fe8f-b6a4-4bbb-b452-daaa2e9df793
       launchButton: !<reference.SceneObject> e41e4172-e7f2-4603-851c-dc05a0e21a3c
-      rocketConf: !<MappingBased.RocketConfigurator> 5d2ffe4e-a3da-4dec-9bfe-d8d4271b8df0
+      rocketConf: !<MappingBased.AssignableType_1> 5d2ffe4e-a3da-4dec-9bfe-d8d4271b8df0
       launchSparks: !<reference.SceneObject> a6e780b3-03cb-49aa-8d53-83150b2bd5d6
       rocketAnimationPlayer: !<reference.AnimationPlayer> ab2efbdd-f11e-4691-bafc-7325dd21c9ce
       flightPathText: !<reference.Text> bf4229f1-c6a5-48d1-a38f-f04b89258a5f
-      launchPlatformToggleButton: !<MappingBased.ToggleButton> 0bcbfbe9-9e47-4eb6-add1-546001a963ac
+      launchPlatformToggleButton: !<MappingBased.AssignableType_2> 0bcbfbe9-9e47-4eb6-add1-546001a963ac
       launchPlatform: !<reference.SceneObject> 245cb741-c1b9-4805-b7c1-793674f0d7ed
   ScriptTypes:
     "":
@@ -9547,7 +9550,7 @@
     {}
   ScriptInputs:
     "":
-      AnchorController: !<MappingBased.AnchorPlacementController> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
+      AnchorController: !<MappingBased.AssignableType> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
   ScriptTypes:
     "":
       {}
@@ -9650,7 +9653,7 @@
     {}
   ScriptInputs:
     "":
-      rocketConfigurator: !<MappingBased.RocketConfigurator> 5d2ffe4e-a3da-4dec-9bfe-d8d4271b8df0
+      rocketConfigurator: !<MappingBased.AssignableType> 5d2ffe4e-a3da-4dec-9bfe-d8d4271b8df0
       objectPrefabs: !<reference.ObjectPrefab[]>
         - !<reference> 8104e815-4316-48be-ad1a-2021666f989f
         - !<reference> b9b3aff4-658d-4c76-ab3d-b479d4a722c8
@@ -9695,7 +9698,7 @@
   ScriptInputs:
     "":
       camObj: !<reference.SceneObject> 00000000-0000-0065-0000-000000000064
-      anchorScript: !<MappingBased.AnchorPlacementController> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
+      anchorScript: !<MappingBased.AssignableType> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
   ScriptTypes:
     "":
       {}
@@ -10956,7 +10959,7 @@
     {}
   ScriptInputs:
     "":
-      Toggle: !<MappingBased.PinchButton> 2fbd75b2-7c14-4a21-817c-bf0a616854ba
+      Toggle: !<MappingBased.AssignableType> 2fbd75b2-7c14-4a21-817c-bf0a616854ba
       ui: !<reference.SceneObject> 5996b799-2731-4758-ab9c-8877b7413152
   ScriptTypes:
     "":
@@ -10997,6 +11000,7 @@
       PlaybackSpeed: 1.000000
       Begin: 0.000000
       End: 400.000000
+      Offset: 0.000000
       Reversed: false
       Disabled: false
       BlendMode: Default
@@ -11009,6 +11013,7 @@
       PlaybackSpeed: 1.000000
       Begin: 0.000000
       End: 420.000000
+      Offset: 0.000000
       Reversed: false
       Disabled: false
       BlendMode: Default
@@ -11021,6 +11026,7 @@
       PlaybackSpeed: 1.000000
       Begin: 0.000000
       End: 360.000000
+      Offset: 0.000000
       Reversed: false
       Disabled: false
       BlendMode: Default
@@ -12585,7 +12591,7 @@
   ScriptInputs:
     "":
       objectVisuals: !<reference.SceneObject> e03d6245-7c4c-44e3-9e44-fff59830a0f6
-      surfaceDetection: !<MappingBased.SurfaceDetection> 07aba218-29ca-4f17-a858-d8fc99b21050
+      surfaceDetection: !<MappingBased.AssignableType> 07aba218-29ca-4f17-a858-d8fc99b21050
   ScriptTypes:
     "":
       {}
@@ -13649,7 +13655,7 @@
     "":
       handType: left
       selectVisual: Default
-      handInteractor: !<MappingBased.HandInteractor> 22e40d6c-4405-4a2f-9eda-9f5e0d425a75
+      handInteractor: !<MappingBased.AssignableType> 22e40d6c-4405-4a2f-9eda-9f5e0d425a75
       handMesh: !<reference.RenderMeshVisual> 9f2b3f06-77a1-4255-830d-ad50801287bd
       root: !<reference.SceneObject> 6f50df52-5045-47a8-839c-bbd20bc99bb5
       autoJointMapping: true
@@ -14625,7 +14631,7 @@
     "":
       handType: right
       selectVisual: Default
-      handInteractor: !<MappingBased.HandInteractor> 58d2a4c0-8eba-4ef1-b77e-c7f7d1192d79
+      handInteractor: !<MappingBased.AssignableType> 58d2a4c0-8eba-4ef1-b77e-c7f7d1192d79
       handMesh: !<reference.RenderMeshVisual> de62f5f3-2f86-4c98-b357-a44d603496f1
       root: !<reference.SceneObject> 780f2ffa-fc27-462d-85fd-d216d21e774a
       autoJointMapping: true
@@ -15243,15 +15249,15 @@
     {}
   ScriptInputs:
     "":
-      undefined: !<MappingBased.PinchButton> ee2a63d5-9f26-4cb9-95fb-5081584550fd
-      creator: !<MappingBased.PinchButton> bcc3891e-d4cd-4e89-a053-46da4f0a3628
-      explorer: !<MappingBased.PinchButton> 67278f3c-ecad-4df6-a533-e8061d6cd9b1
-      creatorScript: !<MappingBased.AnchorPlacementController> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
-      voiceRecognition: !<MappingBased.voiceRecognition> 95dcba69-d010-41c9-b064-86cdab826cf8
+      undefined: !<MappingBased.AssignableType> ee2a63d5-9f26-4cb9-95fb-5081584550fd
+      creator: !<MappingBased.AssignableType_1> bcc3891e-d4cd-4e89-a053-46da4f0a3628
+      explorer: !<MappingBased.AssignableType_2> 67278f3c-ecad-4df6-a533-e8061d6cd9b1
+      creatorScript: !<MappingBased.AssignableType_3> 71b5c311-421e-4d0c-a3f5-f8c2fdcbb40e
+      voiceRecognition: !<MappingBased.AssignableType_4> 95dcba69-d010-41c9-b064-86cdab826cf8
       userModeText: !<reference.Text> f3611df0-8436-4cd4-92b0-77c80741e278
-      bubbleToggle: !<MappingBased.PinchButton> 0a4a34e4-d505-4555-aad5-c04689f4ca34
+      bubbleToggle: !<MappingBased.AssignableType_5> 0a4a34e4-d505-4555-aad5-c04689f4ca34
       bubbleToggleText: !<reference.Text> f0e17aa2-0330-435e-9716-7ac48019bf41
-      deleteButton: !<MappingBased.PinchButton> ea0f6a33-95bd-4f76-9ce9-515bd2a14667
+      deleteButton: !<MappingBased.AssignableType_6> ea0f6a33-95bd-4f76-9ce9-515bd2a14667
   ScriptTypes:
     "":
       {}

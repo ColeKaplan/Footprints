@@ -40,9 +40,15 @@
     - mainColor:
         typeIdx: 5
         value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - overrideTimeElapsed:
+        typeIdx: 1
+        value: 0.000000
     - overrideTimeEnable:
         typeIdx: 2
         value: false
+    - overrideTimeEnabled:
+        typeIdx: 0
+        value: 0
   DepthWrite: true
   DepthTest: true
   DepthFunction: LessEqual
@@ -103,12 +109,6 @@
       typeIdx: 5
       value: {x: 0.156832, y: 0.937530, z: 0.635859, w: 1.000000}
     PreviewEnabled:
-      typeIdx: 0
-      value: 0
-    overrideTimeElapsed:
-      typeIdx: 1
-      value: 0.000000
-    overrideTimeEnabled:
       typeIdx: 0
       value: 0
   Pass: !<reference> 197c9352-daa5-40e9-8064-6bbfb4d86511

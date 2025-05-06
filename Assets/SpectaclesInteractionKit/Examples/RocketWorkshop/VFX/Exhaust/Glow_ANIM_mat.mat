@@ -4,7 +4,12 @@
     - !<own> 0d4f45f9-be50-480c-a432-e101f054b4dc
 - !<PassInfo/0d4f45f9-be50-480c-a432-e101f054b4dc>
   CachedProperties:
-    []
+    - overrideTimeElapsed:
+        typeIdx: 1
+        value: 0.000000
+    - overrideTimeEnabled:
+        typeIdx: 0
+        value: 0
   DepthWrite: false
   DepthTest: true
   DepthFunction: LessEqual
@@ -118,10 +123,4 @@
     glow_scale:
       typeIdx: 1
       value: 1.000000
-    overrideTimeElapsed:
-      typeIdx: 1
-      value: 0.000000
-    overrideTimeEnabled:
-      typeIdx: 0
-      value: 0
   Pass: !<reference> 5044e365-8b27-4d44-81c1-2f0238016319

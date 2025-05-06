@@ -8,6 +8,8 @@
     type: Unset
   Description: Ensure that this package is unpacked in your scene (right-click the package in Asset Browser and unpack if given the option).
   SvgIcon: ""
+  SetupScript:
+    code: ""
   InternalVersion: 0
   VersionMajor: 0
   VersionMinor: 0
@@ -17,6 +19,7 @@
   ComponentUid: bbcdd181-97f8-4471-8221-7ce0586e5781
   CurrentVisibility: Editable
   MaxVisibility: Editable
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
   Instantiable: !<reference> 00000000-0000-0000-0000-000000000000
   AssetLibraryDependencyStructure: !<AssetLibraryDependencyStructure>
     Name: Spatial Anchors
@@ -28,4 +31,4 @@
       patch: 1
       build: 0
   coreVersion: 309
-  clientVersion: 13.3800001
+  clientVersion: 13.380000

@@ -858,7 +858,7 @@
     "":
       handType: right
       selectVisual: Default
-      handInteractor: !<MappingBased.HandInteractor> 38e72372-f5c5-4c5e-888e-003531bd745b
+      handInteractor: !<MappingBased.AssignableType> 38e72372-f5c5-4c5e-888e-003531bd745b
       handMesh: !<reference.RenderMeshVisual> 15198c7d-b87d-41f2-8a03-ebb1e502aa85
       root: !<reference.SceneObject> feac871f-6262-41f8-97ba-c15238ce8cc6
       autoJointMapping: true
@@ -1794,7 +1794,7 @@
     "":
       handType: left
       selectVisual: Default
-      handInteractor: !<MappingBased.HandInteractor> 2ec89c90-23ef-4d6e-8079-acecd4d75c1d
+      handInteractor: !<MappingBased.AssignableType> 2ec89c90-23ef-4d6e-8079-acecd4d75c1d
       handMesh: !<reference.RenderMeshVisual> 640f142e-9401-4452-a70a-6b84ee9fdeb7
       root: !<reference.SceneObject> f0d6b0fb-62e3-448a-87ee-f6527258390d
       autoJointMapping: true

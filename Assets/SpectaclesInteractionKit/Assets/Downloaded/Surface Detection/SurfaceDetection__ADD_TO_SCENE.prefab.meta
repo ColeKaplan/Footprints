@@ -47,7 +47,7 @@
   ScriptInputs:
     "":
       objectVisuals: !<reference.SceneObject> 49444913-ee87-4b0f-bd06-a8e2ed6e2772
-      surfaceDetection: !<MappingBased.SurfaceDetection> cdffcd50-a239-47f9-8017-e22a1e22f737
+      surfaceDetection: !<MappingBased.AssignableType> cdffcd50-a239-47f9-8017-e22a1e22f737
   ScriptTypes:
     "":
       {}
@@ -216,7 +216,7 @@
     "":
       camObj: !<reference.SceneObject> 3e7c2195-4744-4350-8fbf-f15a3dd72ded
       visualObj: !<reference.SceneObject> e0e36eed-5de6-4036-a019-3e47c140014b
-      animation: !<MappingBased.CircleAnimation> b31870ab-cdc2-48d6-9fa5-0f9ea0dee5fe
+      animation: !<MappingBased.AssignableType> b31870ab-cdc2-48d6-9fa5-0f9ea0dee5fe
   ScriptTypes:
     "":
       {}

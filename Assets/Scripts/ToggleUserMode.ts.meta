@@ -38,26 +38,29 @@
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    - creatorScript: !<MappingBased.AnchorPlacementController> 00000000-0000-0000-0000-000000000000
+    - undefined: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
+      creator: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      explorer: !<MappingBased.AssignableType_2> 00000000-0000-0000-0000-000000000000
+      creatorScript: !<MappingBased.AssignableType_3> 00000000-0000-0000-0000-000000000000
+      voiceRecognition: !<MappingBased.AssignableType_4> 00000000-0000-0000-0000-000000000000
       userModeText: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      undefined: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
-      creator: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
-      explorer: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
-      voiceRecognition: !<MappingBased.voiceRecognition> 00000000-0000-0000-0000-000000000000
-      bubbleToggle: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      bubbleToggle: !<MappingBased.AssignableType_5> 00000000-0000-0000-0000-000000000000
       bubbleToggleText: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      deleteButton: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      deleteButton: !<MappingBased.AssignableType_6> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input PinchButton undefined
-    - // @input PinchButton creator
-    - // @input PinchButton explorer
-    - // @input AnchorPlacementController creatorScript
-    - // @input voiceRecognition voiceRecognition
+    - // @input AssignableType undefined
+    - // @input AssignableType_1 creator
+    - // @input AssignableType_2 explorer
+    - // @input AssignableType_3 creatorScript
+    - // @input AssignableType_4 voiceRecognition
     - // @input Component.Text userModeText
-    - // @input PinchButton bubbleToggle
+    - // @input AssignableType_5 bubbleToggle
     - // @input Component.Text bubbleToggleText
-    - // @input PinchButton deleteButton
+    - // @input AssignableType_6 deleteButton
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  SetupScript:
+    code: ""
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000

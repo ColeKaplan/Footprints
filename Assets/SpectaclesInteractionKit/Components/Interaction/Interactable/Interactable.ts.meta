@@ -34,8 +34,8 @@
     {}
   DefaultScriptInputs:
     - targetingMode: !<float> 3.000000
-      isScrollable: false
       enableInstantDrag: false
+      isScrollable: false
       allowMultipleInteractors: true
   ScriptTypes:
     -
@@ -47,3 +47,6 @@
     - // @input bool allowMultipleInteractors = true
   SvgIcon: ""
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  SetupScript:
+    code: ""
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000

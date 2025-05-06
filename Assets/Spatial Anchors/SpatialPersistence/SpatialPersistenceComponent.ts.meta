@@ -47,14 +47,17 @@
     {}
   DefaultScriptInputs:
     - locationCloudStorageModule: !<reference.LocationCloudStorageModule> 00000000-0000-0000-0000-000000000000
+      connectedLensModule: !<reference.ConnectedLensModule> 00000000-0000-0000-0000-000000000000
       useLocalStorage: false
-      debug: false
       mappingInterval: !<float> 120.000000
       resetDelayInS: 0.500000
+      debug: false
       incrementalMapping: false
       enableLoggingPoseSettling: false
-      connectedLensModule: !<reference.ConnectedLensModule> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  SetupScript:
+    code: ""
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
