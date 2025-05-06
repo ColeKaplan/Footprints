@@ -8,7 +8,7 @@ export class ToggleUI extends BaseScriptComponent {
     @input Toggle : PinchButton
     @input ui : SceneObject
 
-    private visible : boolean = false
+    private visible : boolean = true
 
     onAwake() {
 

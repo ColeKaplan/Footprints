@@ -31,12 +31,15 @@
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    - Toggle: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+    - Toggle: !<MappingBased.AssignableType> 00000000-0000-0000-0000-000000000000
       ui: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input PinchButton Toggle
+    - // @input AssignableType Toggle
     - // @input SceneObject ui
   DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  SetupScript:
+    code: ""
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000

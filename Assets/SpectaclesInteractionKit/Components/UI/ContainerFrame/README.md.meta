@@ -1,8 +1,9 @@
 - !<AssetImportMetadata/0d4765c1-6a61-4eb2-9a39-310878dd4b62>
   ImportedAssetIds:
     BinAsset: !<reference> 43515302-9836-4261-8f1e-4b55b50f846d
-  ImporterName: BinAssetImporter
-  PrimaryAsset: !<reference> 43515302-9836-4261-8f1e-4b55b50f846d
+    MarkdownAsset: !<reference> c2e203da-7dc4-4745-9989-0a488d763b8e
+  ImporterName: MarkdownAssetImporter
+  PrimaryAsset: !<reference> c2e203da-7dc4-4745-9989-0a488d763b8e
   PackageType: NotAPackage
   AssetDataMap:
     {}
