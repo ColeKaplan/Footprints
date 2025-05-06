@@ -9,7 +9,7 @@
     TypeScriptAsset: !<own> a01e743d-5ba6-4a44-9292-13bf76deff8e
   DependentFiles:
     []
-  ImporterSettings: !<AssetImporterSettings/2e884bb7-3c76-47ba-b474-f459243f787b>
+  ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
   ExtraData:
@@ -21,7 +21,7 @@
   VersionMajor: 1
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ComponentUid: 7ce74a95-cf6c-42f9-a5f8-d9962dff46f4
   ExportUid: 00000000-0000-0000-0000-000000000000
   CurrentVisibility: Editable
   MaxVisibility: Editable
@@ -39,3 +39,4 @@
   InputLines:
     - // @input Component.RenderMeshVisual calRenderer
     - // @input Component.AudioComponent audio
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000

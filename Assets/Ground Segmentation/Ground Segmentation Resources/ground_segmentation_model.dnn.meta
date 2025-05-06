@@ -11,7 +11,7 @@
     {}
   DependentFiles:
     []
-  ImporterSettings: !<FileMLAssetImporterSettings/b8807492-2e58-4b88-8105-27a5ea5d705e>
+  ImporterSettings: !<FileMLAssetImporterSettings>
     Inputs:
       - !<MLInput>
         Name: data
@@ -41,6 +41,6 @@
             bias: 0.000000
         InputName: ""
         OutputTexture: !<reference> 00000000-0000-0000-0000-000000000000
-  CompressionSettings: !<SingleCompressionSettings/ca775d2d-2d5e-41da-8509-f1db886a49d2>
+  CompressionSettings: !<SingleCompressionSettings>
     CompressorName: None
     CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000

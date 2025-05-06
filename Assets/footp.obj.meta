@@ -25,18 +25,18 @@
     Scene: !<own> 2accd1df-e728-4ef9-8f3c-bd74fa3ad52f
   DependentFiles:
     - footp.mtl
-  ImporterSettings: !<D3FileImporterSettingsBase/761ee230-ee67-4a1e-b532-9f71630b52fc>
+  ImporterSettings: !<D3FileImporterSettingsBase>
     UseLegacyImporter: false
     WithMaterials: true
     NamingConvention: ByCategorySanitize
     PersistentIdGenerationAlgorithm: DescriptorBased
-  CompressionSettings: !<ComplexCompressionSettings/4d60913c-547c-40e2-abb5-a2b7d548ae2e>
+  CompressionSettings: !<ComplexCompressionSettings>
     Presets:
-      Performance Compression: !<SingleCompressionSettings/4bab3179-a732-45f9-b6a9-b94af96c6375>
+      Performance Compression: !<SingleCompressionSettings>
         CompressorName: Performance
-        CompressionSettings: !<TextureCompressionSettings/f12f180c-f1ac-4629-97f9-f9fd1d9b91f5>
+        CompressionSettings: !<TextureCompressionSettings>
           Level: Medium
-      None Compression: !<SingleCompressionSettings/cd03c17f-5606-4c74-af4f-53ecc127cdf0>
+      None Compression: !<SingleCompressionSettings>
         CompressorName: None
         CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
     ExtensionMappings:

@@ -13,6 +13,7 @@ export class ToggleUserMode extends BaseScriptComponent {
     @input userModeText: Text;
     @input bubbleToggle: PinchButton
     @input bubbleToggleText: Text;
+    @input deleteButton: PinchButton;
 
     private creatorMode = true;
 
@@ -45,6 +46,10 @@ export class ToggleUserMode extends BaseScriptComponent {
             } else {
                 this.bubbleToggleText.text = "Bubble Start"
             }
+        })
+
+        this.deleteButton.onButtonPinched.add(() => {
+            this.creatorScript.deleteAnchors();
         })
     }
 }

@@ -30,7 +30,7 @@
     Default Prefabs/Toggle Handle: !<own> 4bf5210c-280e-4328-a6df-9efd49f4b3c2
   DependentFiles:
     []
-  ImporterSettings: !<LensCoreImporterSettings/50403688-4bc8-43f5-80b9-daee6ccf2637>
+  ImporterSettings: !<LensCoreImporterSettings>
     PersistentIdGenerationAlgorithm: DescriptorBased
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
 - !<ObjectPrefabAssetData/4bf5210c-280e-4328-a6df-9efd49f4b3c2>
@@ -74,6 +74,7 @@
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+  RotationAngle: 0
 - !<ScreenTransform/6fbd8462-8c68-4296-91f7-a68481af2a5b>
   PrefabRemaps:
     []
@@ -154,6 +155,7 @@
   FlipY: false
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+  RotationAngle: 0
 - !<ScreenTransform/e7655c0d-33f1-4d69-9905-f4da0a78fe0c>
   PrefabRemaps:
     []

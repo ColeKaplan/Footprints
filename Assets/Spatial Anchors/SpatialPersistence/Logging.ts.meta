@@ -9,7 +9,7 @@
     TypeScriptAsset: !<own> 8c95f984-180e-4d70-9fbc-60cd739a024a
   DependentFiles:
     []
-  ImporterSettings: !<AssetImporterSettings/b052297a-6fc1-493d-a8e7-22ea135f2467>
+  ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
   ExtraData:
@@ -21,7 +21,7 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ComponentUid: 2cf8196a-80da-4e2a-80e2-22398e943476
   ExportUid: 00000000-0000-0000-0000-000000000000
   CurrentVisibility: Editable
   MaxVisibility: Editable
@@ -39,3 +39,4 @@
   InputLines:
     - // @input float logLimit = 10
     - // @input Component.Text loggerOutput
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000

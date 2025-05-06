@@ -11,7 +11,7 @@
     TypeScriptAsset: !<own> da49a59b-d562-4cf6-ac62-b3c4d927ebfc
   DependentFiles:
     []
-  ImporterSettings: !<AssetImporterSettings/ef1af1d3-543f-44b4-9004-efec3957baec>
+  ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
 - !<TypeScriptAssetData/da49a59b-d562-4cf6-ac62-b3c4d927ebfc>
@@ -21,7 +21,7 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ComponentUid: 2f9cbead-96ab-486d-8c8a-665c0e995ae7
   ExportUid: 00000000-0000-0000-0000-000000000000
   CurrentVisibility: Editable
   MaxVisibility: Editable
@@ -36,3 +36,4 @@
       {}
   InputLines:
     - // @input AnchorPlacementController AnchorController
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000

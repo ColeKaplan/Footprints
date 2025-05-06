@@ -11,7 +11,7 @@
     TypeScriptAsset: !<own> df9b9b72-a515-4fce-bd8f-334d9e004c06
   DependentFiles:
     []
-  ImporterSettings: !<AssetImporterSettings/64416264-8e08-4f69-a0cc-23d4965d62d5>
+  ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
 - !<TypeScriptAssetData/df9b9b72-a515-4fce-bd8f-334d9e004c06>
@@ -21,7 +21,7 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ComponentUid: c906ef84-fd3c-4097-bd32-c198752f13e8
   ExportUid: 00000000-0000-0000-0000-000000000000
   CurrentVisibility: Editable
   MaxVisibility: Editable
@@ -39,3 +39,4 @@
   InputLines:
     - // @input Component.Camera cam
     - // @input Asset.ObjectPrefab prefab
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000

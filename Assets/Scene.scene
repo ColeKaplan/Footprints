@@ -123,8 +123,6 @@
   ShadowFrustumFarClipPlane: 1000.000000
   UseEnvMapFromCamera: false
   EnvMapFromCameraMode: Auto
-  UseEstimation: false
-  EstimationIntensity: 1.000000
   EstimationSharpness: 1.000000
   EnvMapExposure: 1.000000
   EnvMapRotation: 0.000000
@@ -138,6 +136,8 @@
   DecayType: None
   DecayLimit: false
   DecayRange: 40.000000
+  UseEstimation: false
+  EstimationIntensity: !<float> 1.000000
 - !<SceneObject/00056e79-b066-62ca-0000-000000001406>
   PrefabRemaps:
     []
@@ -173,8 +173,6 @@
   ShadowFrustumFarClipPlane: 1000.000000
   UseEnvMapFromCamera: false
   EnvMapFromCameraMode: Auto
-  UseEstimation: false
-  EstimationIntensity: 1.000000
   EstimationSharpness: 1.000000
   EnvMapExposure: 1.000000
   EnvMapRotation: 0.000000
@@ -188,6 +186,8 @@
   DecayType: None
   DecayLimit: false
   DecayRange: 40.000000
+  UseEstimation: false
+  EstimationIntensity: !<float> 1.000000
 - !<SceneObject/006192b0-6a28-42d8-9c20-7db3cf994249>
   PrefabRemaps:
     []
@@ -1385,7 +1385,7 @@
 - !<SceneObject/144e9090-9c6d-44a1-910a-3ce946123b2d>
   PrefabRemaps:
     []
-  Name: UI
+  Name: UI_Toggle
   Enabled: true
   Layers: 1
   LocalTransform:
@@ -1394,7 +1394,7 @@
     scale: {x: 0.600000, y: 0.600000, z: 0.600000}
     hasSegmentScaleCompensation: false
   Children:
-    - !<own> 5996b799-2731-4758-ab9c-8877b7413152
+    []
   Components:
     - !<own> a9bb9967-af21-47d8-87b5-3e6132e0760a
     - !<own> bbca9671-a464-4bed-8df2-3ea68bb96fbb
@@ -1676,6 +1676,7 @@
     - !<own> 3bcd20ef-7a73-4f59-b0f2-ec8c0d9bede7
     - !<own> 28b2da69-7c4f-4fa2-a57d-55ca6a66fd83
     - !<own> 144e9090-9c6d-44a1-910a-3ce946123b2d
+    - !<own> 5996b799-2731-4758-ab9c-8877b7413152
   Components:
     - !<own> 488f72da-1de4-4ddf-88f3-ca8b8f971e1d
     - !<own> 30a1422f-7b1b-42d5-b0d6-12a8b79c138f
@@ -4359,8 +4360,8 @@
   Enabled: true
   Layers: 1
   LocalTransform:
-    position: {x: -4.397400, y: -4.108545, z: 0.000002}
-    rotation: {x: 0.000000, y: -0.000000, z: 90.000008}
+    position: {x: -0.182388, y: -9.930471, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 90.000000}
     scale: {x: 5.000000, y: 5.000000, z: 5.000000}
     hasSegmentScaleCompensation: false
   Children:
@@ -5484,13 +5485,13 @@
 - !<SceneObject/5996b799-2731-4758-ab9c-8877b7413152>
   PrefabRemaps:
     []
-  Name: Object
-  Enabled: false
+  Name: UI_Buttons
+  Enabled: true
   Layers: 1
   LocalTransform:
-    position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    position: {x: 7.638458, y: 14.902076, z: -50.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 0.000000}
+    scale: {x: 0.600000, y: 0.600000, z: 0.600000}
     hasSegmentScaleCompensation: false
   Children:
     - !<own> 45186229-3c16-4b58-b0b4-e649d171c1aa
@@ -5771,8 +5772,8 @@
   Enabled: true
   Layers: 1
   LocalTransform:
-    position: {x: -4.397400, y: -11.608544, z: 0.000002}
-    rotation: {x: 0.000000, y: -0.000000, z: 90.000008}
+    position: {x: -0.052612, y: -5.054918, z: 0.000000}
+    rotation: {x: 0.000000, y: -0.000000, z: 90.000000}
     scale: {x: 5.000000, y: 5.000000, z: 5.000000}
     hasSegmentScaleCompensation: false
   Children:
@@ -7211,7 +7212,6 @@
   ScriptInputs:
     "":
       anchorModule: !<MappingBased.AnchorModule> c4156b38-9fb4-4837-967e-66a3c710a8f7
-      deleteButton: !<MappingBased.PinchButton> ea0f6a33-95bd-4f76-9ce9-515bd2a14667
       modeText: !<reference.Text> 74e81495-241b-485c-863b-53ee1c342b65
       pathCountText: !<reference.Text> 3b6a9b0f-ccea-4bf0-9f13-c964471041e5
       trailText: !<reference.Text> ccd4982c-8d88-4450-acd4-704a826c9f69
@@ -8043,6 +8043,7 @@
     - !<reference> 1766b243-ecbd-49ab-99a0-0a126bf505c7
   FlipX: false
   FlipY: false
+  RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
   Size:
@@ -9490,6 +9491,7 @@
     - !<reference> 4d35bac2-e858-4d9c-afa4-6f02ae7d5065
   FlipX: false
   FlipY: false
+  RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
   Size:
@@ -10954,7 +10956,8 @@
     {}
   ScriptInputs:
     "":
-      UI: !<MappingBased.PinchButton> 2fbd75b2-7c14-4a21-817c-bf0a616854ba
+      Toggle: !<MappingBased.PinchButton> 2fbd75b2-7c14-4a21-817c-bf0a616854ba
+      ui: !<reference.SceneObject> 5996b799-2731-4758-ab9c-8877b7413152
   ScriptTypes:
     "":
       {}
@@ -11871,8 +11874,6 @@
   ShadowFrustumFarClipPlane: 1000.000000
   UseEnvMapFromCamera: false
   EnvMapFromCameraMode: Auto
-  UseEstimation: false
-  EstimationIntensity: 1.000000
   EstimationSharpness: 1.000000
   EnvMapExposure: 1.000000
   EnvMapRotation: 0.000000
@@ -11886,6 +11887,8 @@
   DecayType: None
   DecayLimit: false
   DecayRange: 40.000000
+  UseEstimation: false
+  EstimationIntensity: !<float> 1.000000
 - !<Text/bbca9671-a464-4bed-8df2-3ea68bb96fbb>
   PrefabRemaps:
     []
@@ -15248,6 +15251,7 @@
       userModeText: !<reference.Text> f3611df0-8436-4cd4-92b0-77c80741e278
       bubbleToggle: !<MappingBased.PinchButton> 0a4a34e4-d505-4555-aad5-c04689f4ca34
       bubbleToggleText: !<reference.Text> f0e17aa2-0330-435e-9716-7ac48019bf41
+      deleteButton: !<MappingBased.PinchButton> ea0f6a33-95bd-4f76-9ce9-515bd2a14667
   ScriptTypes:
     "":
       {}

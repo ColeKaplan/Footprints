@@ -11,13 +11,13 @@
     {}
   DependentFiles:
     []
-  ImporterSettings: !<FileMeshImporterSettings/bb7cda04-61d9-4cc7-9d67-92e8e4871786>
+  ImporterSettings: !<FileMeshImporterSettings>
     ModifiedVertexFormats:
       normal: Float
       position: Float
-  CompressionSettings: !<SingleCompressionSettings/c7dc740b-9bc8-425b-8dc1-6cd508cd09ad>
+  CompressionSettings: !<SingleCompressionSettings>
     CompressorName: Draco
-    CompressionSettings: !<MeshCompressionSettings/5e9e7ce2-51a2-4844-846d-33683a3be49c>
+    CompressionSettings: !<MeshCompressionSettings>
       EnableDracoCompression: true
       CompressionLevel: 7
       PositionBits: 11

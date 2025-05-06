@@ -11,12 +11,12 @@
     {}
   DependentFiles:
     []
-  ImporterSettings: !<FileMeshImporterSettings/071f7038-07a2-4299-8746-8efcb5c933d1>
+  ImporterSettings: !<FileMeshImporterSettings>
     ModifiedVertexFormats:
       normal: Float
       position: Float
       tangent: Float
       texture0: Float
-  CompressionSettings: !<SingleCompressionSettings/0a7375c2-759e-4fc0-9405-1067d5a73f5f>
+  CompressionSettings: !<SingleCompressionSettings>
     CompressorName: None
     CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000

@@ -11,7 +11,7 @@
     TypeScriptAsset: !<own> 8cc32574-8917-45ef-ad59-af2d49fe3e94
   DependentFiles:
     []
-  ImporterSettings: !<AssetImporterSettings/b99b6d5e-fe20-4b1a-8a63-c717eaa5f636>
+  ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
 - !<TypeScriptAssetData/8cc32574-8917-45ef-ad59-af2d49fe3e94>
@@ -21,7 +21,7 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ComponentUid: a01a23fd-0c8c-47d3-a81e-e8cfe95e38f5
   ExportUid: 00000000-0000-0000-0000-000000000000
   CurrentVisibility: Editable
   MaxVisibility: Editable
@@ -30,6 +30,7 @@
     bubbleToggleText: false
     creator: false
     creatorScript: false
+    deleteButton: false
     explorer: false
     undefined: false
     userModeText: false
@@ -45,6 +46,7 @@
       voiceRecognition: !<MappingBased.voiceRecognition> 00000000-0000-0000-0000-000000000000
       bubbleToggle: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
       bubbleToggleText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      deleteButton: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
@@ -57,3 +59,5 @@
     - // @input Component.Text userModeText
     - // @input PinchButton bubbleToggle
     - // @input Component.Text bubbleToggleText
+    - // @input PinchButton deleteButton
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000

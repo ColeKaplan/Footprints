@@ -5,7 +5,8 @@ import { InteractorEvent } from "../SpectaclesInteractionKit/Core/Interactor/Int
 @component
 export class ToggleUI extends BaseScriptComponent {
 
-    @input UI : PinchButton
+    @input Toggle : PinchButton
+    @input ui : SceneObject
 
     private visible : boolean = false
 
@@ -19,10 +20,10 @@ export class ToggleUI extends BaseScriptComponent {
     onStart() {
         print("got to start UI toggling")
 
-        this.UI.onButtonPinched.add(() => {
+        this.Toggle.onButtonPinched.add(() => {
             print("clicked UI toggle")
             this.visible = !this.visible
-            this.UI.getSceneObject().getChild(0).enabled = this.visible
+            this.ui.enabled = this.visible
         })
     }
 }

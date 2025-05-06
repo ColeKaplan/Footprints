@@ -11,7 +11,7 @@
     TypeScriptAsset: !<own> e8cf4670-9fbe-4fb5-ace6-2b1a4ce0c289
   DependentFiles:
     []
-  ImporterSettings: !<AssetImporterSettings/d4f3e8b5-b1de-4905-88c5-6701e6d4c2c9>
+  ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
 - !<TypeScriptAssetData/e8cf4670-9fbe-4fb5-ace6-2b1a4ce0c289>
@@ -21,7 +21,7 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ComponentUid: 7395cc45-29ab-4d69-9016-caebfefaaa29
   ExportUid: 00000000-0000-0000-0000-000000000000
   CurrentVisibility: Editable
   MaxVisibility: Editable
@@ -30,7 +30,6 @@
     bubbleAudio: false
     bubblePrefab: false
     camera: false
-    deleteButton: false
     footprintPrefab: false
     modeText: false
     pathCountText: false
@@ -50,13 +49,11 @@
       bubblePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
       toggleAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
       bubbleAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
-      deleteButton: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
     - // @input AnchorModule anchorModule
-    - // @input PinchButton deleteButton
     - // @input Component.Text modeText
     - // @input Component.Text pathCountText
     - // @input Component.Text trailText
@@ -66,3 +63,4 @@
     - // @input Asset.ObjectPrefab bubblePrefab
     - // @input Component.AudioComponent toggleAudio
     - // @input Component.AudioComponent bubbleAudio
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000

@@ -9,7 +9,7 @@
     TypeScriptAsset: !<own> 78cd0c3c-7a8d-413f-922b-9ba93be0f5e1
   DependentFiles:
     []
-  ImporterSettings: !<AssetImporterSettings/011554c2-1c66-4a56-9064-cbdc50557cbb>
+  ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
   ExtraData:
@@ -25,7 +25,7 @@
   VersionMajor: 1
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ComponentUid: 712dc71f-fc26-4c2b-b0b1-ba1e01b72861
   ExportUid: 00000000-0000-0000-0000-000000000000
   CurrentVisibility: Editable
   MaxVisibility: Editable
@@ -46,3 +46,4 @@
     - // @input SceneObject camObj
     - // @input SceneObject visualObj
     - // @input CircleAnimation animation
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000

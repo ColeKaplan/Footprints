@@ -11,7 +11,7 @@
     TypeScriptAsset: !<own> deef2c9b-9443-4c2e-9439-56bec85cdaa3
   DependentFiles:
     []
-  ImporterSettings: !<AssetImporterSettings/b593cf8b-914a-4091-b0ec-ba0022be1ec5>
+  ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
 - !<TypeScriptAssetData/deef2c9b-9443-4c2e-9439-56bec85cdaa3>
@@ -21,18 +21,22 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: 00000000-0000-0000-0000-000000000000
+  ComponentUid: a3996c2b-16d5-42ea-bb00-7c08c97e9831
   ExportUid: 00000000-0000-0000-0000-000000000000
   CurrentVisibility: Editable
   MaxVisibility: Editable
   ScriptInputsHidden:
-    UI: false
+    Toggle: false
+    ui: false
   ScriptTypesHidden:
     {}
   DefaultScriptInputs:
-    - UI: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+    - Toggle: !<MappingBased.PinchButton> 00000000-0000-0000-0000-000000000000
+      ui: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
   InputLines:
-    - // @input PinchButton UI
+    - // @input PinchButton Toggle
+    - // @input SceneObject ui
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
